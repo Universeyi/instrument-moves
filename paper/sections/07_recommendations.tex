@@ -1,0 +1,51 @@
+\section{Recommendations}
+\label{sec:recs}
+
+These are addressed to benchmark maintainers and to anyone reporting agent
+evaluations, ourselves included. They are cheap, and most of them are fields
+rather than experiments.
+
+\begin{enumerate}\itemsep2pt
+\item \textbf{Record the serving endpoint, not just the model identifier.}
+  Provider and quantization at minimum. Two entries carrying the same model id
+  today can be different weights on different hardware, and a reader has no way
+  to tell. This is the single highest-value change here, and it is one column.
+\item \textbf{Record image digest, task-set commit and run date.} Digest rather
+  than tag: a tag moves. The run date is what lets a reader notice that two
+  entries are separated by a serving change nobody documented.
+\item \textbf{Report the number of runs, and a range when there is more than
+  one.} Three runs with a minimum and maximum costs three times the compute and
+  removes most of the ambiguity. Where a board already stores a run count,
+  surfacing it in the rendered table is free.
+\item \textbf{State a minimum meaningful gap in the leaderboard
+  documentation.} The detectable difference of Section~\ref{sec:noise} is one
+  way to compute one. If a number like ours is roughly right, differences below it
+  between single runs are not resolvable. Saying so protects submitters as much
+  as readers: it removes the incentive to claim a lead that a re-run would
+  erase.
+\item \textbf{Log completion tokens per action.} It is the cheapest available
+  witness to an endpoint changing underneath a run. Aggregate token counts are
+  dominated by the prompt and will not show it.
+\item \textbf{Distinguish budget exhaustion from task failure in the recorded
+  outcome.} A run stopped at the round cap and a run that did the wrong thing
+  are different events; one in five published runs is the former.
+\item \textbf{Three small fixes we can offer upstream}, each independent of
+  everything above: merge rather than assign caller-supplied request options;
+  guard the response-content accessor against a \texttt{None} body, which a
+  reasoning model returns when it exhausts its budget mid-thought; and match
+  container cleanup against the configured image rather than a hardcoded tag.
+\end{enumerate}
+
+There is a stronger conclusion available, and our data supports it: if a
+serving configuration is not part of an API contract, then an evaluation built
+on hosted inference is not reproducible in principle, only in practice and only
+until the provider changes something. The strict remedy is to self-host and
+freeze the weights. We are not proposing that everyone do so --- for most
+groups the cost is prohibitive and the hosted endpoint is the thing they
+actually deploy against --- but a field that cites two-point differences should
+be explicit that it has chosen convenience over reproducibility, rather than
+assuming it has both.
+
+None of this makes a benchmark deterministic, and none of it should. The
+purpose is narrower: to let a reader of a leaderboard tell the difference
+between a system that improved and an instrument that moved.

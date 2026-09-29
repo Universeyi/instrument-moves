@@ -1,0 +1,9 @@
+AcceptMeetingTask
+ChangeWallpaperTask
+CheckEventTimeTask
+CloseFlightModeTask
+GoogleMapsAlibabaSouthNeighborTask
+MastodonChangeHeaderTask
+MastodonNewPostTask
+OpenFlightModeTask
+TakeSelfieTask

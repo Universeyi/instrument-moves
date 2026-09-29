@@ -1,0 +1,147 @@
+{
+  "BidFileRenameTask": {
+    "median_total_tokens": 269600.0,
+    "median_steps": 42.5,
+    "n_models": 16
+  },
+  "DownloadSendReceiptTask": {
+    "median_total_tokens": 294742.0,
+    "median_steps": 35.0,
+    "n_models": 16
+  },
+  "GraduationMassEmailTask": {
+    "median_total_tokens": 306560.5,
+    "median_steps": 38.0,
+    "n_models": 16
+  },
+  "MastodonImportMutedUsersTask": {
+    "median_total_tokens": 231845.0,
+    "median_steps": 28.0,
+    "n_models": 16
+  },
+  "MattermostBudgetApprovalPipelineTask": {
+    "median_total_tokens": 144231.5,
+    "median_steps": 22.0,
+    "n_models": 16
+  },
+  "MattermostCreateChannelTask": {
+    "median_total_tokens": 198849.5,
+    "median_steps": 32.0,
+    "n_models": 16
+  },
+  "MattermostEmailTask": {
+    "median_total_tokens": 212096.0,
+    "median_steps": 22.5,
+    "n_models": 16
+  },
+  "ScheduleLunchViaSmsTask": {
+    "median_total_tokens": 176067.0,
+    "median_steps": 24.0,
+    "n_models": 16
+  },
+  "SendFormsTask": {
+    "median_total_tokens": 284325.5,
+    "median_steps": 37.0,
+    "n_models": 16
+  },
+  "CVEmailTask": {
+    "median_total_tokens": 84825.0,
+    "median_steps": 13.5,
+    "n_models": 16
+  },
+  "AcceptMeetingTask": {
+    "median_total_tokens": 39529.0,
+    "median_steps": 7.0,
+    "n_models": 16
+  },
+  "ChangeWallpaperTask": {
+    "median_total_tokens": 46412.5,
+    "median_steps": 8.0,
+    "n_models": 16
+  },
+  "CheckEventTimeTask": {
+    "median_total_tokens": 94175.0,
+    "median_steps": 12.0,
+    "n_models": 16
+  },
+  "CloseFlightModeTask": {
+    "median_total_tokens": 24891.5,
+    "median_steps": 4.5,
+    "n_models": 16
+  },
+  "GoogleMapsAlibabaSouthNeighborTask": {
+    "median_total_tokens": 49925.5,
+    "median_steps": 9.0,
+    "n_models": 16
+  },
+  "MastodonChangeHeaderTask": {
+    "median_total_tokens": 33846,
+    "median_steps": 7.0,
+    "n_models": 15
+  },
+  "MastodonNewPostTask": {
+    "median_total_tokens": 29103.5,
+    "median_steps": 6.0,
+    "n_models": 16
+  },
+  "OpenFlightModeTask": {
+    "median_total_tokens": 28534.0,
+    "median_steps": 4.5,
+    "n_models": 16
+  },
+  "TakeSelfieTask": {
+    "median_total_tokens": 56193.0,
+    "median_steps": 8.0,
+    "n_models": 16
+  },
+  "CheckInterviewTimesTask": {
+    "median_total_tokens": 346288.5,
+    "median_steps": 50.0,
+    "n_models": 16
+  },
+  "LocalFileManagementTask2": {
+    "median_total_tokens": 396310.0,
+    "median_steps": 50.0,
+    "n_models": 16
+  },
+  "MastodonGetServerInfoTask": {
+    "median_total_tokens": 332034.5,
+    "median_steps": 50.0,
+    "n_models": 16
+  },
+  "MastodonServerInfoReportTask": {
+    "median_total_tokens": 473033.0,
+    "median_steps": 50.0,
+    "n_models": 16
+  },
+  "MastodonShareLocationTask": {
+    "median_total_tokens": 117858.5,
+    "median_steps": 22.5,
+    "n_models": 16
+  },
+  "MattermostProjectStatusReportTask": {
+    "median_total_tokens": 348050.0,
+    "median_steps": 50.0,
+    "n_models": 16
+  },
+  "MattermostResourceConflictResolutionTask": {
+    "median_total_tokens": 342849.0,
+    "median_steps": 50.0,
+    "n_models": 16
+  },
+  "SMSManagement": {
+    "median_total_tokens": 286956.5,
+    "median_steps": 39.0,
+    "n_models": 16
+  },
+  "MastodonCalendarMultiMemosTask": {
+    "median_total_tokens": 417926,
+    "median_steps": 50,
+    "n_models": 15
+  },
+  "ReadQwen3PaperTask5": {
+    "median_total_tokens": 281402,
+    "median_steps": 50,
+    "n_models": 15
+  }
+}

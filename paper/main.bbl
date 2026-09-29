@@ -1,0 +1,84 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bowyer et~al.(2025)Bowyer, Aitchison, and Ivanova]{bowyer2025clt}
+Sam Bowyer, Laurence Aitchison, and Desi~R. Ivanova.
+\newblock Position: Don't use the {CLT} in {LLM} evals with fewer than a few
+  hundred datapoints.
+\newblock In \emph{International Conference on Machine Learning (ICML)}, 2025.
+\newblock Spotlight position paper; arXiv:2503.01747; dblp
+  \texttt{conf/icml/BowyerAI25}.
+
+\bibitem[Chen et~al.(2021)Chen, Cai, Zaharia, and Zou]{chen2021apishifts}
+Lingjiao Chen, Tracy Cai, Matei Zaharia, and James Zou.
+\newblock Did the model change? {Efficiently} assessing machine learning {API}
+  shifts.
+\newblock \emph{arXiv preprint arXiv:2107.14203}, 2021.
+
+\bibitem[Chen et~al.(2024)Chen, Zaharia, and Zou]{chen2024chatgpt}
+Lingjiao Chen, Matei Zaharia, and James Zou.
+\newblock How is {ChatGPT}'s behavior changing over time?
+\newblock \emph{Harvard Data Science Review}, 6\penalty0 (2), 2024.
+\newblock arXiv:2307.09009.
+
+\bibitem[Gruber and Fraser(2022)]{gruber2022flakiness}
+Martin Gruber and Gordon Fraser.
+\newblock A survey on how test flakiness affects developers and what support
+  they need to address it.
+\newblock In \emph{IEEE International Conference on Software Testing,
+  Verification and Validation (ICST)}, 2022.
+\newblock arXiv:2203.00483.
+
+\bibitem[Kong et~al.(2026)Kong, Zhang, Yang, Gao, Liu, Tong, Cai, Zhou, Zhang,
+  Chen, Liu, Hoi, and Wang]{kong2026mobileworld}
+Quyu Kong, Xu~Zhang, Zhenyu Yang, Nolan Gao, Chen Liu, Panrong Tong, Chenglin
+  Cai, Hanzhang Zhou, Jianan Zhang, Liangyu Chen, Zhidan Liu, Steven Hoi, and
+  Yue Wang.
+\newblock {MobileWorld}: Benchmarking autonomous mobile agents in agent-user
+  interactive and {MCP}-augmented environments.
+\newblock In \emph{Proceedings of the 64th Annual Meeting of the Association
+  for Computational Linguistics (ACL)}, 2026.
+\newblock arXiv:2512.19432; dblp \texttt{conf/acl/KongZYGLTCZZCLH26}.
+
+\bibitem[Miller(2024)]{miller2024errorbars}
+Evan Miller.
+\newblock Adding error bars to evals: A statistical approach to language model
+  evaluations.
+\newblock \emph{arXiv preprint arXiv:2411.00640}, 2024.
+
+\bibitem[Rawles et~al.(2025)Rawles, Clinckemaillie, Chang, Waltz, Lau, Fair,
+  Li, Bishop, Li, Campbell-Ajala, Toyama, Berry, Tyamagundlu, Lillicrap, and
+  Riva]{rawles2025androidworld}
+Christopher Rawles, Sarah Clinckemaillie, Yifan Chang, Jonathan Waltz,
+  Gabrielle Lau, Marybeth Fair, Alice Li, William Bishop, Wei Li, Folawiyo
+  Campbell-Ajala, Daniel Toyama, Robert Berry, Divya Tyamagundlu, Timothy
+  Lillicrap, and Oriana Riva.
+\newblock {AndroidWorld}: A dynamic benchmarking environment for autonomous
+  agents.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2025.
+\newblock arXiv:2405.14573; dblp \texttt{conf/iclr/RawlesCCWLFLBLC25}.
+
+\bibitem[Yao et~al.(2025)Yao, Shinn, Razavi, and Narasimhan]{yao2025taubench}
+Shunyu Yao, Noah Shinn, Pedram Razavi, and Karthik Narasimhan.
+\newblock {$\tau$}-bench: A benchmark for tool-agent-user interaction in
+  real-world domains.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2025.
+\newblock arXiv:2406.12045; dblp \texttt{conf/iclr/YaoSRN25}.
+
+\bibitem[Yuan et~al.(2025)Yuan, Li, Ding, Xie, Li, Zhao, Wan, Shi, Hu, and
+  Liu]{yuan2025nondeterminism}
+Jiayi Yuan, Hao Li, Xinheng Ding, Wenya Xie, Yu-Jhe Li, Wentian Zhao, Kun Wan,
+  Jing Shi, Xia Hu, and Zirui Liu.
+\newblock Understanding and mitigating numerical sources of nondeterminism in
+  {LLM} inference.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2025.
+\newblock Oral presentation; arXiv:2506.09501.
+
+\end{thebibliography}

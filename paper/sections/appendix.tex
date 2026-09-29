@@ -1,0 +1,204 @@
+\section{Per-task results}
+\label{app:pertask}
+All 29 tasks over the six repetitions of the headline basis, ordered by flip
+rate. \textbf{The \emph{group} column describes the published runs' behaviour,
+not ours}: it records whether the benchmark's own published trajectories all
+passed a task, all failed it, or disagreed on it (Section~\ref{sec:setup}), and
+it is how the task set was stratified. A task can therefore be listed as
+\emph{all-pass} and still have failed in every one of our repetitions.\footnote{%
+Four tasks here score 0/6 despite having passed in two of the three rounds that
+preceded the serving change of Section~\ref{sec:endpoint}:
+\texttt{BidFileRenameTask}, \texttt{CheckEventTimeTask},
+\texttt{DownloadSendReceiptTask} and \texttt{MattermostCreateChannelTask} (see
+Figure~\ref{fig:dumbbell}). The headline basis lies entirely after that change,
+so these rows are a consequence of it rather than an anomaly. The remaining
+zero-scoring tasks are ones the published runs also fail.} Flip rate is the share of trial pairs that disagree,
+$k(n-k)/\binom{n}{2}$; its maximum is below 1 and depends on $n$, reaching
+0.600 at $n=6$. Wilson intervals are wide at this sample size, which is why the
+suite-level figures rather than the per-task ones carry the argument in
+Section~\ref{sec:noise}.
+
+\begin{center}\scriptsize
+\input{sections/tables/app_per_task}
+\end{center}
+
+\section{Tasks that never flipped}
+\label{app:stable}
+The 22 tasks that returned the same verdict in every repetition of the headline
+basis. As in Appendix~\ref{app:pertask}, \emph{group} is the published runs'
+behaviour rather than ours, which is why a row can read \emph{all-pass} and
+\emph{always failed} at once. Their existence is the control: a setup that flipped everywhere would be
+measuring something other than the benchmark. Note that all 10 tasks the
+published runs uniformly fail are here, and 8 of the 9 they uniformly pass.
+
+\begin{center}\scriptsize
+\input{sections/tables/app_stable}
+\end{center}
+
+\section{Three intervals that are easy to confuse}
+\label{app:intervals}
+We compute and report three different quantities, and conflating them is the
+most likely way to misread this paper.
+\begin{itemize}\itemsep2pt
+\item \textbf{Re-run distribution.} Where the total would land if the same task
+  set were run again. Each task's rate is drawn from a Jeffreys posterior
+  before the Bernoulli draw, so that the finite number of repetitions is
+  carried through rather than assumed away. This is the headline at the 29-task
+  suite scale (the $\sigma$ of the footnote in Section~\ref{sec:noise}).
+\item \textbf{Plug-in distribution.} The same, with each measured rate treated
+  as exact. The reweighted 117-task width and the detectable difference ---
+  $1.96\sqrt{2}\,\sigma$ of this distribution --- derive from it. Excluding
+  parameter uncertainty makes both lower bounds on the re-run width, which is
+  the conservative direction for reading a gap.
+\item \textbf{Estimate bootstrap.} How precisely \emph{this experiment}
+  determined its own number, by resampling repetitions within each task. It
+  answers a question about our precision, not about a future run.
+\end{itemize}
+
+\section{Silent restarts}
+\label{app:retries}
+Across the 290 runs of the arm the harness's in-task retry fired 110 times.
+Every one is instability that was absorbed before it could reach a score, which
+is why the variance reported in Section~\ref{sec:noise} is a floor. The
+concentration is the diagnostic: a hard task is hard in every round, whereas an
+incident happens in one.
+
+\begin{center}\small
+\input{sections/tables/app_retries_round}
+\end{center}
+
+\noindent By task, counting only tasks that were restarted at least once:
+
+\begin{center}\scriptsize
+\input{sections/tables/app_retries_task}
+\end{center}
+
+\section{Round-6 sensitivity in full}
+\label{app:sensitivity}
+Round 6 caught the run's only infrastructure incident and is also its
+highest-scoring round, so it is the obvious thing to attack. Every figure below
+is recomputed from scratch on the data that remains.
+
+\begin{center}\small
+\input{sections/tables/app_sens_headline}
+\end{center}
+
+\noindent Statistics that use all the data rather than the extremes barely
+move, and the two $\sigma$ scales move in \emph{opposite} directions --- the
+29-task figure widens because a task losing a repetition widens its Beta
+posterior, while the 117-task figure narrows because two low-rate tasks move
+further from $0.5$, cutting their Bernoulli variance by more than the two tasks
+moving toward $0.5$ add. Of the four estimates that move, three fall and one
+rises. The detectable difference derives from the second. The
+best$-$worst spread is the one figure that responds, because round 6 holds the
+maximum; Table~\ref{tab:loo} shows it is unmoved by dropping any other round.
+
+\noindent Only four tasks change pass rate at all, and none flips \emph{only}
+when round 6 is removed:
+
+\begin{center}\small
+\input{sections/tables/app_sens_pertask}
+\end{center}
+
+\noindent Finally, the worry that round 6's 39.13\% flatters it because the
+outage cost it six of its 29 tasks. It is the other way round: the tasks it lost
+pass \emph{more} often than average, so imputing them at their own observed
+rates puts round 6 at 40.2\%, above the figure actually recorded.
+
+\begin{center}\small
+\input{sections/tables/app_sens_lost}
+\end{center}
+
+\section{Method and provenance}
+\label{app:provenance}
+The harness records a trajectory, a screenshot per step and a free-text
+verdict, but no timestamps, model parameters, image digest or task-set commit.
+Our orchestrator adds those, plus the count of directories the harness leaves
+behind when it silently restarts a run, and writes one \texttt{fsync}'d line
+per run. The raw record (\texttt{runs.jsonl}, 314 lines covering this arm and
+the preparatory smoke and calibration arms) carries a sha256 that is stamped
+into the analysis file and onto every report figure; the paper's figures
+regenerate from that analysis file by one seeded command, so any figure can be
+traced to the records that produced it.
+
+Every field below is recorded on each of the 290 rows and checked for
+consistency across them; a row disagreeing with the others would be reported as
+a violation rather than averaged over.
+
+\begin{center}\small
+\input{sections/tables/app_provenance}
+\end{center}
+
+\noindent Round boundaries in wall-clock time, so that the change of
+Section~\ref{sec:endpoint} and the outage of Appendix~\ref{app:sensitivity} can
+be located independently of the prose:
+
+\begin{center}\small
+\input{sections/tables/app_rounds}
+\end{center}
+
+\noindent The evaluation, the analysis and the figures are three commands:
+
+\begin{quote}\ttfamily\small
+python3 scripts/run\_matrix.py -{}-arm A\_temp0 -{}-trials 10 \\
+\hspace*{2em}-{}-tasks data/pilot\_all.txt -{}-agent-type <pinned agent> \\
+\hspace*{2em}-{}-temperature 0 -{}-seed 42 \\[2pt]
+python3 scripts/analyze.py -{}-arm A\_temp0 -{}-trials 4:10 \\
+\hspace*{2em}-{}-exclude-trials 6 -{}-leave-one-out -{}-regime-split 4 \\[2pt]
+python3 scripts/plots\_paper.py
+\end{quote}
+
+\noindent Resampling is seeded, so the same raw records always produce the same
+analysis file, and the analysis file carries the sha256 of the records it was
+computed from. A separate script re-checks the paper's headline numeric claims against those
+files and fails if any disagrees, or if the raw-record hash appears in the
+text.
+
+\noindent One class of number does not come from that pipeline: the endpoint
+probes of Section~\ref{sec:determinism} and evidence 4--5 of
+Section~\ref{sec:endpoint} were produced by a standalone diagnostic against the
+live router and transcribed into a data file, which records that provenance
+explicitly. We flag the difference rather than let it pass as equivalent.
+
+\section{Tasks that randomise their own initial state}
+\label{app:randomised}
+Seven tasks in the benchmark call the standard library's random functions in
+their own setup, and no seeding call appears anywhere in the codebase. For
+these, successive runs are not literally the same problem, so a flip carries a
+different meaning: the content changed, not only the outcome.
+
+One of the seven, \texttt{CVEmailTask}, is in our task set. \textbf{It is
+included in the 29-task aggregate}, and it flips (3/6 on the headline basis).
+We flag it rather than drop it: excluding a task after seeing that it flips
+would be selecting on the outcome, and one task cannot move a 29-task total by
+more than 3.4 points in any case. The analysis records it as a separate
+subgroup so that a reader who prefers to discount it can, and
+Appendix~\ref{app:pertask} identifies it by name.
+
+\section{Checking the alternative explanation: verifier errors}
+\label{app:checker}
+If the flips in Section~\ref{sec:noise} were scoring mistakes rather than
+variance, the paper's central quantity would be measuring the wrong thing. We
+therefore looked, and we had every incentive to find something: a demonstrable
+verifier defect would have been a stronger and more quotable result than the
+one we have, and it would have fitted this paper's theme better.
+
+We ranked runs by how likely they were to be scoring errors --- minority
+outcomes inside unstable tasks first, then passes completed in fewer steps than
+any published run of the same task needed, then runs stopped at the round
+budget --- and inspected the five most suspicious of the 111 ranked candidates
+against the task definitions in the public repository.
+
+\textbf{We found no verifier defect.} Every case was a genuine agent failure.
+The most promising candidate was a task whose verifier rejected an email for
+not containing a tracking code, while the recorded subject line visibly
+contained one; the task definition shows the required code, and the agent had
+supplied a different, invented string. The verifier was right.
+
+We report the negative result for three reasons: it is the obvious alternative
+explanation and a reader deserves it answered before asking; it leaves that
+explanation unsupported where it was most likely to show, which is what
+Section~\ref{sec:noise} needs --- five of 111 is a triage depth, not an
+exhaustive audit, and the ranking is released so a reader can extend the search
+from the top; and reporting a search that failed is the discipline this paper
+argues for.

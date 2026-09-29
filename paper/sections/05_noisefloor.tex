@@ -1,0 +1,113 @@
+\section{The resulting noise floor}
+\label{sec:noise}
+
+Seven repetitions fall inside the later serving configuration. They scored
+31.0, 31.0, 39.1, 34.5, 37.9, 37.9 and 34.5\%. \emph{Every headline figure
+below is computed on the six rounds that exclude round 6, for the reason given
+after Table~\ref{tab:loo}; seven-round values are given alongside so the
+difference is always visible.} Seven of 29 tasks did not return the
+same verdict every time (eight over all seven rounds), and the controls behave
+as they should: 0 of 10 flips among tasks all published runs fail, 1 of 9 among
+tasks all published runs pass, and 6 of 10 among the disagreed-on group.
+
+\paragraph{The headline is not the range.} A best-minus-worst spread is an
+order statistic: it cannot grow when a repetition is removed, it grows on
+average with the number of repetitions, and a seven-round spread and a
+six-round spread are therefore not comparable quantities. Our own sensitivity
+check forced this correction. Table~\ref{tab:loo} recomputes everything with
+each round dropped in turn: the spread is unmoved by dropping any round except
+the one holding the maximum, while the minimum detectable difference varies
+across all seven variants within a narrow band. Throughout, the
+\emph{detectable difference at 95\%} is $1.96\sqrt{2}\,\sigma$, with $\sigma$
+the resampled single-run standard deviation at the reweighted 117-task scale;
+interval widths beside it are empirical 2.5--97.5\% spans of the same
+distribution, hence not exact multiples (Appendix~\ref{app:intervals}).
+
+\begin{table}[t]
+\centering\small
+\caption{Leave-one-round-out. Every figure recomputed from scratch on what
+remains. The range responds only to removing the maximum; the detectable
+difference is stable at 8.02--9.01 points and the comparison against published
+entries never changes.}
+\label{tab:loo}
+\begin{tabular}{lccccccc}
+\toprule
+round dropped & 4 & 5 & \textbf{6} & 7 & 8 & 9 & 10 \\
+\midrule
+best $-$ worst (pp) & 8.10 & 8.10 & \textbf{6.90} & 8.10 & 8.10 & 8.10 & 8.10 \\
+detectable difference (pp) & 9.00 & 8.52 & \textbf{8.15} & 8.42 & 8.02 & 8.76 & 9.01 \\
+adjacent gaps within noise & 16/17 & 16/17 & 16/17 & 16/17 & 16/17 & 16/17 & 16/17 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Round 6, and why the conservative number is the headline.} Round 6
+contains the only infrastructure incident in the run: the provider returned
+HTTP 401 for about an hour, 68 of the 95 silent restarts in this regime fall in it (110 across all ten rounds), and
+all six runs that produced no verdict are in it. It is also the highest-scoring
+round of the regime, on a reduced denominator of 23 tasks. We therefore report
+the figures \emph{without} it as the headline, with the seven-round values
+alongside:\footnote{The two scales move in \emph{opposite} directions when round
+6 is removed: at the 29-task scale $\sigma$ rises from 5.87 to 5.92\,pp, at the
+reweighted 117-task scale it falls from 3.13 to 2.94\,pp. They are computed
+differently, and Appendix~\ref{app:sensitivity} traces the mechanism; the
+detectable difference derives from the second scale. We report both because
+reporting only the one that suits the argument is precisely the failure this
+paper is about.}
+
+\begin{center}\small
+\begin{tabular}{lcc}
+\toprule
+ & 6 rounds (round 6 removed) & 7 rounds \\
+\midrule
+detectable difference at 95\% & \textbf{8.15 pp} & 8.67 pp \\
+95\% interval at suite scale, width & \textbf{11.11 pp} & 12.82 pp \\
+tasks that flipped & 7 / 29 & 8 / 29 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Removing the incident moves the result against us, and we report it
+anyway.} The threshold falls from 8.67 to 8.15 points, which is a stricter bar:
+the number of published pairs separated by less than it drops from 39 to 35.
+We report the lower figure because it is the one measured on data containing no
+infrastructure incident, not because it is the more favourable one.
+
+Two things are worth stating precisely rather than glossing. First, the single
+task that stops flipping, \texttt{DownloadSendReceiptTask}, does so at 1/7
+$\rightarrow$ 0/6: it lost its one passing round, not its instability. Only 4 of
+29 tasks change pass rate at all, and no task flips \emph{only} when round 6 is
+removed. Second, imputing the six lost runs at those tasks' own rates in the
+other rounds puts round 6 at 40.2\% rather than the 39.13\% recorded --- the
+outage cost that round height rather than lending it any, because the tasks it
+happened to cost pass more often than average (44.4\% against 34.5\%).
+Appendix~\ref{app:sensitivity} has the full comparison.
+
+
+
+\paragraph{Carrying it to the full suite.} The 29 tasks are deliberately
+skewed, so their level means nothing on its own. Reweighting the three groups
+to their true sizes in the 117-task GUI-only suite (98 disagreed-on, 9
+always-passed, 10 always-failed) gives a width that is comparable to a
+leaderboard number. Stated conditionally, because it is:
+\emph{if the 88 disagreed-on tasks we did not measure behave like the 10 we
+did}, a single run of the full suite falls within a 95\% interval about
+11.1 points wide.
+
+\paragraph{What this means for reading a leaderboard.} Under the resampling model above, and for this agent on this endpoint, two
+single runs need to differ by 8.15 points before the gap exceeds what
+repetition alone produces; to detect a real difference reliably rather than merely to notice it,
+the gap must be larger still. Of the 17 adjacent pairs among the 18 published GUI-only entries, 16 are
+separated by less than that, as are 35 of the 153 pairs overall (39 at the
+seven-round threshold of 8.67). We state this as an indication of scale and not as a re-scoring: the
+threshold was measured for one model on 29 tasks and is being applied to
+entries produced by other agents and other models. The appropriate reading of a
+gap below the threshold is that it \emph{warrants a second run before
+citation}, not that the two systems are equal.
+
+\paragraph{Are the flips scoring errors rather than variance?} It is the
+obvious alternative explanation, and we checked it: we inspected the five
+most suspicious of 111 ranked runs against the task definitions and found no
+verifier defect --- every one was a genuine agent failure. Appendix~\ref{app:checker}
+reports that negative result and why we had every incentive to find the
+opposite.

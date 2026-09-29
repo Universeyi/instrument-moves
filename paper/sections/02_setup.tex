@@ -1,0 +1,53 @@
+\section{Setup: what was pinned}
+\label{sec:setup}
+
+Table~\ref{tab:setup} is the configuration. Everything in it is a flag we could
+set. This paper is about what remained free anyway.
+
+\begin{table}[t]
+\centering\small
+\caption{The pinned configuration. Nothing under the benchmark was modified;
+the custom agent is supplied through the harness's existing
+\texttt{--agent-type} hook, so reproducing this requires no fork.}
+\label{tab:setup}
+\begin{tabular}{ll}
+\toprule
+model & \texttt{moonshotai/kimi-k2.5} via an inference router \\
+serving endpoint & provider pinned, quantization \texttt{int4},
+                   \texttt{allow\_fallbacks: false} \\
+sampling & \texttt{temperature=0}, \texttt{seed=42},
+           \texttt{max\_tokens=2048} (the agent default) \\
+container image & tag \texttt{v1.4}; the full digest is recorded on every row and given in Appendix~\ref{app:provenance} \\
+task-set commit & \texttt{83e7b8fc} \\
+execution & \texttt{--max-concurrency 1}, no task shuffling,
+            one fresh container per repetition round \\
+round budget & \texttt{--max-round 50}, \texttt{--auto-retry 10} \\
+tasks & 29 GUI-only, stratified from the published trajectory bundles \\
+pass threshold & \texttt{score > 0.99}, the benchmark's own \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Task selection, and why it is skewed on purpose.} The 29 tasks are
+drawn from the benchmark's own published per-model trajectories: 10 that the
+published runs disagree on, 9 that all of them pass, and 10 that all of them
+fail.\footnote{%
+The groups were assigned from the 15 of the 18 published bundles whose result files our parser read;
+the other three record results in formats it did not recognise. Read in full, five of the 29 tasks would
+carry a different group label: four \emph{all-pass} tasks (\texttt{AcceptMeetingTask},
+\texttt{CheckEventTimeTask}, \texttt{GoogleMapsAlibabaSouthNeighborTask}, \texttt{TakeSelfieTask})
+each have one or two failing runs among the extra three, and one \emph{all-fail} task
+(\texttt{SMSManagement}) has one passing run. The selection and every measurement are unchanged; only the
+label describing the published runs differs.} The disagreed-on group is where within-configuration instability is most
+likely to appear; the other two are controls, and a setup that produced flips
+everywhere would be measuring something other than the benchmark. Because the
+set is deliberately unrepresentative, its absolute score level is not
+comparable to a leaderboard number. Only widths are, and only after the
+reweighting in Section~\ref{sec:noise}.
+
+\paragraph{Records kept per run.} The harness alone records none of the fields
+above; what our orchestrator adds, and how every figure traces back to the raw
+records, is catalogued in Appendix~\ref{app:provenance}. The raw records, the
+endpoint probes behind Section~\ref{sec:determinism} and evidence strands 4 and
+5 of Section~\ref{sec:endpoint}, the analysis code with its derived data files,
+and the figure scripts are released together at \url{https://github.com/Universeyi/instrument-moves}.

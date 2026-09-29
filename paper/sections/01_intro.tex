@@ -1,0 +1,60 @@
+\section{Introduction}
+
+Leaderboards for agent benchmarks are read as measurements. The gap between
+adjacent entries is cited as evidence that one system is better than another,
+and differences of two or three points routinely carry that weight. On the
+board we study, 37 of 40 entries are the result of a single run, and no entry
+reports an interval.
+
+A benchmark that drives a real operating system through a real user interface
+against real network services will have run-to-run variance. That is the price
+of not being a static test set, and it is a price worth paying: the alternative
+measures something much less like deployment. What has been missing is a
+number for it, and a way to tell when the number has changed.
+
+We pinned every control the tooling of
+MobileWorld~\citep{kong2026mobileworld} exposes and ran ten repetitions over 29
+GUI-only tasks, 290 runs in total. We set out to measure a noise floor. We
+found something larger: the configuration was not, in the event, fixed, and
+nothing in the tooling or the reporting format would have told us.
+
+\paragraph{The claim.} A benchmark is an instrument for measuring agent
+capability. This instrument moves while nobody is recording, and current
+reporting practice contains no mechanism that would reveal it.
+
+\paragraph{Contributions.}
+\begin{itemize}\itemsep2pt
+\item \textbf{A methodological error in determinism checks.} Identical requests
+  at \texttt{temperature{=}0} with a fixed seed returned different completions
+  on both endpoints we tested, though both advertise seed support. An earlier
+  check of ours with a short prompt returned byte-identical output twice and
+  looked like proof of the opposite. Under greedy decoding a thirty-token answer
+  comes back byte-identical almost regardless of the endpoint; determinism has
+  to be probed at the output length the real workload produces.
+\item \textbf{A documented mid-run serving change, with a detector.} Between
+  repetition 3 and 4, with every flag unchanged, ten tasks got worse and none
+  got better ($p = 0.002$), and median completion tokens per action fell 20.1\%
+  in one step. We give five independent lines of evidence and the cheap signal
+  that exposes it.
+\item \textbf{A noise floor for this configuration, and what it implies.}
+  Within one serving configuration, two single runs need to differ by
+  8.15 points before the gap exceeds what repetition alone produces. The figure
+  is a property of a resampling model fitted to one agent, one endpoint and one
+  reweighted task sample, not a constant of the benchmark.
+\item \textbf{Findings that need no compute.} Eight properties of the public
+  repository, each with where to look, that bear on whether two entries
+  are comparable at all. A reader can check each one without trusting any
+  measurement of ours.
+\end{itemize}
+
+A benchmark that reports only a scalar score is a measuring device with no
+self-check: it cannot distinguish a system that improved from an instrument
+that moved, and neither can the metadata recorded beside it. Treating the
+harness as a verification system --- recording the signals a failure would show
+up in, not only the number --- is what made Section~\ref{sec:endpoint} visible
+at all, at a cost of one integer per request.
+
+The first three compose into one argument rather than three results, and the
+fourth asks for no trust at all. Determinism controls are why one must pin the
+endpoint; the endpoint change is why pinning is not enough and why nothing would
+have told us; the noise floor prices the consequence.

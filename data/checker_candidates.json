@@ -1,0 +1,2119 @@
+{
+  "generated_at": "2026-08-28T02:02:49.760448+00:00",
+  "source_analysis": "data/analysis.json",
+  "runs_sha256": "5425e4299f4317033ac15c216228c81a796c9d2e3097f16b900b3138847b9668",
+  "arm": "A_temp0",
+  "n_candidates": 111,
+  "ranking_note": "A prior over where to look, not a verdict. Every entry still has to be judged by hand; the judgement goes in report/checker_issues.md.",
+  "candidates": [
+    {
+      "priority": 14.221,
+      "task_id": "MattermostEmailTask",
+      "bucket": "split",
+      "trial": 5,
+      "run_id": "81ab3ce3c6904d8693ac9018ef3c2c20",
+      "outcome": "scored",
+      "score": 1.0,
+      "pass": true,
+      "steps": 21,
+      "reason_text": "No reason provided for MattermostEmailTask",
+      "task_pass_rate": 0.3333,
+      "task_flip_rate": 0.5333,
+      "public_steps_min": 9,
+      "why": [
+        "minority outcome: passed in 2 of 6 scored trials"
+      ],
+      "traj_path": "runs/A_temp0/MattermostEmailTask/trial_005/MattermostEmailTask"
+    },
+    {
+      "priority": 14.221,
+      "task_id": "MattermostEmailTask",
+      "bucket": "split",
+      "trial": 7,
+      "run_id": "f34ee21bacc94243b742a2f5597dc681",
+      "outcome": "scored",
+      "score": 1.0,
+      "pass": true,
+      "steps": 20,
+      "reason_text": "No reason provided for MattermostEmailTask",
+      "task_pass_rate": 0.3333,
+      "task_flip_rate": 0.5333,
+      "public_steps_min": 9,
+      "why": [
+        "minority outcome: passed in 2 of 6 scored trials"
+      ],
+      "traj_path": "runs/A_temp0/MattermostEmailTask/trial_007/MattermostEmailTask"
+    },
+    {
+      "priority": 14.221,
+      "task_id": "ScheduleLunchViaSmsTask",
+      "bucket": "split",
+      "trial": 5,
+      "run_id": "93960d5b35604321a6fa7414fcd3c7b9",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 22,
+      "reason_text": "Calendar event not found for Oct 17, 2025 11:00-12:00. Found 17 total events.",
+      "task_pass_rate": 0.6667,
+      "task_flip_rate": 0.5333,
+      "public_steps_min": 11,
+      "why": [
+        "minority outcome: failed in 2 of 6 scored trials"
+      ],
+      "traj_path": "runs/A_temp0/ScheduleLunchViaSmsTask/trial_005/ScheduleLunchViaSmsTask"
+    },
+    {
+      "priority": 14.221,
+      "task_id": "ScheduleLunchViaSmsTask",
+      "bucket": "split",
+      "trial": 8,
+      "run_id": "bda2883651a841a5bd057867d3634922",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 26,
+      "reason_text": "Calendar event not found for Oct 17, 2025 11:00-12:00. Found 17 total events.",
+      "task_pass_rate": 0.6667,
+      "task_flip_rate": 0.5333,
+      "public_steps_min": 11,
+      "why": [
+        "minority outcome: failed in 2 of 6 scored trials"
+      ],
+      "traj_path": "runs/A_temp0/ScheduleLunchViaSmsTask/trial_008/ScheduleLunchViaSmsTask"
+    },
+    {
+      "priority": 13.606,
+      "task_id": "MastodonImportMutedUsersTask",
+      "bucket": "split",
+      "trial": 6,
+      "run_id": "e648b1e3637445c8a927e01c5a777075",
+      "outcome": "scored",
+      "score": 1.0,
+      "pass": true,
+      "steps": 44,
+      "reason_text": "No reason provided for MastodonImportMutedUsersTask",
+      "task_pass_rate": 0.2857,
+      "task_flip_rate": 0.4762,
+      "public_steps_min": 7,
+      "why": [
+        "minority outcome: passed in 2 of 7 scored trials"
+      ],
+      "traj_path": "runs/A_temp0/MastodonImportMutedUsersTask/trial_006/MastodonImportMutedUsersTask"
+    },
+    {
+      "priority": 13.606,
+      "task_id": "MastodonImportMutedUsersTask",
+      "bucket": "split",
+      "trial": 9,
+      "run_id": "13ae294e62c846148158e708620fd3e9",
+      "outcome": "scored",
+      "score": 1.0,
+      "pass": true,
+      "steps": 29,
+      "reason_text": "No reason provided for MastodonImportMutedUsersTask",
+      "task_pass_rate": 0.2857,
+      "task_flip_rate": 0.4762,
+      "public_steps_min": 7,
+      "why": [
+        "minority outcome: passed in 2 of 7 scored trials"
+      ],
+      "traj_path": "runs/A_temp0/MastodonImportMutedUsersTask/trial_009/MastodonImportMutedUsersTask"
+    },
+    {
+      "priority": 13.606,
+      "task_id": "MattermostBudgetApprovalPipelineTask",
+      "bucket": "split",
+      "trial": 7,
+      "run_id": "825c6ab3e6bc4cdfaf5a37456d7b26b8",
+      "outcome": "scored",
+      "score": 1.0,
+      "pass": true,
+      "steps": 28,
+      "reason_text": "No reason provided for MattermostBudgetApprovalPipelineTask",
+      "task_pass_rate": 0.2857,
+      "task_flip_rate": 0.4762,
+      "public_steps_min": 6,
+      "why": [
+        "minority outcome: passed in 2 of 7 scored trials"
+      ],
+      "traj_path": "runs/A_temp0/MattermostBudgetApprovalPipelineTask/trial_007/MattermostBudgetApprovalPipelineTask"
+    },
+    {
+      "priority": 13.606,
+      "task_id": "MattermostBudgetApprovalPipelineTask",
+      "bucket": "split",
+      "trial": 8,
+      "run_id": "b4ce8ec58c674d06b33777bf954f5940",
+      "outcome": "scored",
+      "score": 1.0,
+      "pass": true,
+      "steps": 34,
+      "reason_text": "No reason provided for MattermostBudgetApprovalPipelineTask",
+      "task_pass_rate": 0.2857,
+      "task_flip_rate": 0.4762,
+      "public_steps_min": 6,
+      "why": [
+        "minority outcome: passed in 2 of 7 scored trials"
+      ],
+      "traj_path": "runs/A_temp0/MattermostBudgetApprovalPipelineTask/trial_008/MattermostBudgetApprovalPipelineTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "BidFileRenameTask",
+      "bucket": "split",
+      "trial": 4,
+      "run_id": "e102b56911584a03be55ab79640bdd29",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Bid files not renamed (missed): ['bid_menu_design_contract.pdf', 'bid_food_supplier_quote.txt']",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 16,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/BidFileRenameTask/trial_004/BidFileRenameTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "BidFileRenameTask",
+      "bucket": "split",
+      "trial": 5,
+      "run_id": "fe0fa99a872642c49858e8d571fdba42",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Bid files not renamed (missed): ['bid_food_supplier_quote.txt']",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 16,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/BidFileRenameTask/trial_005/BidFileRenameTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "BidFileRenameTask",
+      "bucket": "split",
+      "trial": 6,
+      "run_id": "adba0c6189d74309becdfe22168b6b13",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Bid files not renamed (missed): ['bid_food_supplier_quote.txt']",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 16,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/BidFileRenameTask/trial_006/BidFileRenameTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "BidFileRenameTask",
+      "bucket": "split",
+      "trial": 7,
+      "run_id": "d7df057f7f9b470889780bd809855588",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Bid files not renamed (missed): ['bid_restaurant_proposal.txt', 'bid_catering_menu_2024.doc', 'bid_menu_design_contract.pdf', 'bid_food_supplier_quote.txt']",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 16,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/BidFileRenameTask/trial_007/BidFileRenameTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "BidFileRenameTask",
+      "bucket": "split",
+      "trial": 8,
+      "run_id": "fb78d6a02f084a6ba2ce714471bc9764",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Bid files not renamed (missed): ['bid_menu_design_contract.pdf', 'bid_food_supplier_quote.txt']",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 16,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/BidFileRenameTask/trial_008/BidFileRenameTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "BidFileRenameTask",
+      "bucket": "split",
+      "trial": 9,
+      "run_id": "f15386b9d19d407d8117caf2bac70dbc",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Bid files not renamed (missed): ['bid_restaurant_proposal.txt', 'bid_catering_menu_2024.doc', 'bid_menu_design_contract.pdf', 'bid_food_supplier_quote.txt']",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 16,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/BidFileRenameTask/trial_009/BidFileRenameTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "BidFileRenameTask",
+      "bucket": "split",
+      "trial": 10,
+      "run_id": "e3cfcfe06521421b97e832834951c570",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Bid files not renamed (missed): ['bid_restaurant_proposal.txt', 'bid_catering_menu_2024.doc', 'bid_menu_design_contract.pdf', 'bid_food_supplier_quote.txt']",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 16,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/BidFileRenameTask/trial_010/BidFileRenameTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "CVEmailTask",
+      "bucket": "split",
+      "trial": 4,
+      "run_id": "e259cee9ad64497ca488a743afb64027",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 10,
+      "reason_text": "CV files not found in email attachments: ['David_Lee_CV.pdf', 'John_Walker_CV.pdf']. Attachments: ['Stephanie_Ramirez_CV.pdf']",
+      "task_pass_rate": 0.5,
+      "task_flip_rate": 0.6,
+      "public_steps_min": 10,
+      "why": [
+        "even split: 6 trials, 3 passed"
+      ],
+      "traj_path": "runs/A_temp0/CVEmailTask/trial_004/CVEmailTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "CVEmailTask",
+      "bucket": "split",
+      "trial": 5,
+      "run_id": "ac00287bd1b049b6b9a1c0702a6a8274",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 10,
+      "reason_text": "CV files not found in email attachments: ['Charles_Jackson_CV.pdf', 'Angela_White_CV.pdf']. Attachments: ['Richard_Walker_CV.pdf']",
+      "task_pass_rate": 0.5,
+      "task_flip_rate": 0.6,
+      "public_steps_min": 10,
+      "why": [
+        "even split: 6 trials, 3 passed"
+      ],
+      "traj_path": "runs/A_temp0/CVEmailTask/trial_005/CVEmailTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "CVEmailTask",
+      "bucket": "split",
+      "trial": 7,
+      "run_id": "152911208b0c4bd4a9ff069705397213",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 10,
+      "reason_text": "CV files not found in email attachments: ['Charles_Ramirez_CV.pdf', 'Daniel_Anderson_CV.pdf']. Attachments: ['Christopher_Lewis_CV.pdf']",
+      "task_pass_rate": 0.5,
+      "task_flip_rate": 0.6,
+      "public_steps_min": 10,
+      "why": [
+        "even split: 6 trials, 3 passed"
+      ],
+      "traj_path": "runs/A_temp0/CVEmailTask/trial_007/CVEmailTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "CVEmailTask",
+      "bucket": "split",
+      "trial": 8,
+      "run_id": "2154b03e391649f4b84e08325f14f470",
+      "outcome": "scored",
+      "score": 1.0,
+      "pass": true,
+      "steps": 12,
+      "reason_text": "success",
+      "task_pass_rate": 0.5,
+      "task_flip_rate": 0.6,
+      "public_steps_min": 10,
+      "why": [
+        "even split: 6 trials, 3 passed"
+      ],
+      "traj_path": "runs/A_temp0/CVEmailTask/trial_008/CVEmailTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "CVEmailTask",
+      "bucket": "split",
+      "trial": 9,
+      "run_id": "3b1e180ce3db47798f3acf9516f3ff86",
+      "outcome": "scored",
+      "score": 1.0,
+      "pass": true,
+      "steps": 12,
+      "reason_text": "success",
+      "task_pass_rate": 0.5,
+      "task_flip_rate": 0.6,
+      "public_steps_min": 10,
+      "why": [
+        "even split: 6 trials, 3 passed"
+      ],
+      "traj_path": "runs/A_temp0/CVEmailTask/trial_009/CVEmailTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "CVEmailTask",
+      "bucket": "split",
+      "trial": 10,
+      "run_id": "f95f7dcf42e545d5a1910fee7cc1b69b",
+      "outcome": "scored",
+      "score": 1.0,
+      "pass": true,
+      "steps": 12,
+      "reason_text": "success",
+      "task_pass_rate": 0.5,
+      "task_flip_rate": 0.6,
+      "public_steps_min": 10,
+      "why": [
+        "even split: 6 trials, 3 passed"
+      ],
+      "traj_path": "runs/A_temp0/CVEmailTask/trial_010/CVEmailTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "CheckInterviewTimesTask",
+      "bucket": "all_fail",
+      "trial": 4,
+      "run_id": "62ccd5b4639748a1b3c92032b8de45d1",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "incorrect calendar events",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 34,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/CheckInterviewTimesTask/trial_004/CheckInterviewTimesTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "CheckInterviewTimesTask",
+      "bucket": "all_fail",
+      "trial": 5,
+      "run_id": "ea5465cb5fb94b2e96c83b2ea465bbbd",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "incorrect calendar events",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 34,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/CheckInterviewTimesTask/trial_005/CheckInterviewTimesTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "CheckInterviewTimesTask",
+      "bucket": "all_fail",
+      "trial": 6,
+      "run_id": "f5f5fcc1d60f48cfa867da9f843ab921",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "incorrect calendar events",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 34,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/CheckInterviewTimesTask/trial_006/CheckInterviewTimesTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "CheckInterviewTimesTask",
+      "bucket": "all_fail",
+      "trial": 7,
+      "run_id": "60a5ecb64e504702b78387ce000fed9c",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "incorrect calendar events",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 34,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/CheckInterviewTimesTask/trial_007/CheckInterviewTimesTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "CheckInterviewTimesTask",
+      "bucket": "all_fail",
+      "trial": 8,
+      "run_id": "a8fabef4ee7e48089d4a728ee521f4e6",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "incorrect calendar events",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 34,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/CheckInterviewTimesTask/trial_008/CheckInterviewTimesTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "CheckInterviewTimesTask",
+      "bucket": "all_fail",
+      "trial": 9,
+      "run_id": "48d4f53fc8214626b743204a5c58c43a",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "incorrect calendar events",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 34,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/CheckInterviewTimesTask/trial_009/CheckInterviewTimesTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "CheckInterviewTimesTask",
+      "bucket": "all_fail",
+      "trial": 10,
+      "run_id": "6ee685b8bbb344b78f8773f030227582",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "incorrect calendar events",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 34,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/CheckInterviewTimesTask/trial_010/CheckInterviewTimesTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "DownloadSendReceiptTask",
+      "bucket": "split",
+      "trial": 7,
+      "run_id": "4fae5c7f90934404a2343245741e2495",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.1429,
+      "task_flip_rate": 0.2857,
+      "public_steps_min": 15,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/DownloadSendReceiptTask/trial_007/DownloadSendReceiptTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "GraduationMassEmailTask",
+      "bucket": "split",
+      "trial": 6,
+      "run_id": "460a8d5b70c3442fabc3fefbb3894e0e",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 32,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/GraduationMassEmailTask/trial_006/GraduationMassEmailTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "GraduationMassEmailTask",
+      "bucket": "split",
+      "trial": 7,
+      "run_id": "23b78a8bf81b4edabeddd28e538c518a",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 32,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/GraduationMassEmailTask/trial_007/GraduationMassEmailTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "GraduationMassEmailTask",
+      "bucket": "split",
+      "trial": 10,
+      "run_id": "e3215e45620b4cda8d7eb42d59c7c9e6",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 32,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/GraduationMassEmailTask/trial_010/GraduationMassEmailTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "LocalFileManagementTask2",
+      "bucket": "all_fail",
+      "trial": 4,
+      "run_id": "be867f360c69407f844030fefe4d1ccc",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "File 06_music_collection_20240929.zip is not deleted",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 5,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/LocalFileManagementTask2/trial_004/LocalFileManagementTask2"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "LocalFileManagementTask2",
+      "bucket": "all_fail",
+      "trial": 5,
+      "run_id": "d8ac5fa7e2234ed9aa1e5135a0550746",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "File 06_music_collection_20240929.zip is not deleted",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 5,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/LocalFileManagementTask2/trial_005/LocalFileManagementTask2"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "LocalFileManagementTask2",
+      "bucket": "all_fail",
+      "trial": 6,
+      "run_id": "72e0ce0ecafe4383a8484abfc3b368b9",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "File 06_music_collection_20240929.zip is not deleted",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 5,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/LocalFileManagementTask2/trial_006/LocalFileManagementTask2"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "LocalFileManagementTask2",
+      "bucket": "all_fail",
+      "trial": 7,
+      "run_id": "0100a6bca957458e8168c2336f5d6441",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "File 06_music_collection_20240929.zip is not deleted",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 5,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/LocalFileManagementTask2/trial_007/LocalFileManagementTask2"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "LocalFileManagementTask2",
+      "bucket": "all_fail",
+      "trial": 8,
+      "run_id": "5cc3420a01c34bf3b2b303e7dc63cfcf",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "File 06_music_collection_20240929.zip is not deleted",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 5,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/LocalFileManagementTask2/trial_008/LocalFileManagementTask2"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "LocalFileManagementTask2",
+      "bucket": "all_fail",
+      "trial": 9,
+      "run_id": "647e58cf74b642819f5851cc520241b9",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "File 06_music_collection_20240929.zip is not deleted",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 5,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/LocalFileManagementTask2/trial_009/LocalFileManagementTask2"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "LocalFileManagementTask2",
+      "bucket": "all_fail",
+      "trial": 10,
+      "run_id": "ce49968c9f4a4f24af44298a780c3cb2",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "File 06_music_collection_20240929.zip is not deleted",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 5,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/LocalFileManagementTask2/trial_010/LocalFileManagementTask2"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonCalendarMultiMemosTask",
+      "bucket": "all_fail",
+      "trial": 4,
+      "run_id": "17f7d2751851442cb67973e61f4d7c66",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Event not found: 1761318000 - 1761323400",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 29,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonCalendarMultiMemosTask/trial_004/MastodonCalendarMultiMemosTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonCalendarMultiMemosTask",
+      "bucket": "all_fail",
+      "trial": 5,
+      "run_id": "5d6981acb97e4b79b3f1637b8091c1d4",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Event not found: 1761318000 - 1761323400",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 29,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonCalendarMultiMemosTask/trial_005/MastodonCalendarMultiMemosTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonCalendarMultiMemosTask",
+      "bucket": "all_fail",
+      "trial": 6,
+      "run_id": "fb3720bfd89c4feea90485e85f30611b",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Event not found: 1761575400 - 1761580800",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 29,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonCalendarMultiMemosTask/trial_006/MastodonCalendarMultiMemosTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonCalendarMultiMemosTask",
+      "bucket": "all_fail",
+      "trial": 7,
+      "run_id": "3badae51d2bb4ee99ac0a5185452d6d2",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Event not found: 1761318000 - 1761323400",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 29,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonCalendarMultiMemosTask/trial_007/MastodonCalendarMultiMemosTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonCalendarMultiMemosTask",
+      "bucket": "all_fail",
+      "trial": 8,
+      "run_id": "b867315368004a58b77e936050e16aca",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Event not found: 1761318000 - 1761323400",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 29,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonCalendarMultiMemosTask/trial_008/MastodonCalendarMultiMemosTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonCalendarMultiMemosTask",
+      "bucket": "all_fail",
+      "trial": 9,
+      "run_id": "f18c4bda57344674b87c2cecd096f92b",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Event not found: 1761318000 - 1761323400",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 29,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonCalendarMultiMemosTask/trial_009/MastodonCalendarMultiMemosTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonCalendarMultiMemosTask",
+      "bucket": "all_fail",
+      "trial": 10,
+      "run_id": "fe3e1cc4ba4a44c8bf88be209a86ad15",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Event not found: 1761318000 - 1761323400",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 29,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonCalendarMultiMemosTask/trial_010/MastodonCalendarMultiMemosTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonGetServerInfoTask",
+      "bucket": "all_fail",
+      "trial": 4,
+      "run_id": "12d1f4c97b1b4f12bce702689a4cb899",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "The database size info not correct, expected: 15.6 MB, actual: Hello from Owner 👋",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 10,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonGetServerInfoTask/trial_004/MastodonGetServerInfoTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonGetServerInfoTask",
+      "bucket": "all_fail",
+      "trial": 5,
+      "run_id": "5e096db0b9474bd180f41cb2e0f070fa",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "The database size info not correct, expected: 15.6 MB, actual: Hello from Owner 👋",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 10,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonGetServerInfoTask/trial_005/MastodonGetServerInfoTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonGetServerInfoTask",
+      "bucket": "all_fail",
+      "trial": 6,
+      "run_id": "bb2cae9259e04716a2e77ac800af537d",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "The database size info not correct, expected: 15.6 MB, actual: Hello from Owner 👋",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 10,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonGetServerInfoTask/trial_006/MastodonGetServerInfoTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonGetServerInfoTask",
+      "bucket": "all_fail",
+      "trial": 7,
+      "run_id": "fd695d8fca00423fb40a1cf3ebc7ff1e",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "The database size info not correct, expected: 15.6 MB, actual: Hello from Owner 👋",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 10,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonGetServerInfoTask/trial_007/MastodonGetServerInfoTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonGetServerInfoTask",
+      "bucket": "all_fail",
+      "trial": 8,
+      "run_id": "f8197fdeca4a449daac3ce949292ea17",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "The database size info not correct, expected: 15.6 MB, actual: Hello from Owner 👋",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 10,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonGetServerInfoTask/trial_008/MastodonGetServerInfoTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonGetServerInfoTask",
+      "bucket": "all_fail",
+      "trial": 10,
+      "run_id": "76e3be76c0f04a78adc80aca901ae262",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "The database size info not correct, expected: 15.6 MB, actual: Hello from Owner 👋",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 10,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonGetServerInfoTask/trial_010/MastodonGetServerInfoTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonImportMutedUsersTask",
+      "bucket": "split",
+      "trial": 4,
+      "run_id": "e0fcf07a3846489f822b543a50510f96",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No muted users found for user 'test'",
+      "task_pass_rate": 0.2857,
+      "task_flip_rate": 0.4762,
+      "public_steps_min": 7,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonImportMutedUsersTask/trial_004/MastodonImportMutedUsersTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonImportMutedUsersTask",
+      "bucket": "split",
+      "trial": 5,
+      "run_id": "2db50d3ddd6a46ef9e83a3fad30ae77a",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No muted users found for user 'test'",
+      "task_pass_rate": 0.2857,
+      "task_flip_rate": 0.4762,
+      "public_steps_min": 7,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonImportMutedUsersTask/trial_005/MastodonImportMutedUsersTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonImportMutedUsersTask",
+      "bucket": "split",
+      "trial": 7,
+      "run_id": "ed993c8686df4e32bced6a29ce9254f4",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No muted users found for user 'test'",
+      "task_pass_rate": 0.2857,
+      "task_flip_rate": 0.4762,
+      "public_steps_min": 7,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonImportMutedUsersTask/trial_007/MastodonImportMutedUsersTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonImportMutedUsersTask",
+      "bucket": "split",
+      "trial": 10,
+      "run_id": "123e0d5806fd41e3a86b2e5e74163ee9",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No muted users found for user 'test'",
+      "task_pass_rate": 0.2857,
+      "task_flip_rate": 0.4762,
+      "public_steps_min": 7,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonImportMutedUsersTask/trial_010/MastodonImportMutedUsersTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonServerInfoReportTask",
+      "bucket": "all_fail",
+      "trial": 4,
+      "run_id": "f9bdace8f39542f5aa2bad59706087a6",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 20,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonServerInfoReportTask/trial_004/MastodonServerInfoReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonServerInfoReportTask",
+      "bucket": "all_fail",
+      "trial": 5,
+      "run_id": "cc742dd89786489d8f2fe2c8873620dd",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 20,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonServerInfoReportTask/trial_005/MastodonServerInfoReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonServerInfoReportTask",
+      "bucket": "all_fail",
+      "trial": 6,
+      "run_id": "21babd076df44fa397e9e0aa564ba2cf",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 20,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonServerInfoReportTask/trial_006/MastodonServerInfoReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonServerInfoReportTask",
+      "bucket": "all_fail",
+      "trial": 7,
+      "run_id": "4e5860985fb244baa9cc53972b1597b4",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 20,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonServerInfoReportTask/trial_007/MastodonServerInfoReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonServerInfoReportTask",
+      "bucket": "all_fail",
+      "trial": 8,
+      "run_id": "9f9c75adb4b94d1085e9912bbaaf382c",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 20,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonServerInfoReportTask/trial_008/MastodonServerInfoReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonServerInfoReportTask",
+      "bucket": "all_fail",
+      "trial": 9,
+      "run_id": "8343889563c34f12a5911aced6632f8f",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 20,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonServerInfoReportTask/trial_009/MastodonServerInfoReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonServerInfoReportTask",
+      "bucket": "all_fail",
+      "trial": 10,
+      "run_id": "1d815cde67504ef9b92713eae1943c1e",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 20,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonServerInfoReportTask/trial_010/MastodonServerInfoReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonShareLocationTask",
+      "bucket": "all_fail",
+      "trial": 5,
+      "run_id": "d403ea1d07ef49259e8013848004b0b2",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "URL mismatch: Which country has the largest land area? does not contain https://maps.app.goo.gl/xxxxxx",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 14,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonShareLocationTask/trial_005/MastodonShareLocationTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonShareLocationTask",
+      "bucket": "all_fail",
+      "trial": 6,
+      "run_id": "5af0f2e1781c46b4b72f75e4e26d0e0f",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "URL mismatch: Which country has the largest land area? does not contain https://maps.app.goo.gl/xxxxxx",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 14,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonShareLocationTask/trial_006/MastodonShareLocationTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MastodonShareLocationTask",
+      "bucket": "all_fail",
+      "trial": 10,
+      "run_id": "b3d762e2fbe94560b5c37025c8aeb7d6",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "URL mismatch: Which country has the largest land area? does not contain https://maps.app.goo.gl/xxxxxx",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 14,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MastodonShareLocationTask/trial_010/MastodonShareLocationTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostBudgetApprovalPipelineTask",
+      "bucket": "split",
+      "trial": 4,
+      "run_id": "a4c34c1316f54c47bf373c2fd203d830",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Budget summary table not posted in channel (missing departments, ROI info, or table format)",
+      "task_pass_rate": 0.2857,
+      "task_flip_rate": 0.4762,
+      "public_steps_min": 6,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostBudgetApprovalPipelineTask/trial_004/MattermostBudgetApprovalPipelineTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostBudgetApprovalPipelineTask",
+      "bucket": "split",
+      "trial": 5,
+      "run_id": "e8cafe7956e549989216ad5f1a4a40e5",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Budget summary table not posted in channel (missing departments, ROI info, or table format)",
+      "task_pass_rate": 0.2857,
+      "task_flip_rate": 0.4762,
+      "public_steps_min": 6,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostBudgetApprovalPipelineTask/trial_005/MattermostBudgetApprovalPipelineTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostBudgetApprovalPipelineTask",
+      "bucket": "split",
+      "trial": 6,
+      "run_id": "a484757cabbf4966bca4414a914dcc03",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Budget summary table not posted in channel (missing departments, ROI info, or table format)",
+      "task_pass_rate": 0.2857,
+      "task_flip_rate": 0.4762,
+      "public_steps_min": 6,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostBudgetApprovalPipelineTask/trial_006/MattermostBudgetApprovalPipelineTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostBudgetApprovalPipelineTask",
+      "bucket": "split",
+      "trial": 9,
+      "run_id": "5f1fefece528405b8235decc781c6252",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Budget summary table not posted in channel (missing departments, ROI info, or table format)",
+      "task_pass_rate": 0.2857,
+      "task_flip_rate": 0.4762,
+      "public_steps_min": 6,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostBudgetApprovalPipelineTask/trial_009/MattermostBudgetApprovalPipelineTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostBudgetApprovalPipelineTask",
+      "bucket": "split",
+      "trial": 10,
+      "run_id": "434ed45f50f74e9398b71e4aecbc6486",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Budget summary table not posted in channel (missing departments, ROI info, or table format)",
+      "task_pass_rate": 0.2857,
+      "task_flip_rate": 0.4762,
+      "public_steps_min": 6,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostBudgetApprovalPipelineTask/trial_010/MattermostBudgetApprovalPipelineTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostProjectStatusReportTask",
+      "bucket": "all_fail",
+      "trial": 4,
+      "run_id": "34e62dc0160047128ff8343ea9babac4",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Escalation event for 'Payment Integration' not created",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 3,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostProjectStatusReportTask/trial_004/MattermostProjectStatusReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostProjectStatusReportTask",
+      "bucket": "all_fail",
+      "trial": 5,
+      "run_id": "867f2619e5d845b3b56e2523c37b79da",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email sent",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 3,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostProjectStatusReportTask/trial_005/MattermostProjectStatusReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostProjectStatusReportTask",
+      "bucket": "all_fail",
+      "trial": 6,
+      "run_id": "e4df95b479864c25ba30509ffe62d5f9",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email sent",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 3,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostProjectStatusReportTask/trial_006/MattermostProjectStatusReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostProjectStatusReportTask",
+      "bucket": "all_fail",
+      "trial": 7,
+      "run_id": "0027fad3dc1c405a8635dc0479f90600",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "On-track item 'Authentication Module' not in on-track section",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 3,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostProjectStatusReportTask/trial_007/MattermostProjectStatusReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostProjectStatusReportTask",
+      "bucket": "all_fail",
+      "trial": 8,
+      "run_id": "e881722fd1db4b5db14a41d9a9a774f8",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email sent",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 3,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostProjectStatusReportTask/trial_008/MattermostProjectStatusReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostProjectStatusReportTask",
+      "bucket": "all_fail",
+      "trial": 9,
+      "run_id": "9c68bfa1dfba481b83466293896cfb50",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "On-track item 'API Gateway Setup' not in on-track section",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 3,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostProjectStatusReportTask/trial_009/MattermostProjectStatusReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostProjectStatusReportTask",
+      "bucket": "all_fail",
+      "trial": 10,
+      "run_id": "980262923cbe4f43afd691dfa5bd76ee",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Escalation event for 'Payment Integration' not created",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 3,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostProjectStatusReportTask/trial_010/MattermostProjectStatusReportTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostResourceConflictResolutionTask",
+      "bucket": "all_fail",
+      "trial": 4,
+      "run_id": "273a18bd3d0f4422aaabec4618ffc88c",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email sent",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 9,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostResourceConflictResolutionTask/trial_004/MattermostResourceConflictResolutionTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostResourceConflictResolutionTask",
+      "bucket": "all_fail",
+      "trial": 5,
+      "run_id": "6dcdddf64f3e4cabb71fe19c27bc704c",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email sent",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 9,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostResourceConflictResolutionTask/trial_005/MattermostResourceConflictResolutionTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostResourceConflictResolutionTask",
+      "bucket": "all_fail",
+      "trial": 6,
+      "run_id": "9fea198d50904df4966aa6c89f6af222",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email sent",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 9,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostResourceConflictResolutionTask/trial_006/MattermostResourceConflictResolutionTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostResourceConflictResolutionTask",
+      "bucket": "all_fail",
+      "trial": 7,
+      "run_id": "631cb94e66864354b538cc058c98c5d1",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email sent",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 9,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostResourceConflictResolutionTask/trial_007/MattermostResourceConflictResolutionTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostResourceConflictResolutionTask",
+      "bucket": "all_fail",
+      "trial": 8,
+      "run_id": "18268b495eb04853b5e8465c152d184f",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email sent",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 9,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostResourceConflictResolutionTask/trial_008/MattermostResourceConflictResolutionTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostResourceConflictResolutionTask",
+      "bucket": "all_fail",
+      "trial": 9,
+      "run_id": "cdc292d9a2484609bb48ccddbf08fe1b",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email sent",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 9,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostResourceConflictResolutionTask/trial_009/MattermostResourceConflictResolutionTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "MattermostResourceConflictResolutionTask",
+      "bucket": "all_fail",
+      "trial": 10,
+      "run_id": "956dfbb9b6e94ba5a06db41731caf95f",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email sent",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 9,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/MattermostResourceConflictResolutionTask/trial_010/MattermostResourceConflictResolutionTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "ReadQwen3PaperTask5",
+      "bucket": "all_fail",
+      "trial": 4,
+      "run_id": "2a4b7de9385b4bb49f86492c2ae4ec4d",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "incorrect. Expected: vie Latn,khm Khmr, Got:",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 1,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/ReadQwen3PaperTask5/trial_004/ReadQwen3PaperTask5"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "ReadQwen3PaperTask5",
+      "bucket": "all_fail",
+      "trial": 6,
+      "run_id": "f14a4d6a9286478a8efe387f23fa484b",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "incorrect. Expected: vie Latn,khm Khmr, Got:",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 1,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/ReadQwen3PaperTask5/trial_006/ReadQwen3PaperTask5"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "ReadQwen3PaperTask5",
+      "bucket": "all_fail",
+      "trial": 7,
+      "run_id": "52cc154a88da476493b7a5df396ec48f",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "incorrect. Expected: vie Latn,khm Khmr, Got:",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 1,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/ReadQwen3PaperTask5/trial_007/ReadQwen3PaperTask5"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "ReadQwen3PaperTask5",
+      "bucket": "all_fail",
+      "trial": 8,
+      "run_id": "f8840805d4c34f19832d104e6345f786",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "incorrect. Expected: vie Latn,khm Khmr, Got:",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 1,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/ReadQwen3PaperTask5/trial_008/ReadQwen3PaperTask5"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "ReadQwen3PaperTask5",
+      "bucket": "all_fail",
+      "trial": 9,
+      "run_id": "c1b11c69214947cfa9204f7afb5da6b0",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "incorrect. Expected: vie Latn,khm Khmr, Got:",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 1,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/ReadQwen3PaperTask5/trial_009/ReadQwen3PaperTask5"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "ReadQwen3PaperTask5",
+      "bucket": "all_fail",
+      "trial": 10,
+      "run_id": "464b1c17d5c3416b82ca1c878e0c4f09",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "incorrect. Expected: vie Latn,khm Khmr, Got:",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 1,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/ReadQwen3PaperTask5/trial_010/ReadQwen3PaperTask5"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "SMSManagement",
+      "bucket": "all_fail",
+      "trial": 4,
+      "run_id": "f9a72a9b99e048839738ba851d703d6c",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Spam message found!",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 22,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/SMSManagement/trial_004/SMSManagement"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "SMSManagement",
+      "bucket": "all_fail",
+      "trial": 5,
+      "run_id": "1edea6807b8441a09ca858b4e4e3de39",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Spam message found!",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 22,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/SMSManagement/trial_005/SMSManagement"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "SMSManagement",
+      "bucket": "all_fail",
+      "trial": 6,
+      "run_id": "241a3c823d9f469bb37ef307124a8ae1",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Spam message found!",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 22,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/SMSManagement/trial_006/SMSManagement"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "SMSManagement",
+      "bucket": "all_fail",
+      "trial": 7,
+      "run_id": "8409952cef6f45799c8e3b0647f5ba4f",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Spam message found!",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 22,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/SMSManagement/trial_007/SMSManagement"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "SMSManagement",
+      "bucket": "all_fail",
+      "trial": 8,
+      "run_id": "f4e19fa48411448795bb854c5a7b0cb7",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Spam message found!",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 22,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/SMSManagement/trial_008/SMSManagement"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "SMSManagement",
+      "bucket": "all_fail",
+      "trial": 9,
+      "run_id": "5107faaf73e9449e9f6d122efbb54a62",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Spam message found!",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 22,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/SMSManagement/trial_009/SMSManagement"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "SMSManagement",
+      "bucket": "all_fail",
+      "trial": 10,
+      "run_id": "203bd94c60ee4812b4b343f9fd1a1f52",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "Spam message found!",
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 22,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/SMSManagement/trial_010/SMSManagement"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "SendFormsTask",
+      "bucket": "split",
+      "trial": 4,
+      "run_id": "4453b0e170b94f8b9e8589d63f65e781",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.1667,
+      "task_flip_rate": 0.3333,
+      "public_steps_min": 5,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/SendFormsTask/trial_004/SendFormsTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "SendFormsTask",
+      "bucket": "split",
+      "trial": 5,
+      "run_id": "0b4f30f460564b8c89ffe6036b4bc315",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.1667,
+      "task_flip_rate": 0.3333,
+      "public_steps_min": 5,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/SendFormsTask/trial_005/SendFormsTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "SendFormsTask",
+      "bucket": "split",
+      "trial": 7,
+      "run_id": "9f320a37f40e43dfa382022ca7869119",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.1667,
+      "task_flip_rate": 0.3333,
+      "public_steps_min": 5,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/SendFormsTask/trial_007/SendFormsTask"
+    },
+    {
+      "priority": 12.0,
+      "task_id": "SendFormsTask",
+      "bucket": "split",
+      "trial": 10,
+      "run_id": "23c034cc9f3945e7b240bad2a7005e45",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 50,
+      "reason_text": "No email found",
+      "task_pass_rate": 0.1667,
+      "task_flip_rate": 0.3333,
+      "public_steps_min": 5,
+      "why": [
+        "steps pinned at --max-round (50): the run was cut off, so a 0 here measures the round budget"
+      ],
+      "traj_path": "runs/A_temp0/SendFormsTask/trial_010/SendFormsTask"
+    },
+    {
+      "priority": 11.11,
+      "task_id": "SendFormsTask",
+      "bucket": "split",
+      "trial": 8,
+      "run_id": "f9438aadfaa8489093aae6cf4223ce0c",
+      "outcome": "scored",
+      "score": 1.0,
+      "pass": true,
+      "steps": 36,
+      "reason_text": "correct answer",
+      "task_pass_rate": 0.1667,
+      "task_flip_rate": 0.3333,
+      "public_steps_min": 5,
+      "why": [
+        "minority outcome: passed in 1 of 6 scored trials"
+      ],
+      "traj_path": "runs/A_temp0/SendFormsTask/trial_008/SendFormsTask"
+    },
+    {
+      "priority": 9.795,
+      "task_id": "DownloadSendReceiptTask",
+      "bucket": "split",
+      "trial": 6,
+      "run_id": "93eabb0f07754636be57bfe68ea7ea22",
+      "outcome": "scored",
+      "score": 1.0,
+      "pass": true,
+      "steps": 30,
+      "reason_text": "success",
+      "task_pass_rate": 0.1429,
+      "task_flip_rate": 0.2857,
+      "public_steps_min": 15,
+      "why": [
+        "minority outcome: passed in 1 of 7 scored trials"
+      ],
+      "traj_path": "runs/A_temp0/DownloadSendReceiptTask/trial_006/DownloadSendReceiptTask"
+    },
+    {
+      "priority": 9.795,
+      "task_id": "TakeSelfieTask",
+      "bucket": "all_pass",
+      "trial": 7,
+      "run_id": "56d6c07eb9ec46148c4e36d38cd1ba4e",
+      "outcome": "scored",
+      "score": 0.0,
+      "pass": false,
+      "steps": 6,
+      "reason_text": "No new photo detected",
+      "task_pass_rate": 0.8571,
+      "task_flip_rate": 0.2857,
+      "public_steps_min": 5,
+      "why": [
+        "minority outcome: failed in 1 of 7 scored trials"
+      ],
+      "traj_path": "runs/A_temp0/TakeSelfieTask/trial_007/TakeSelfieTask"
+    },
+    {
+      "priority": 8.0,
+      "task_id": "AcceptMeetingTask",
+      "bucket": "all_pass",
+      "trial": 6,
+      "run_id": "ec8cc58b53334b459f4b2e03e82b930f",
+      "outcome": "no_result",
+      "score": null,
+      "pass": null,
+      "steps": 0,
+      "reason_text": null,
+      "task_pass_rate": 1.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 6,
+      "why": [
+        "outcome=no_result: no score was produced"
+      ],
+      "traj_path": "runs/A_temp0/AcceptMeetingTask/trial_006/AcceptMeetingTask"
+    },
+    {
+      "priority": 8.0,
+      "task_id": "CVEmailTask",
+      "bucket": "split",
+      "trial": 6,
+      "run_id": "a264bc5955d24033bf7984004a39d485",
+      "outcome": "no_result",
+      "score": null,
+      "pass": null,
+      "steps": 0,
+      "reason_text": null,
+      "task_pass_rate": 0.5,
+      "task_flip_rate": 0.6,
+      "public_steps_min": 10,
+      "why": [
+        "outcome=no_result: no score was produced"
+      ],
+      "traj_path": "runs/A_temp0/CVEmailTask/trial_006/CVEmailTask"
+    },
+    {
+      "priority": 8.0,
+      "task_id": "MattermostCreateChannelTask",
+      "bucket": "split",
+      "trial": 6,
+      "run_id": "2620c605b7294b2283e0e75ae1508ced",
+      "outcome": "no_result",
+      "score": null,
+      "pass": null,
+      "steps": 0,
+      "reason_text": null,
+      "task_pass_rate": 0.0,
+      "task_flip_rate": 0.0,
+      "public_steps_min": 17,
+      "why": [
+        "outcome=no_result: no score was produced"
+      ],
+      "traj_path": "runs/A_temp0/MattermostCreateChannelTask/trial_006/MattermostCreateChannelTask"
+    },
+    {
+      "priority": 8.0,
+      "task_id": "MattermostEmailTask",
+      "bucket": "split",
+      "trial": 6,
+      "run_id": "89873f0c2a5b42bfa5077e84e7577f03",
+      "outcome": "no_result",
+      "score": null,
+      "pass": null,
+      "steps": 0,
+      "reason_text": null,
+      "task_pass_rate": 0.3333,
+      "task_flip_rate": 0.5333,
+      "public_steps_min": 9,
+      "why": [
+        "outcome=no_result: no score was produced"
+      ],
+      "traj_path": "runs/A_temp0/MattermostEmailTask/trial_006/MattermostEmailTask"
+    },
+    {
+      "priority": 8.0,
+      "task_id": "ScheduleLunchViaSmsTask",
+      "bucket": "split",
+      "trial": 6,
+      "run_id": "e6bf86bc23434cd581fa8f0d67147a55",
+      "outcome": "no_result",
+      "score": null,
+      "pass": null,
+      "steps": 0,
+      "reason_text": null,
+      "task_pass_rate": 0.6667,
+      "task_flip_rate": 0.5333,
+      "public_steps_min": 11,
+      "why": [
+        "outcome=no_result: no score was produced"
+      ],
+      "traj_path": "runs/A_temp0/ScheduleLunchViaSmsTask/trial_006/ScheduleLunchViaSmsTask"
+    },
+    {
+      "priority": 8.0,
+      "task_id": "SendFormsTask",
+      "bucket": "split",
+      "trial": 6,
+      "run_id": "8aecf8b5f8fd4d78bf1a5cf6c552fadf",
+      "outcome": "no_result",
+      "score": null,
+      "pass": null,
+      "steps": 0,
+      "reason_text": null,
+      "task_pass_rate": 0.1667,
+      "task_flip_rate": 0.3333,
+      "public_steps_min": 5,
+      "why": [
+        "outcome=no_result: no score was produced"
+      ],
+      "traj_path": "runs/A_temp0/SendFormsTask/trial_006/SendFormsTask"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+\section{Limitations}
+
+\textbf{One agent, one model, one endpoint.} Instability is very likely
+model-dependent: a model that is decisive on a task will flip less than one
+that is borderline on it. The threshold we report should be read as an order of
+magnitude for this class of benchmark, not as a constant to be applied to other
+entries as though it were measured on them.
+
+\textbf{Seven repetitions over 29 tasks.} Per-task rates are correspondingly
+imprecise --- a task passing 3 of 6 times has a 95\% interval of roughly
+19--81\%. The suite-level figures are much better determined than the per-task
+ones, and we lean on the former.
+
+\textbf{The task set is deliberately skewed} toward tasks that published runs
+disagree on. Its score level is not comparable to a leaderboard number; only
+the width is, and only after reweighting, and that reweighting assumes the 88
+disagreed-on tasks we did not run behave like the 10 we did.
+
+\textbf{GUI-only.} The user-interaction and MCP suites were not run. The former
+puts a second language model inside the loop and would plausibly be noisier,
+not less.
+
+\textbf{The harness absorbs part of what we set out to measure.} Its internal
+retry fired 110 times across all ten rounds (95 of them within the seven rounds
+of the headline configuration), silently, and those restarts are instability
+that never reached a score. Our figures are therefore a floor.
+
+\textbf{Environment version.} We ran a container image newer than the one most
+published entries used, because the older tag carries a defect the maintainers
+had already fixed and injecting a known bug into a variance measurement would
+measure the wrong thing. The quantization also differs from the reference
+entry's. Both are recorded per run.
+
+\textbf{The serving change is documented, not explained.} We can show when it
+happened, that it was specific to one endpoint, and what it did to the output.
+We cannot see inside somebody else's fleet, and we do not speculate about the
+cause.
+
+We would rather see this measured better than see it left unmeasured. The raw
+per-run records, the analysis code and the figure scripts are released, and the
+figures in this paper regenerate from a single command. If the noise floor of
+an evaluation instrument is worth knowing --- and we think a field that cites
+two-point differences should want to know it --- then it is worth publishing
+alongside the scores, by whoever is best placed to measure it.

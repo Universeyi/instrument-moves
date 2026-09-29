@@ -1,0 +1,20 @@
+\begin{tabular}{ll}
+\toprule
+model & \texttt{moonshotai/kimi-k2.5} \\
+serving provider / quantization & \texttt{atlas-cloud} / \texttt{int4} \\
+sampling & temperature \texttt{0.0}, seed \texttt{42} \\
+agent & \texttt{agents/pinned\_e2e\_agent.py} \\
+image & \texttt{ghcr.io/tongyi-mai/mobile\_world:v1.4} \\
+image digest & \begin{tabular}[t]{@{}l@{}}\texttt{sha256:00e24a8995892af9a0e1b68bc14ce455}\\\texttt{fae288d0f1ca8cf57e84a58e40e9f19e}\end{tabular} \\
+task-set commit & \texttt{83e7b8fc75ebb6c4a098254a42999db5f4172666} \\
+max rounds / step wait & 50 / 3.0s \\
+harness auto-retry & 10 \\
+container recycling & trial \\
+host kernel / cores & 6.17.0-1022-gcp / 8 \\
+pass threshold & score $>$ 0.99 \\
+resampling & 10000 draws, seed \texttt{20260824} \\
+rows analysed (headline basis) & 174 (rounds 4--10 less round 6; 203 over all seven, 290 over all ten) \\
+duplicate trial keys & 0 (none expected) \\
+provenance consistent across rows & yes \\
+\bottomrule
+\end{tabular}

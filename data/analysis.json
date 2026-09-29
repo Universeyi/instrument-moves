@@ -1,0 +1,4378 @@
+{
+  "generated_at": "2026-08-28T02:02:49.760448+00:00",
+  "generator": "scripts/analyze.py",
+  "inputs": {
+    "runs_jsonl": "data/runs.jsonl",
+    "runs_sha256": "5425e4299f4317033ac15c216228c81a796c9d2e3097f16b900b3138847b9668",
+    "n_rows_read": 203,
+    "n_rows_used": 203,
+    "duplicate_keys": [],
+    "unparseable_lines": [],
+    "pilot_tasks": "data/pilot_tasks.json",
+    "public_matrix": "data/public_matrix.json",
+    "traj_stats": "data/traj_stats.json"
+  },
+  "settings": {
+    "trial_range": [
+      4,
+      10
+    ],
+    "trials_excluded": [],
+    "tasks_restricted_to": null,
+    "pass_threshold": 0.99,
+    "bootstrap_resamples": 10000,
+    "seed": 20260824,
+    "interval": "Wilson score, 95%"
+  },
+  "arms": {
+    "A_temp0": {
+      "arm": "A_temp0",
+      "n_rows": 203,
+      "n_tasks": 29,
+      "trials_per_task": {
+        "n": 29,
+        "mean": 7.0,
+        "sd": 0.0,
+        "min": 7.0,
+        "p05": 7.0,
+        "median": 7.0,
+        "p95": 7.0,
+        "max": 7.0
+      },
+      "outcomes": {
+        "scored": 197,
+        "no_result": 6
+      },
+      "outcomes_by_trial": {
+        "4": {
+          "scored": 29
+        },
+        "5": {
+          "scored": 29
+        },
+        "6": {
+          "scored": 23,
+          "no_result": 6
+        },
+        "7": {
+          "scored": 29
+        },
+        "8": {
+          "scored": 29
+        },
+        "9": {
+          "scored": 29
+        },
+        "10": {
+          "scored": 29
+        }
+      },
+      "provenance": {
+        "consistent": true,
+        "violations": [],
+        "values": {
+          "model": "moonshotai/kimi-k2.5",
+          "agent_type": "agents/pinned_e2e_agent.py",
+          "llm_base_url": "https://openrouter.ai/api/v1",
+          "image": "ghcr.io/tongyi-mai/mobile_world:v1.4",
+          "image_digest": "00e24a8995892af9a0e1b68bc14ce455fae288d0f1ca8cf57e84a58e40e9f19e",
+          "taskset_commit": "83e7b8fc75ebb6c4a098254a42999db5f4172666",
+          "max_round": 50,
+          "step_wait_time": 3.0,
+          "auto_retry": 10,
+          "enable_user_interaction": false,
+          "enable_mcp": false,
+          "recycle_policy": "trial"
+        },
+        "model_params": {
+          "or_provider": "atlas-cloud",
+          "or_quant": "int4",
+          "temperature": "0.0",
+          "seed": "42"
+        },
+        "host": {
+          "platform": "Linux-6.17.0-1022-gcp-x86_64-with-glibc2.39",
+          "machine": "x86_64",
+          "processor": "x86_64",
+          "python": "3.12.3",
+          "cpu_count": 8,
+          "mem_bytes": 33649025024,
+          "kernel": "6.17.0-1022-gcp",
+          "kvm_present": true
+        },
+        "partial_scores_seen": []
+      },
+      "per_trial_suite_score": {
+        "per_trial": [
+          {
+            "trial": 4,
+            "n_tasks_attempted": 29,
+            "n_tasks_scored": 29,
+            "n_passed": 9,
+            "score_pct": 31.0345,
+            "complete": true,
+            "reduced_denominator": false
+          },
+          {
+            "trial": 5,
+            "n_tasks_attempted": 29,
+            "n_tasks_scored": 29,
+            "n_passed": 9,
+            "score_pct": 31.0345,
+            "complete": true,
+            "reduced_denominator": false
+          },
+          {
+            "trial": 6,
+            "n_tasks_attempted": 29,
+            "n_tasks_scored": 23,
+            "n_passed": 9,
+            "score_pct": 39.1304,
+            "complete": true,
+            "reduced_denominator": true
+          },
+          {
+            "trial": 7,
+            "n_tasks_attempted": 29,
+            "n_tasks_scored": 29,
+            "n_passed": 10,
+            "score_pct": 34.4828,
+            "complete": true,
+            "reduced_denominator": false
+          },
+          {
+            "trial": 8,
+            "n_tasks_attempted": 29,
+            "n_tasks_scored": 29,
+            "n_passed": 11,
+            "score_pct": 37.931,
+            "complete": true,
+            "reduced_denominator": false
+          },
+          {
+            "trial": 9,
+            "n_tasks_attempted": 29,
+            "n_tasks_scored": 29,
+            "n_passed": 11,
+            "score_pct": 37.931,
+            "complete": true,
+            "reduced_denominator": false
+          },
+          {
+            "trial": 10,
+            "n_tasks_attempted": 29,
+            "n_tasks_scored": 29,
+            "n_passed": 10,
+            "score_pct": 34.4828,
+            "complete": true,
+            "reduced_denominator": false
+          }
+        ],
+        "n_trials_complete": 7,
+        "n_trials_partial": 0,
+        "n_trials_reduced_denominator": 1,
+        "tasks_per_complete_trial": 29,
+        "summary": {
+          "n": 7,
+          "mean": 35.1467,
+          "sd": 3.3185,
+          "min": 31.0345,
+          "p05": 31.0345,
+          "median": 34.4828,
+          "p95": 38.7706,
+          "max": 39.1304
+        },
+        "observed_range_pp": 8.0959,
+        "pairwise_abs_difference_pp": {
+          "n": 21,
+          "mean": 3.9551,
+          "sd": 2.5887,
+          "min": 0.0,
+          "p05": 0.0,
+          "median": 3.4483,
+          "p95": 8.0959,
+          "max": 8.0959
+        },
+        "note": "Computed over rounds that attempted the whole suite. A round that attempted fewer tasks is still in progress and is excluded, because the tasks it has not reached are not a random subset. A round that attempted every task but scored fewer -- an outage, say -- is KEPT and flagged with reduced_denominator, since dropping it would hide exactly the rounds an incident touched."
+      },
+      "tasks": [
+        {
+          "task_id": "AcceptMeetingTask",
+          "bucket": "all_pass",
+          "group": "gmail",
+          "randomized_setup": false,
+          "public_pass_fraction": 1.0,
+          "n_trials": 7,
+          "n_scored": 6,
+          "n_unscored": 1,
+          "unscored_outcomes": {
+            "no_result": 1
+          },
+          "passes": 6,
+          "pass_rate": 1.0,
+          "wilson95": [
+            0.6097,
+            1.0
+          ],
+          "wilson95_width": 0.3903,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.6,
+          "pass_rate_unscored_as_fail": 0.8571,
+          "steps": {
+            "n": 6,
+            "mean": 7.0,
+            "sd": 0.0,
+            "min": 7.0,
+            "p05": 7.0,
+            "median": 7.0,
+            "p95": 7.0,
+            "max": 7.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 94.3986,
+            "sd": 28.2922,
+            "min": 77.05,
+            "p05": 77.755,
+            "median": 84.06,
+            "p95": 137.568,
+            "max": 157.23
+          },
+          "absorbed_retries": 9,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "4030cdf548e94dbf8cd606da3c5527f3",
+              "reason": "Correct email sent"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "85f4e1449e9c414bb3b45243382b7dfb",
+              "reason": "Correct email sent"
+            },
+            {
+              "trial": 6,
+              "outcome": "no_result",
+              "score": null,
+              "pass": null,
+              "steps": 0,
+              "run_id": "ec8cc58b53334b459f4b2e03e82b930f",
+              "reason": null
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "2b2cc7b2737c43a38a4aa8ad79e0842b",
+              "reason": "Correct email sent"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "1006f175143e406c9266207f6ead9f02",
+              "reason": "Correct email sent"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "decfc80626304c37a2626adbab567120",
+              "reason": "Correct email sent"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "38e237a596444f27acf9d3603e84ebff",
+              "reason": "Correct email sent"
+            }
+          ]
+        },
+        {
+          "task_id": "BidFileRenameTask",
+          "bucket": "split",
+          "group": "native",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.4666666666666667,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 7,
+            "mean": 50.0,
+            "sd": 0.0,
+            "min": 50.0,
+            "p05": 50.0,
+            "median": 50.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 499.5729,
+            "sd": 18.6004,
+            "min": 475.25,
+            "p05": 475.391,
+            "median": 500.3,
+            "p95": 519.967,
+            "max": 522.52
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "e102b56911584a03be55ab79640bdd29",
+              "reason": "Bid files not renamed (missed): ['bid_menu_design_contract.pdf', 'bid_food_supplier_quote.txt']"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "fe0fa99a872642c49858e8d571fdba42",
+              "reason": "Bid files not renamed (missed): ['bid_food_supplier_quote.txt']"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "adba0c6189d74309becdfe22168b6b13",
+              "reason": "Bid files not renamed (missed): ['bid_food_supplier_quote.txt']"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "d7df057f7f9b470889780bd809855588",
+              "reason": "Bid files not renamed (missed): ['bid_restaurant_proposal.txt', 'bid_catering_menu_2024.doc', 'bid_menu_design_contract.pdf', 'bid_food_supplier_quote.txt']"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "fb78d6a02f084a6ba2ce714471bc9764",
+              "reason": "Bid files not renamed (missed): ['bid_menu_design_contract.pdf', 'bid_food_supplier_quote.txt']"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "f15386b9d19d407d8117caf2bac70dbc",
+              "reason": "Bid files not renamed (missed): ['bid_restaurant_proposal.txt', 'bid_catering_menu_2024.doc', 'bid_menu_design_contract.pdf', 'bid_food_supplier_quote.txt']"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "e3cfcfe06521421b97e832834951c570",
+              "reason": "Bid files not renamed (missed): ['bid_restaurant_proposal.txt', 'bid_catering_menu_2024.doc', 'bid_menu_design_contract.pdf', 'bid_food_supplier_quote.txt']"
+            }
+          ]
+        },
+        {
+          "task_id": "CVEmailTask",
+          "bucket": "split",
+          "group": "native",
+          "randomized_setup": true,
+          "public_pass_fraction": 0.4,
+          "n_trials": 7,
+          "n_scored": 6,
+          "n_unscored": 1,
+          "unscored_outcomes": {
+            "no_result": 1
+          },
+          "passes": 3,
+          "pass_rate": 0.5,
+          "wilson95": [
+            0.1876,
+            0.8124
+          ],
+          "wilson95_width": 0.6248,
+          "flipped": true,
+          "flip_rate": 0.6,
+          "flip_rate_max": 0.6,
+          "pass_rate_unscored_as_fail": 0.4286,
+          "steps": {
+            "n": 6,
+            "mean": 11.0,
+            "sd": 1.0954,
+            "min": 10.0,
+            "p05": 10.0,
+            "median": 11.0,
+            "p95": 12.0,
+            "max": 12.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 138.4343,
+            "sd": 17.9436,
+            "min": 118.4,
+            "p05": 119.684,
+            "median": 132.4,
+            "p95": 164.774,
+            "max": 168.89
+          },
+          "absorbed_retries": 9,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 10,
+              "run_id": "e259cee9ad64497ca488a743afb64027",
+              "reason": "CV files not found in email attachments: ['David_Lee_CV.pdf', 'John_Walker_CV.pdf']. Attachments: ['Stephanie_Ramirez_CV.pdf']"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 10,
+              "run_id": "ac00287bd1b049b6b9a1c0702a6a8274",
+              "reason": "CV files not found in email attachments: ['Charles_Jackson_CV.pdf', 'Angela_White_CV.pdf']. Attachments: ['Richard_Walker_CV.pdf']"
+            },
+            {
+              "trial": 6,
+              "outcome": "no_result",
+              "score": null,
+              "pass": null,
+              "steps": 0,
+              "run_id": "a264bc5955d24033bf7984004a39d485",
+              "reason": null
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 10,
+              "run_id": "152911208b0c4bd4a9ff069705397213",
+              "reason": "CV files not found in email attachments: ['Charles_Ramirez_CV.pdf', 'Daniel_Anderson_CV.pdf']. Attachments: ['Christopher_Lewis_CV.pdf']"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 12,
+              "run_id": "2154b03e391649f4b84e08325f14f470",
+              "reason": "success"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 12,
+              "run_id": "3b1e180ce3db47798f3acf9516f3ff86",
+              "reason": "success"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 12,
+              "run_id": "f95f7dcf42e545d5a1910fee7cc1b69b",
+              "reason": "success"
+            }
+          ]
+        },
+        {
+          "task_id": "ChangeWallpaperTask",
+          "bucket": "all_pass",
+          "group": "settings",
+          "randomized_setup": false,
+          "public_pass_fraction": 1.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 7,
+          "pass_rate": 1.0,
+          "wilson95": [
+            0.6457,
+            1.0
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 1.0,
+          "steps": {
+            "n": 7,
+            "mean": 8.8571,
+            "sd": 0.378,
+            "min": 8.0,
+            "p05": 8.3,
+            "median": 9.0,
+            "p95": 9.0,
+            "max": 9.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 152.5129,
+            "sd": 67.1353,
+            "min": 112.42,
+            "p05": 116.32,
+            "median": 126.86,
+            "p95": 255.87,
+            "max": 303.18
+          },
+          "absorbed_retries": 9,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "0de374a4765147adb711b7ec6939d855",
+              "reason": "Success"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 8,
+              "run_id": "a4a7d5d8871e45e1b08a36c09c1c8ff2",
+              "reason": "Success"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "9f62c77fb6e5480f92151fb119c45cbb",
+              "reason": "Success"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "7c358c68a16142b0bf20a71bb7cd6276",
+              "reason": "Success"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "8ae8c4a02a5141e5ba78e473e3ffeb65",
+              "reason": "Success"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "86c39f4b182f46df8b1df58ce6790b61",
+              "reason": "Success"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "dd29a43203144156af4a793ee89599ec",
+              "reason": "Success"
+            }
+          ]
+        },
+        {
+          "task_id": "CheckEventTimeTask",
+          "bucket": "all_pass",
+          "group": "gmail",
+          "randomized_setup": false,
+          "public_pass_fraction": 1.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 7,
+            "mean": 17.5714,
+            "sd": 4.7909,
+            "min": 11.0,
+            "p05": 11.3,
+            "median": 18.0,
+            "p95": 22.7,
+            "max": 23.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 193.5386,
+            "sd": 55.1737,
+            "min": 126.8,
+            "p05": 128.975,
+            "median": 187.87,
+            "p95": 254.211,
+            "max": 255.0
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 22,
+              "run_id": "3368e1961a9e4f98892b1e60670ea646",
+              "reason": "No alarm found at 6:00 PM"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 11,
+              "run_id": "14ca22b447074a6785a58af12e91ae33",
+              "reason": "No alarm found at 6:00 PM"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 12,
+              "run_id": "0126ee005c4c4c99bd6161d475a96d36",
+              "reason": "No alarm found at 6:00 PM"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 18,
+              "run_id": "bae1aca4de8c4632a1f694676cba99f0",
+              "reason": "No alarm found at 6:00 PM"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 16,
+              "run_id": "737a9e04296445a7a5e6c771d8791cdd",
+              "reason": "No alarm found at 6:00 PM"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 23,
+              "run_id": "7ca221c03bc04a9d8470f2721023aa62",
+              "reason": "No alarm found at 6:00 PM"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 21,
+              "run_id": "46d1f0f25a77429a8cd73a9f7474a2b3",
+              "reason": "No alarm found at 6:00 PM"
+            }
+          ]
+        },
+        {
+          "task_id": "CheckInterviewTimesTask",
+          "bucket": "all_fail",
+          "group": "gmail",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 7,
+            "mean": 50.0,
+            "sd": 0.0,
+            "min": 50.0,
+            "p05": 50.0,
+            "median": 50.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 779.1043,
+            "sd": 246.2264,
+            "min": 590.85,
+            "p05": 594.453,
+            "median": 666.42,
+            "p95": 1165.514,
+            "max": 1224.68
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "62ccd5b4639748a1b3c92032b8de45d1",
+              "reason": "incorrect calendar events"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "ea5465cb5fb94b2e96c83b2ea465bbbd",
+              "reason": "incorrect calendar events"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "f5f5fcc1d60f48cfa867da9f843ab921",
+              "reason": "incorrect calendar events"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "60a5ecb64e504702b78387ce000fed9c",
+              "reason": "incorrect calendar events"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "a8fabef4ee7e48089d4a728ee521f4e6",
+              "reason": "incorrect calendar events"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "48d4f53fc8214626b743204a5c58c43a",
+              "reason": "incorrect calendar events"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "6ee685b8bbb344b78f8773f030227582",
+              "reason": "incorrect calendar events"
+            }
+          ]
+        },
+        {
+          "task_id": "CloseFlightModeTask",
+          "bucket": "all_pass",
+          "group": "settings",
+          "randomized_setup": false,
+          "public_pass_fraction": 1.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 7,
+          "pass_rate": 1.0,
+          "wilson95": [
+            0.6457,
+            1.0
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 1.0,
+          "steps": {
+            "n": 7,
+            "mean": 6.4286,
+            "sd": 1.2724,
+            "min": 4.0,
+            "p05": 4.6,
+            "median": 7.0,
+            "p95": 7.7,
+            "max": 8.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 105.3157,
+            "sd": 22.1241,
+            "min": 61.84,
+            "p05": 71.563,
+            "median": 107.1,
+            "p95": 124.77,
+            "max": 126.33
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "1df236a0a9a1424abd1744f41b3a1524",
+              "reason": "Success"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "2c35184141a64b789dbbf57c7e064746",
+              "reason": "Success"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 4,
+              "run_id": "73f7fd539b3a45bba25dd98c681f4d85",
+              "reason": "Success"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 6,
+              "run_id": "f44611b058b942d1ba669f2a3fa146c4",
+              "reason": "Success"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 6,
+              "run_id": "37396aced7354ec38037bf433faad17b",
+              "reason": "Success"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 8,
+              "run_id": "e5b6baa13a8d4aee9875bcd03e64e777",
+              "reason": "Success"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "6497711dd2fa4a8fb626bbbe4aaabe96",
+              "reason": "Success"
+            }
+          ]
+        },
+        {
+          "task_id": "DownloadSendReceiptTask",
+          "bucket": "split",
+          "group": "gmail",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.4666666666666667,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 1,
+          "pass_rate": 0.1429,
+          "wilson95": [
+            0.0257,
+            0.5131
+          ],
+          "wilson95_width": 0.4874,
+          "flipped": true,
+          "flip_rate": 0.2857,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.1429,
+          "steps": {
+            "n": 7,
+            "mean": 35.0,
+            "sd": 8.7939,
+            "min": 26.0,
+            "p05": 26.6,
+            "median": 31.0,
+            "p95": 47.9,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 482.0243,
+            "sd": 111.7959,
+            "min": 292.61,
+            "p05": 330.599,
+            "median": 480.93,
+            "p95": 600.38,
+            "max": 613.28
+          },
+          "absorbed_retries": 1,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 31,
+              "run_id": "a2cd8a30b5e14b8b92681951336a904e",
+              "reason": "Incorrect total amount"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 37,
+              "run_id": "7917d369e9ed43a0a1fdf352aed64fe0",
+              "reason": "Incorrect total amount"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 30,
+              "run_id": "93eabb0f07754636be57bfe68ea7ea22",
+              "reason": "success"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "4fae5c7f90934404a2343245741e2495",
+              "reason": "No email found"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 26,
+              "run_id": "5d33be31408e4e22a06fd4ba6ca6215d",
+              "reason": "Incorrect number of attachments"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 28,
+              "run_id": "a32c6a7bda3444c98e27dd951ac360f8",
+              "reason": "Incorrect total amount"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 43,
+              "run_id": "ea908289978a41168731edfbf7929c29",
+              "reason": "Incorrect attachment"
+            }
+          ]
+        },
+        {
+          "task_id": "GoogleMapsAlibabaSouthNeighborTask",
+          "bucket": "all_pass",
+          "group": "map",
+          "randomized_setup": false,
+          "public_pass_fraction": 1.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 7,
+          "pass_rate": 1.0,
+          "wilson95": [
+            0.6457,
+            1.0
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 1.0,
+          "steps": {
+            "n": 7,
+            "mean": 9.1429,
+            "sd": 0.378,
+            "min": 9.0,
+            "p05": 9.0,
+            "median": 9.0,
+            "p95": 9.7,
+            "max": 10.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 130.9186,
+            "sd": 15.2022,
+            "min": 119.24,
+            "p05": 119.537,
+            "median": 124.76,
+            "p95": 153.68,
+            "max": 154.94
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "0db791eec9a44f719ca8f46a01cf2751",
+              "reason": "success"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "14238afaaf824faabccd4f8ac37f6d4b",
+              "reason": "success"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "fadef7f812af4f638ea2ab42dc765dd1",
+              "reason": "success"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 10,
+              "run_id": "9842d9771e7b4afbb0697bd35d401751",
+              "reason": "success"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "c7eadf146f9a4581a51d93b2a30c517b",
+              "reason": "success"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "15d4489081e5492f968a0d87ebb69e21",
+              "reason": "success"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "c369c011b12c4d2688ab6e1d697791f7",
+              "reason": "success"
+            }
+          ]
+        },
+        {
+          "task_id": "GraduationMassEmailTask",
+          "bucket": "split",
+          "group": "gmail",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.5333333333333333,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 7,
+            "mean": 27.1429,
+            "sd": 21.5208,
+            "min": 7.0,
+            "p05": 7.0,
+            "median": 13.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 293.6614,
+            "sd": 226.7071,
+            "min": 80.27,
+            "p05": 86.693,
+            "median": 138.22,
+            "p95": 567.354,
+            "max": 572.01
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 7,
+              "run_id": "e3a61322cc5a4ef28992c435e131767a",
+              "reason": "No email found"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 13,
+              "run_id": "fde15c62367d4814a2404f9e4eac2608",
+              "reason": "No email found"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "460a8d5b70c3442fabc3fefbb3894e0e",
+              "reason": "No email found"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "23b78a8bf81b4edabeddd28e538c518a",
+              "reason": "No email found"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 13,
+              "run_id": "174aaf4451ca4ce7aed490365ad070d2",
+              "reason": "No email found"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 7,
+              "run_id": "d414fbe49fed4455b40e769205f41b75",
+              "reason": "No email found"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "e3215e45620b4cda8d7eb42d59c7c9e6",
+              "reason": "No email found"
+            }
+          ]
+        },
+        {
+          "task_id": "LocalFileManagementTask2",
+          "bucket": "all_fail",
+          "group": "work",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 7,
+            "mean": 50.0,
+            "sd": 0.0,
+            "min": 50.0,
+            "p05": 50.0,
+            "median": 50.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 550.4029,
+            "sd": 46.3121,
+            "min": 499.57,
+            "p05": 501.295,
+            "median": 545.22,
+            "p95": 601.556,
+            "max": 603.29
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "be867f360c69407f844030fefe4d1ccc",
+              "reason": "File 06_music_collection_20240929.zip is not deleted"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "d8ac5fa7e2234ed9aa1e5135a0550746",
+              "reason": "File 06_music_collection_20240929.zip is not deleted"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "72e0ce0ecafe4383a8484abfc3b368b9",
+              "reason": "File 06_music_collection_20240929.zip is not deleted"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "0100a6bca957458e8168c2336f5d6441",
+              "reason": "File 06_music_collection_20240929.zip is not deleted"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "5cc3420a01c34bf3b2b303e7dc63cfcf",
+              "reason": "File 06_music_collection_20240929.zip is not deleted"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "647e58cf74b642819f5851cc520241b9",
+              "reason": "File 06_music_collection_20240929.zip is not deleted"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "ce49968c9f4a4f24af44298a780c3cb2",
+              "reason": "File 06_music_collection_20240929.zip is not deleted"
+            }
+          ]
+        },
+        {
+          "task_id": "MastodonCalendarMultiMemosTask",
+          "bucket": "all_fail",
+          "group": "mastodon",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 7,
+            "mean": 50.0,
+            "sd": 0.0,
+            "min": 50.0,
+            "p05": 50.0,
+            "median": 50.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 655.2514,
+            "sd": 228.9738,
+            "min": 495.26,
+            "p05": 503.768,
+            "median": 593.19,
+            "p95": 1007.771,
+            "max": 1161.59
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "17f7d2751851442cb67973e61f4d7c66",
+              "reason": "Event not found: 1761318000 - 1761323400"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "5d6981acb97e4b79b3f1637b8091c1d4",
+              "reason": "Event not found: 1761318000 - 1761323400"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "fb3720bfd89c4feea90485e85f30611b",
+              "reason": "Event not found: 1761575400 - 1761580800"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "3badae51d2bb4ee99ac0a5185452d6d2",
+              "reason": "Event not found: 1761318000 - 1761323400"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "b867315368004a58b77e936050e16aca",
+              "reason": "Event not found: 1761318000 - 1761323400"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "f18c4bda57344674b87c2cecd096f92b",
+              "reason": "Event not found: 1761318000 - 1761323400"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "fe3e1cc4ba4a44c8bf88be209a86ad15",
+              "reason": "Event not found: 1761318000 - 1761323400"
+            }
+          ]
+        },
+        {
+          "task_id": "MastodonChangeHeaderTask",
+          "bucket": "all_pass",
+          "group": "mastodon",
+          "randomized_setup": false,
+          "public_pass_fraction": 1.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 7,
+          "pass_rate": 1.0,
+          "wilson95": [
+            0.6457,
+            1.0
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 1.0,
+          "steps": {
+            "n": 7,
+            "mean": 7.0,
+            "sd": 0.0,
+            "min": 7.0,
+            "p05": 7.0,
+            "median": 7.0,
+            "p95": 7.0,
+            "max": 7.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 120.1943,
+            "sd": 4.7439,
+            "min": 117.37,
+            "p05": 117.574,
+            "median": 118.19,
+            "p95": 127.679,
+            "max": 130.7
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "67fb0f1a5fc045a2b0a15a1f61ba10a6",
+              "reason": "No reason provided for MastodonChangeHeaderTask"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "d33ab59ced394bbdaedb9366e60e826f",
+              "reason": "No reason provided for MastodonChangeHeaderTask"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "5c8676fc001042bf9344f7ea65759f08",
+              "reason": "No reason provided for MastodonChangeHeaderTask"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "1002c3ba85fa47d2a6c44a1b6c751396",
+              "reason": "No reason provided for MastodonChangeHeaderTask"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "dd60082062e34731a07a458f15d45e4f",
+              "reason": "No reason provided for MastodonChangeHeaderTask"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "aaa11314a0f1422388e7756dfb41bb66",
+              "reason": "No reason provided for MastodonChangeHeaderTask"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "1b92c68853df4b219d9a94ad72c71c64",
+              "reason": "No reason provided for MastodonChangeHeaderTask"
+            }
+          ]
+        },
+        {
+          "task_id": "MastodonGetServerInfoTask",
+          "bucket": "all_fail",
+          "group": "mastodon",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 7,
+            "mean": 45.0,
+            "sd": 13.2288,
+            "min": 15.0,
+            "p05": 25.5,
+            "median": 50.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 873.2686,
+            "sd": 229.8963,
+            "min": 734.68,
+            "p05": 737.344,
+            "median": 764.48,
+            "p95": 1241.905,
+            "max": 1365.82
+          },
+          "absorbed_retries": 4,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "12d1f4c97b1b4f12bce702689a4cb899",
+              "reason": "The database size info not correct, expected: 15.6 MB, actual: Hello from Owner 👋"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "5e096db0b9474bd180f41cb2e0f070fa",
+              "reason": "The database size info not correct, expected: 15.6 MB, actual: Hello from Owner 👋"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "bb2cae9259e04716a2e77ac800af537d",
+              "reason": "The database size info not correct, expected: 15.6 MB, actual: Hello from Owner 👋"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "fd695d8fca00423fb40a1cf3ebc7ff1e",
+              "reason": "The database size info not correct, expected: 15.6 MB, actual: Hello from Owner 👋"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "f8197fdeca4a449daac3ce949292ea17",
+              "reason": "The database size info not correct, expected: 15.6 MB, actual: Hello from Owner 👋"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 15,
+              "run_id": "2f102a140e35467fb9e39d45e7fe7a19",
+              "reason": "The database size info not correct, expected: 15.6 MB, actual: Hello from Owner 👋"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "76e3be76c0f04a78adc80aca901ae262",
+              "reason": "The database size info not correct, expected: 15.6 MB, actual: Hello from Owner 👋"
+            }
+          ]
+        },
+        {
+          "task_id": "MastodonImportMutedUsersTask",
+          "bucket": "split",
+          "group": "mastodon",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.4666666666666667,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 2,
+          "pass_rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ],
+          "wilson95_width": 0.5588,
+          "flipped": true,
+          "flip_rate": 0.4762,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.2857,
+          "steps": {
+            "n": 7,
+            "mean": 42.1429,
+            "sd": 11.7534,
+            "min": 22.0,
+            "p05": 24.1,
+            "median": 50.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 691.4586,
+            "sd": 172.4875,
+            "min": 383.66,
+            "p05": 424.574,
+            "median": 758.16,
+            "p95": 843.668,
+            "max": 858.68
+          },
+          "absorbed_retries": 8,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "e0fcf07a3846489f822b543a50510f96",
+              "reason": "No muted users found for user 'test'"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "2db50d3ddd6a46ef9e83a3fad30ae77a",
+              "reason": "No muted users found for user 'test'"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 44,
+              "run_id": "e648b1e3637445c8a927e01c5a777075",
+              "reason": "No reason provided for MastodonImportMutedUsersTask"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "ed993c8686df4e32bced6a29ce9254f4",
+              "reason": "No muted users found for user 'test'"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 22,
+              "run_id": "066603f450304a3f920dfa143fdb0419",
+              "reason": "No muted users found for user 'test'"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 29,
+              "run_id": "13ae294e62c846148158e708620fd3e9",
+              "reason": "No reason provided for MastodonImportMutedUsersTask"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "123e0d5806fd41e3a86b2e5e74163ee9",
+              "reason": "No muted users found for user 'test'"
+            }
+          ]
+        },
+        {
+          "task_id": "MastodonNewPostTask",
+          "bucket": "all_pass",
+          "group": "mastodon",
+          "randomized_setup": false,
+          "public_pass_fraction": 1.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 7,
+          "pass_rate": 1.0,
+          "wilson95": [
+            0.6457,
+            1.0
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 1.0,
+          "steps": {
+            "n": 7,
+            "mean": 6.4286,
+            "sd": 0.7868,
+            "min": 6.0,
+            "p05": 6.0,
+            "median": 6.0,
+            "p95": 7.7,
+            "max": 8.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 98.1886,
+            "sd": 10.796,
+            "min": 89.67,
+            "p05": 90.348,
+            "median": 93.65,
+            "p95": 115.454,
+            "max": 120.35
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 6,
+              "run_id": "0969178430f64ffa83468891cd6eafc8",
+              "reason": "No reason provided for MastodonNewPostTask"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 7,
+              "run_id": "5fd0a656dead4af8af744bddaad54934",
+              "reason": "No reason provided for MastodonNewPostTask"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 6,
+              "run_id": "f72177d0dd6140eba016f025f6c38a6c",
+              "reason": "No reason provided for MastodonNewPostTask"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 6,
+              "run_id": "446cd47104cd468991584b779884588c",
+              "reason": "No reason provided for MastodonNewPostTask"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 6,
+              "run_id": "5c75890cd90b4106aefac681e34a8e48",
+              "reason": "No reason provided for MastodonNewPostTask"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 8,
+              "run_id": "e7c5ba3effb0458780bcf7b7d13aae53",
+              "reason": "No reason provided for MastodonNewPostTask"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 6,
+              "run_id": "e2a1a53e18eb46beace372f43bf8d60a",
+              "reason": "No reason provided for MastodonNewPostTask"
+            }
+          ]
+        },
+        {
+          "task_id": "MastodonServerInfoReportTask",
+          "bucket": "all_fail",
+          "group": "mastodon",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 7,
+            "mean": 50.0,
+            "sd": 0.0,
+            "min": 50.0,
+            "p05": 50.0,
+            "median": 50.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 655.3057,
+            "sd": 55.5344,
+            "min": 607.42,
+            "p05": 611.35,
+            "median": 632.04,
+            "p95": 740.758,
+            "max": 750.49
+          },
+          "absorbed_retries": 9,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "f9bdace8f39542f5aa2bad59706087a6",
+              "reason": "No email found"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "cc742dd89786489d8f2fe2c8873620dd",
+              "reason": "No email found"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "21babd076df44fa397e9e0aa564ba2cf",
+              "reason": "No email found"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "4e5860985fb244baa9cc53972b1597b4",
+              "reason": "No email found"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "9f9c75adb4b94d1085e9912bbaaf382c",
+              "reason": "No email found"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "8343889563c34f12a5911aced6632f8f",
+              "reason": "No email found"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "1d815cde67504ef9b92713eae1943c1e",
+              "reason": "No email found"
+            }
+          ]
+        },
+        {
+          "task_id": "MastodonShareLocationTask",
+          "bucket": "all_fail",
+          "group": "mastodon",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 7,
+            "mean": 35.1429,
+            "sd": 17.9298,
+            "min": 8.0,
+            "p05": 10.4,
+            "median": 45.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 544.4,
+            "sd": 232.545,
+            "min": 201.07,
+            "p05": 231.856,
+            "median": 541.36,
+            "p95": 795.239,
+            "max": 811.1
+          },
+          "absorbed_retries": 7,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 27,
+              "run_id": "4502c91d348a492c8ecbc014d0c78208",
+              "reason": "URL mismatch: Which country has the largest land area? does not contain https://maps.app.goo.gl/xxxxxx"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "d403ea1d07ef49259e8013848004b0b2",
+              "reason": "URL mismatch: Which country has the largest land area? does not contain https://maps.app.goo.gl/xxxxxx"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "5af0f2e1781c46b4b72f75e4e26d0e0f",
+              "reason": "URL mismatch: Which country has the largest land area? does not contain https://maps.app.goo.gl/xxxxxx"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 8,
+              "run_id": "53f9e9ab51394e4880256ac25271f693",
+              "reason": "URL mismatch: Which country has the largest land area? does not contain https://maps.app.goo.gl/xxxxxx"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 16,
+              "run_id": "7d50c07d96474ddcb9c78d006cb8c40a",
+              "reason": "URL mismatch: Which country has the largest land area? does not contain https://maps.app.goo.gl/xxxxxx"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 45,
+              "run_id": "82f7b77e595b424d88188151c61e58e1",
+              "reason": "URL mismatch: Which country has the largest land area? does not contain https://maps.app.goo.gl/xxxxxx"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "b3d762e2fbe94560b5c37025c8aeb7d6",
+              "reason": "URL mismatch: Which country has the largest land area? does not contain https://maps.app.goo.gl/xxxxxx"
+            }
+          ]
+        },
+        {
+          "task_id": "MattermostBudgetApprovalPipelineTask",
+          "bucket": "split",
+          "group": "work",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.5333333333333333,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 2,
+          "pass_rate": 0.2857,
+          "wilson95": [
+            0.0822,
+            0.6411
+          ],
+          "wilson95_width": 0.5588,
+          "flipped": true,
+          "flip_rate": 0.4762,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.2857,
+          "steps": {
+            "n": 7,
+            "mean": 44.5714,
+            "sd": 9.4315,
+            "min": 28.0,
+            "p05": 29.8,
+            "median": 50.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 542.2957,
+            "sd": 75.8344,
+            "min": 395.32,
+            "p05": 429.232,
+            "median": 566.43,
+            "p95": 616.824,
+            "max": 623.58
+          },
+          "absorbed_retries": 3,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "a4c34c1316f54c47bf373c2fd203d830",
+              "reason": "Budget summary table not posted in channel (missing departments, ROI info, or table format)"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "e8cafe7956e549989216ad5f1a4a40e5",
+              "reason": "Budget summary table not posted in channel (missing departments, ROI info, or table format)"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "a484757cabbf4966bca4414a914dcc03",
+              "reason": "Budget summary table not posted in channel (missing departments, ROI info, or table format)"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 28,
+              "run_id": "825c6ab3e6bc4cdfaf5a37456d7b26b8",
+              "reason": "No reason provided for MattermostBudgetApprovalPipelineTask"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 34,
+              "run_id": "b4ce8ec58c674d06b33777bf954f5940",
+              "reason": "No reason provided for MattermostBudgetApprovalPipelineTask"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "5f1fefece528405b8235decc781c6252",
+              "reason": "Budget summary table not posted in channel (missing departments, ROI info, or table format)"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "434ed45f50f74e9398b71e4aecbc6486",
+              "reason": "Budget summary table not posted in channel (missing departments, ROI info, or table format)"
+            }
+          ]
+        },
+        {
+          "task_id": "MattermostCreateChannelTask",
+          "bucket": "split",
+          "group": "work",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.4666666666666667,
+          "n_trials": 7,
+          "n_scored": 6,
+          "n_unscored": 1,
+          "unscored_outcomes": {
+            "no_result": 1
+          },
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3903
+          ],
+          "wilson95_width": 0.3903,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.6,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 6,
+            "mean": 23.3333,
+            "sd": 1.0328,
+            "min": 22.0,
+            "p05": 22.0,
+            "median": 24.0,
+            "p95": 24.0,
+            "max": 24.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 232.06,
+            "sd": 19.2369,
+            "min": 211.77,
+            "p05": 212.706,
+            "median": 228.15,
+            "p95": 260.915,
+            "max": 268.43
+          },
+          "absorbed_retries": 9,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 24,
+              "run_id": "d36269665800455c906316e91cb77dee",
+              "reason": "Number of members in the channel is not correct"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 22,
+              "run_id": "bcc73c7391c345368688e24a02624c4a",
+              "reason": "Number of members in the channel is not correct"
+            },
+            {
+              "trial": 6,
+              "outcome": "no_result",
+              "score": null,
+              "pass": null,
+              "steps": 0,
+              "run_id": "2620c605b7294b2283e0e75ae1508ced",
+              "reason": null
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 24,
+              "run_id": "f6422a47b9474276a7d930bf44c7967b",
+              "reason": "Number of members in the channel is not correct"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 24,
+              "run_id": "93fa619a973c4f99ba028da534bccb8b",
+              "reason": "Number of members in the channel is not correct"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 24,
+              "run_id": "fac77945a80440fca2605c340e37f23d",
+              "reason": "Number of members in the channel is not correct"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 22,
+              "run_id": "deb745804b424182afdb730e61cd03ed",
+              "reason": "Number of members in the channel is not correct"
+            }
+          ]
+        },
+        {
+          "task_id": "MattermostEmailTask",
+          "bucket": "split",
+          "group": "work",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.5333333333333333,
+          "n_trials": 7,
+          "n_scored": 6,
+          "n_unscored": 1,
+          "unscored_outcomes": {
+            "no_result": 1
+          },
+          "passes": 2,
+          "pass_rate": 0.3333,
+          "wilson95": [
+            0.0968,
+            0.7
+          ],
+          "wilson95_width": 0.6032,
+          "flipped": true,
+          "flip_rate": 0.5333,
+          "flip_rate_max": 0.6,
+          "pass_rate_unscored_as_fail": 0.2857,
+          "steps": {
+            "n": 6,
+            "mean": 20.8333,
+            "sd": 0.7528,
+            "min": 20.0,
+            "p05": 20.0,
+            "median": 21.0,
+            "p95": 21.75,
+            "max": 22.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 274.11,
+            "sd": 27.426,
+            "min": 216.43,
+            "p05": 231.706,
+            "median": 284.81,
+            "p95": 295.081,
+            "max": 295.27
+          },
+          "absorbed_retries": 9,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 20,
+              "run_id": "d2d02c4afb7745e58b4d87df0139f4c9",
+              "reason": "Subject or body does not contain the tracking code: Signed Contract from Sam Hi Legal Team,"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 21,
+              "run_id": "81ab3ce3c6904d8693ac9018ef3c2c20",
+              "reason": "No reason provided for MattermostEmailTask"
+            },
+            {
+              "trial": 6,
+              "outcome": "no_result",
+              "score": null,
+              "pass": null,
+              "steps": 0,
+              "run_id": "89873f0c2a5b42bfa5077e84e7577f03",
+              "reason": null
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 20,
+              "run_id": "f34ee21bacc94243b742a2f5597dc681",
+              "reason": "No reason provided for MattermostEmailTask"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 22,
+              "run_id": "645d0e280d65472d892ef4847d734606",
+              "reason": "Subject or body does not contain the tracking code: Signed Contract from Sam Hi Legal Team,"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 21,
+              "run_id": "3d231850a95940f9bb8a2875f8d61684",
+              "reason": "Subject or body does not contain the tracking code: Sam's Signed Contract for Review Hi Legal Team,"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 21,
+              "run_id": "350ea20c15cc436382d298a817810d16",
+              "reason": "Subject or body does not contain the tracking code: Signed Contract from Sam Hi Legal Team,"
+            }
+          ]
+        },
+        {
+          "task_id": "MattermostProjectStatusReportTask",
+          "bucket": "all_fail",
+          "group": "work",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 7,
+            "mean": 50.0,
+            "sd": 0.0,
+            "min": 50.0,
+            "p05": 50.0,
+            "median": 50.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 559.3086,
+            "sd": 27.3672,
+            "min": 512.17,
+            "p05": 520.651,
+            "median": 561.95,
+            "p95": 590.734,
+            "max": 596.29
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "34e62dc0160047128ff8343ea9babac4",
+              "reason": "Escalation event for 'Payment Integration' not created"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "867f2619e5d845b3b56e2523c37b79da",
+              "reason": "No email sent"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "e4df95b479864c25ba30509ffe62d5f9",
+              "reason": "No email sent"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "0027fad3dc1c405a8635dc0479f90600",
+              "reason": "On-track item 'Authentication Module' not in on-track section"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "e881722fd1db4b5db14a41d9a9a774f8",
+              "reason": "No email sent"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "9c68bfa1dfba481b83466293896cfb50",
+              "reason": "On-track item 'API Gateway Setup' not in on-track section"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "980262923cbe4f43afd691dfa5bd76ee",
+              "reason": "Escalation event for 'Payment Integration' not created"
+            }
+          ]
+        },
+        {
+          "task_id": "MattermostResourceConflictResolutionTask",
+          "bucket": "all_fail",
+          "group": "work",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 7,
+            "mean": 50.0,
+            "sd": 0.0,
+            "min": 50.0,
+            "p05": 50.0,
+            "median": 50.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 513.0686,
+            "sd": 52.092,
+            "min": 466.82,
+            "p05": 468.068,
+            "median": 491.94,
+            "p95": 586.712,
+            "max": 588.74
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "273a18bd3d0f4422aaabec4618ffc88c",
+              "reason": "No email sent"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "6dcdddf64f3e4cabb71fe19c27bc704c",
+              "reason": "No email sent"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "9fea198d50904df4966aa6c89f6af222",
+              "reason": "No email sent"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "631cb94e66864354b538cc058c98c5d1",
+              "reason": "No email sent"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "18268b495eb04853b5e8465c152d184f",
+              "reason": "No email sent"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "cdc292d9a2484609bb48ccddbf08fe1b",
+              "reason": "No email sent"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "956dfbb9b6e94ba5a06db41731caf95f",
+              "reason": "No email sent"
+            }
+          ]
+        },
+        {
+          "task_id": "OpenFlightModeTask",
+          "bucket": "all_pass",
+          "group": "settings",
+          "randomized_setup": false,
+          "public_pass_fraction": 1.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 7,
+          "pass_rate": 1.0,
+          "wilson95": [
+            0.6457,
+            1.0
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 1.0,
+          "steps": {
+            "n": 7,
+            "mean": 6.2857,
+            "sd": 1.7043,
+            "min": 4.0,
+            "p05": 4.3,
+            "median": 6.0,
+            "p95": 8.7,
+            "max": 9.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 113.3143,
+            "sd": 28.8574,
+            "min": 68.41,
+            "p05": 77.881,
+            "median": 108.45,
+            "p95": 151.188,
+            "max": 153.78
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 5,
+              "run_id": "633cb87413094284bb31a9fc419aab1c",
+              "reason": "Success"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 8,
+              "run_id": "252b411319694c96b6c5735a4c00ed16",
+              "reason": "Success"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "a1c1d71a5ef4427f8d261d93717f4ac1",
+              "reason": "Success"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 6,
+              "run_id": "bdbdf8abc3a34019877d26e313193975",
+              "reason": "Success"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 4,
+              "run_id": "96829b564f4d405da0a913202e8caf25",
+              "reason": "Success"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 6,
+              "run_id": "070916dfa29f4bec8fdf43235ff53907",
+              "reason": "Success"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 6,
+              "run_id": "b29f9003baf34476a45c9d09c1fd6b56",
+              "reason": "Success"
+            }
+          ]
+        },
+        {
+          "task_id": "ReadQwen3PaperTask5",
+          "bucket": "all_fail",
+          "group": "native",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 7,
+            "mean": 44.5714,
+            "sd": 14.3626,
+            "min": 12.0,
+            "p05": 23.4,
+            "median": 50.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 493.5614,
+            "sd": 157.132,
+            "min": 139.36,
+            "p05": 255.109,
+            "median": 550.46,
+            "p95": 574.003,
+            "max": 579.16
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "2a4b7de9385b4bb49f86492c2ae4ec4d",
+              "reason": "incorrect. Expected: vie Latn,khm Khmr, Got:"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 12,
+              "run_id": "fc065eabfdaa485ba308bfb4bc737b09",
+              "reason": "incorrect. Expected: vie Latn,khm Khmr, Got:"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "f14a4d6a9286478a8efe387f23fa484b",
+              "reason": "incorrect. Expected: vie Latn,khm Khmr, Got:"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "52cc154a88da476493b7a5df396ec48f",
+              "reason": "incorrect. Expected: vie Latn,khm Khmr, Got:"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "f8840805d4c34f19832d104e6345f786",
+              "reason": "incorrect. Expected: vie Latn,khm Khmr, Got:"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "c1b11c69214947cfa9204f7afb5da6b0",
+              "reason": "incorrect. Expected: vie Latn,khm Khmr, Got:"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "464b1c17d5c3416b82ca1c878e0c4f09",
+              "reason": "incorrect. Expected: vie Latn,khm Khmr, Got:"
+            }
+          ]
+        },
+        {
+          "task_id": "SMSManagement",
+          "bucket": "all_fail",
+          "group": "native",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 0,
+          "pass_rate": 0.0,
+          "wilson95": [
+            0.0,
+            0.3543
+          ],
+          "wilson95_width": 0.3543,
+          "flipped": false,
+          "flip_rate": 0.0,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.0,
+          "steps": {
+            "n": 7,
+            "mean": 50.0,
+            "sd": 0.0,
+            "min": 50.0,
+            "p05": 50.0,
+            "median": 50.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 579.15,
+            "sd": 41.2398,
+            "min": 525.36,
+            "p05": 529.503,
+            "median": 591.73,
+            "p95": 626.181,
+            "max": 629.1
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "f9a72a9b99e048839738ba851d703d6c",
+              "reason": "Spam message found!"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "1edea6807b8441a09ca858b4e4e3de39",
+              "reason": "Spam message found!"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "241a3c823d9f469bb37ef307124a8ae1",
+              "reason": "Spam message found!"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "8409952cef6f45799c8e3b0647f5ba4f",
+              "reason": "Spam message found!"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "f4e19fa48411448795bb854c5a7b0cb7",
+              "reason": "Spam message found!"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "5107faaf73e9449e9f6d122efbb54a62",
+              "reason": "Spam message found!"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "203bd94c60ee4812b4b343f9fd1a1f52",
+              "reason": "Spam message found!"
+            }
+          ]
+        },
+        {
+          "task_id": "ScheduleLunchViaSmsTask",
+          "bucket": "split",
+          "group": "calendar",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.4666666666666667,
+          "n_trials": 7,
+          "n_scored": 6,
+          "n_unscored": 1,
+          "unscored_outcomes": {
+            "no_result": 1
+          },
+          "passes": 4,
+          "pass_rate": 0.6667,
+          "wilson95": [
+            0.3,
+            0.9032
+          ],
+          "wilson95_width": 0.6032,
+          "flipped": true,
+          "flip_rate": 0.5333,
+          "flip_rate_max": 0.6,
+          "pass_rate_unscored_as_fail": 0.5714,
+          "steps": {
+            "n": 6,
+            "mean": 25.8333,
+            "sd": 3.7639,
+            "min": 22.0,
+            "p05": 22.5,
+            "median": 25.0,
+            "p95": 31.25,
+            "max": 33.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 282.4114,
+            "sd": 71.167,
+            "min": 165.58,
+            "p05": 184.489,
+            "median": 299.32,
+            "p95": 366.571,
+            "max": 389.17
+          },
+          "absorbed_retries": 9,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 24,
+              "run_id": "dd3fa1e606f44927a59ffc342f352d3f",
+              "reason": "Success"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 22,
+              "run_id": "93960d5b35604321a6fa7414fcd3c7b9",
+              "reason": "Calendar event not found for Oct 17, 2025 11:00-12:00. Found 17 total events."
+            },
+            {
+              "trial": 6,
+              "outcome": "no_result",
+              "score": null,
+              "pass": null,
+              "steps": 0,
+              "run_id": "e6bf86bc23434cd581fa8f0d67147a55",
+              "reason": null
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 25,
+              "run_id": "4cdb11b026524d3dbfa9cb55cf5d8723",
+              "reason": "Success"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 26,
+              "run_id": "bda2883651a841a5bd057867d3634922",
+              "reason": "Calendar event not found for Oct 17, 2025 11:00-12:00. Found 17 total events."
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 33,
+              "run_id": "3ea3e5ef307040d0ac117b18a84386f2",
+              "reason": "Success"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 25,
+              "run_id": "c7bcb4e2ca1a4d149a6c859e0961adf5",
+              "reason": "Success"
+            }
+          ]
+        },
+        {
+          "task_id": "SendFormsTask",
+          "bucket": "split",
+          "group": "gmail",
+          "randomized_setup": false,
+          "public_pass_fraction": 0.5333333333333333,
+          "n_trials": 7,
+          "n_scored": 6,
+          "n_unscored": 1,
+          "unscored_outcomes": {
+            "no_result": 1
+          },
+          "passes": 1,
+          "pass_rate": 0.1667,
+          "wilson95": [
+            0.0301,
+            0.5635
+          ],
+          "wilson95_width": 0.5334,
+          "flipped": true,
+          "flip_rate": 0.3333,
+          "flip_rate_max": 0.6,
+          "pass_rate_unscored_as_fail": 0.1429,
+          "steps": {
+            "n": 6,
+            "mean": 46.1667,
+            "sd": 6.1455,
+            "min": 36.0,
+            "p05": 37.25,
+            "median": 50.0,
+            "p95": 50.0,
+            "max": 50.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 391.9329,
+            "sd": 110.1677,
+            "min": 170.7,
+            "p05": 218.16,
+            "median": 430.09,
+            "p95": 480.877,
+            "max": 486.4
+          },
+          "absorbed_retries": 9,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "4453b0e170b94f8b9e8589d63f65e781",
+              "reason": "No email found"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "0b4f30f460564b8c89ffe6036b4bc315",
+              "reason": "No email found"
+            },
+            {
+              "trial": 6,
+              "outcome": "no_result",
+              "score": null,
+              "pass": null,
+              "steps": 0,
+              "run_id": "8aecf8b5f8fd4d78bf1a5cf6c552fadf",
+              "reason": null
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "9f320a37f40e43dfa382022ca7869119",
+              "reason": "No email found"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 36,
+              "run_id": "f9438aadfaa8489093aae6cf4223ce0c",
+              "reason": "correct answer"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 41,
+              "run_id": "16eb97f1f2b24f279fbddd44c061f732",
+              "reason": "incorrect email - unexpected attachment found"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 50,
+              "run_id": "23c034cc9f3945e7b240bad2a7005e45",
+              "reason": "No email found"
+            }
+          ]
+        },
+        {
+          "task_id": "TakeSelfieTask",
+          "bucket": "all_pass",
+          "group": "native",
+          "randomized_setup": false,
+          "public_pass_fraction": 1.0,
+          "n_trials": 7,
+          "n_scored": 7,
+          "n_unscored": 0,
+          "unscored_outcomes": {},
+          "passes": 6,
+          "pass_rate": 0.8571,
+          "wilson95": [
+            0.4869,
+            0.9743
+          ],
+          "wilson95_width": 0.4874,
+          "flipped": true,
+          "flip_rate": 0.2857,
+          "flip_rate_max": 0.5714,
+          "pass_rate_unscored_as_fail": 0.8571,
+          "steps": {
+            "n": 7,
+            "mean": 11.7143,
+            "sd": 4.5356,
+            "min": 6.0,
+            "p05": 6.9,
+            "median": 10.0,
+            "p95": 18.1,
+            "max": 19.0
+          },
+          "duration_s": {
+            "n": 7,
+            "mean": 173.1657,
+            "sd": 76.5615,
+            "min": 81.23,
+            "p05": 91.055,
+            "median": 169.12,
+            "p95": 285.198,
+            "max": 310.59
+          },
+          "absorbed_retries": 0,
+          "trial_outcomes": [
+            {
+              "trial": 4,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 16,
+              "run_id": "f172dc8ca77d4232a8fce659f390dde9",
+              "reason": "Photo taken successfully (1 new photo(s))"
+            },
+            {
+              "trial": 5,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 19,
+              "run_id": "14a85b3c782b4196b008cbfaf3ecd11a",
+              "reason": "Photo taken successfully (1 new photo(s))"
+            },
+            {
+              "trial": 6,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "cd0048f4b3ad4672ada2dfe296d85ff8",
+              "reason": "Photo taken successfully (1 new photo(s))"
+            },
+            {
+              "trial": 7,
+              "outcome": "scored",
+              "score": 0.0,
+              "pass": false,
+              "steps": 6,
+              "run_id": "56d6c07eb9ec46148c4e36d38cd1ba4e",
+              "reason": "No new photo detected"
+            },
+            {
+              "trial": 8,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 9,
+              "run_id": "c6bcbc81f90a4b1e8c73a6b46a6aaca8",
+              "reason": "Photo taken successfully (1 new photo(s))"
+            },
+            {
+              "trial": 9,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 13,
+              "run_id": "930571dfe217471fa524717ab6229821",
+              "reason": "Photo taken successfully (1 new photo(s))"
+            },
+            {
+              "trial": 10,
+              "outcome": "scored",
+              "score": 1.0,
+              "pass": true,
+              "steps": 10,
+              "run_id": "c1423e5a852e4c16ba3b19ad54d16eb9",
+              "reason": "Photo taken successfully (1 new photo(s))"
+            }
+          ]
+        }
+      ],
+      "flips": {
+        "n_tasks_with_2plus_scored_trials": 29,
+        "n_flipped": 8,
+        "flipped_task_ids": [
+          "CVEmailTask",
+          "DownloadSendReceiptTask",
+          "MastodonImportMutedUsersTask",
+          "MattermostBudgetApprovalPipelineTask",
+          "MattermostEmailTask",
+          "ScheduleLunchViaSmsTask",
+          "SendFormsTask",
+          "TakeSelfieTask"
+        ],
+        "mean_flip_rate": 0.1215,
+        "ranked_by_instability": [
+          {
+            "task_id": "CVEmailTask",
+            "bucket": "split",
+            "passes": 3,
+            "n_scored": 6,
+            "pass_rate": 0.5,
+            "flip_rate": 0.6,
+            "wilson95": [
+              0.1876,
+              0.8124
+            ]
+          },
+          {
+            "task_id": "MattermostEmailTask",
+            "bucket": "split",
+            "passes": 2,
+            "n_scored": 6,
+            "pass_rate": 0.3333,
+            "flip_rate": 0.5333,
+            "wilson95": [
+              0.0968,
+              0.7
+            ]
+          },
+          {
+            "task_id": "ScheduleLunchViaSmsTask",
+            "bucket": "split",
+            "passes": 4,
+            "n_scored": 6,
+            "pass_rate": 0.6667,
+            "flip_rate": 0.5333,
+            "wilson95": [
+              0.3,
+              0.9032
+            ]
+          },
+          {
+            "task_id": "MastodonImportMutedUsersTask",
+            "bucket": "split",
+            "passes": 2,
+            "n_scored": 7,
+            "pass_rate": 0.2857,
+            "flip_rate": 0.4762,
+            "wilson95": [
+              0.0822,
+              0.6411
+            ]
+          },
+          {
+            "task_id": "MattermostBudgetApprovalPipelineTask",
+            "bucket": "split",
+            "passes": 2,
+            "n_scored": 7,
+            "pass_rate": 0.2857,
+            "flip_rate": 0.4762,
+            "wilson95": [
+              0.0822,
+              0.6411
+            ]
+          },
+          {
+            "task_id": "SendFormsTask",
+            "bucket": "split",
+            "passes": 1,
+            "n_scored": 6,
+            "pass_rate": 0.1667,
+            "flip_rate": 0.3333,
+            "wilson95": [
+              0.0301,
+              0.5635
+            ]
+          },
+          {
+            "task_id": "DownloadSendReceiptTask",
+            "bucket": "split",
+            "passes": 1,
+            "n_scored": 7,
+            "pass_rate": 0.1429,
+            "flip_rate": 0.2857,
+            "wilson95": [
+              0.0257,
+              0.5131
+            ]
+          },
+          {
+            "task_id": "TakeSelfieTask",
+            "bucket": "all_pass",
+            "passes": 6,
+            "n_scored": 7,
+            "pass_rate": 0.8571,
+            "flip_rate": 0.2857,
+            "wilson95": [
+              0.4869,
+              0.9743
+            ]
+          },
+          {
+            "task_id": "AcceptMeetingTask",
+            "bucket": "all_pass",
+            "passes": 6,
+            "n_scored": 6,
+            "pass_rate": 1.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.6097,
+              1.0
+            ]
+          },
+          {
+            "task_id": "BidFileRenameTask",
+            "bucket": "split",
+            "passes": 0,
+            "n_scored": 7,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3543
+            ]
+          },
+          {
+            "task_id": "ChangeWallpaperTask",
+            "bucket": "all_pass",
+            "passes": 7,
+            "n_scored": 7,
+            "pass_rate": 1.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.6457,
+              1.0
+            ]
+          },
+          {
+            "task_id": "CheckEventTimeTask",
+            "bucket": "all_pass",
+            "passes": 0,
+            "n_scored": 7,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3543
+            ]
+          },
+          {
+            "task_id": "CheckInterviewTimesTask",
+            "bucket": "all_fail",
+            "passes": 0,
+            "n_scored": 7,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3543
+            ]
+          },
+          {
+            "task_id": "CloseFlightModeTask",
+            "bucket": "all_pass",
+            "passes": 7,
+            "n_scored": 7,
+            "pass_rate": 1.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.6457,
+              1.0
+            ]
+          },
+          {
+            "task_id": "GoogleMapsAlibabaSouthNeighborTask",
+            "bucket": "all_pass",
+            "passes": 7,
+            "n_scored": 7,
+            "pass_rate": 1.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.6457,
+              1.0
+            ]
+          },
+          {
+            "task_id": "GraduationMassEmailTask",
+            "bucket": "split",
+            "passes": 0,
+            "n_scored": 7,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3543
+            ]
+          },
+          {
+            "task_id": "LocalFileManagementTask2",
+            "bucket": "all_fail",
+            "passes": 0,
+            "n_scored": 7,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3543
+            ]
+          },
+          {
+            "task_id": "MastodonCalendarMultiMemosTask",
+            "bucket": "all_fail",
+            "passes": 0,
+            "n_scored": 7,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3543
+            ]
+          },
+          {
+            "task_id": "MastodonChangeHeaderTask",
+            "bucket": "all_pass",
+            "passes": 7,
+            "n_scored": 7,
+            "pass_rate": 1.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.6457,
+              1.0
+            ]
+          },
+          {
+            "task_id": "MastodonGetServerInfoTask",
+            "bucket": "all_fail",
+            "passes": 0,
+            "n_scored": 7,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3543
+            ]
+          },
+          {
+            "task_id": "MastodonNewPostTask",
+            "bucket": "all_pass",
+            "passes": 7,
+            "n_scored": 7,
+            "pass_rate": 1.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.6457,
+              1.0
+            ]
+          },
+          {
+            "task_id": "MastodonServerInfoReportTask",
+            "bucket": "all_fail",
+            "passes": 0,
+            "n_scored": 7,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3543
+            ]
+          },
+          {
+            "task_id": "MastodonShareLocationTask",
+            "bucket": "all_fail",
+            "passes": 0,
+            "n_scored": 7,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3543
+            ]
+          },
+          {
+            "task_id": "MattermostCreateChannelTask",
+            "bucket": "split",
+            "passes": 0,
+            "n_scored": 6,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3903
+            ]
+          },
+          {
+            "task_id": "MattermostProjectStatusReportTask",
+            "bucket": "all_fail",
+            "passes": 0,
+            "n_scored": 7,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3543
+            ]
+          },
+          {
+            "task_id": "MattermostResourceConflictResolutionTask",
+            "bucket": "all_fail",
+            "passes": 0,
+            "n_scored": 7,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3543
+            ]
+          },
+          {
+            "task_id": "OpenFlightModeTask",
+            "bucket": "all_pass",
+            "passes": 7,
+            "n_scored": 7,
+            "pass_rate": 1.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.6457,
+              1.0
+            ]
+          },
+          {
+            "task_id": "ReadQwen3PaperTask5",
+            "bucket": "all_fail",
+            "passes": 0,
+            "n_scored": 7,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3543
+            ]
+          },
+          {
+            "task_id": "SMSManagement",
+            "bucket": "all_fail",
+            "passes": 0,
+            "n_scored": 7,
+            "pass_rate": 0.0,
+            "flip_rate": 0.0,
+            "wilson95": [
+              0.0,
+              0.3543
+            ]
+          }
+        ],
+        "n_trials_typical": 7,
+        "flip_rate_max_typical": 0.5714,
+        "definition": "flip_rate = discordant trial pairs / all trial pairs = k(n-k) / C(n,2). Its maximum is below 1 and depends on n; flip_rate_max is recorded per task."
+      },
+      "rerun": {
+        "plugin": {
+          "n_slots": 29,
+          "n_resamples": 10000,
+          "mean_pct": 35.2997,
+          "sd_pp": 4.1878,
+          "ci95_pct": [
+            27.5862,
+            44.8276
+          ],
+          "ci95_width_pp": 17.2414,
+          "counts_hist": {
+            "7": 55,
+            "8": 622,
+            "9": 2069,
+            "10": 3214,
+            "11": 2584,
+            "12": 1147,
+            "13": 272,
+            "14": 32,
+            "15": 5
+          },
+          "definition": "Bernoulli(p_hat) per task. Lower bound: it pretends 10 trials measured p exactly."
+        },
+        "posterior": {
+          "n_slots": 29,
+          "n_resamples": 10000,
+          "mean_pct": 37.081,
+          "sd_pp": 5.8651,
+          "ci95_pct": [
+            27.5862,
+            48.2759
+          ],
+          "ci95_width_pp": 20.6897,
+          "counts_hist": {
+            "5": 4,
+            "6": 31,
+            "7": 193,
+            "8": 640,
+            "9": 1425,
+            "10": 2171,
+            "11": 2355,
+            "12": 1676,
+            "13": 959,
+            "14": 392,
+            "15": 122,
+            "16": 26,
+            "17": 3,
+            "18": 3
+          },
+          "definition": "p drawn from Jeffreys posterior Beta(k+0.5, n-k+0.5), then Bernoulli(p). Headline: includes the fact that p itself is only estimated."
+        }
+      },
+      "estimate": {
+        "n_resamples": 10000,
+        "mean_pct": 35.303,
+        "sd_pp": 1.6544,
+        "ci95_pct": [
+          32.1018,
+          38.5878
+        ],
+        "ci95_width_pp": 6.486,
+        "definition": "Trials resampled with replacement within each task; the spread is the precision of this experiment's own estimate, not the spread of a future run."
+      },
+      "gui_only_extrapolation": {
+        "strata_sizes": {
+          "split": 98,
+          "all_pass": 9,
+          "all_fail": 10
+        },
+        "strata_measured": {
+          "all_fail": 10,
+          "all_pass": 9,
+          "split": 10
+        },
+        "strata_unmeasured": {
+          "all_fail": 0,
+          "all_pass": 0,
+          "split": 88
+        },
+        "total_slots": 117,
+        "fixed_taskset": {
+          "n_slots": 117,
+          "n_resamples": 10000,
+          "mean_pct": 26.0734,
+          "sd_pp": 3.1271,
+          "ci95_pct": [
+            19.6581,
+            32.4786
+          ],
+          "ci95_width_pp": 12.8205,
+          "counts_hist": {
+            "17": 1,
+            "19": 4,
+            "20": 19,
+            "21": 28,
+            "22": 74,
+            "23": 130,
+            "24": 216,
+            "25": 346,
+            "26": 518,
+            "27": 745,
+            "28": 897,
+            "29": 1018,
+            "30": 1016,
+            "31": 1086,
+            "32": 994,
+            "33": 846,
+            "34": 701,
+            "35": 513,
+            "36": 330,
+            "37": 218,
+            "38": 137,
+            "39": 79,
+            "40": 48,
+            "41": 16,
+            "42": 12,
+            "43": 3,
+            "44": 4,
+            "46": 1
+          },
+          "definition": "Stratum rates carried to their real sizes; only Bernoulli noise. This is the width to compare with a leaderboard gap."
+        },
+        "resampled_tasks": {
+          "n_slots": 117,
+          "n_resamples": 10000,
+          "mean_pct": 26.6153,
+          "sd_pp": 3.6476,
+          "ci95_pct": [
+            19.6581,
+            34.188
+          ],
+          "ci95_width_pp": 14.5299,
+          "counts_hist": {
+            "16": 1,
+            "17": 1,
+            "18": 2,
+            "19": 13,
+            "20": 23,
+            "21": 54,
+            "22": 89,
+            "23": 157,
+            "24": 213,
+            "25": 360,
+            "26": 484,
+            "27": 572,
+            "28": 732,
+            "29": 869,
+            "30": 892,
+            "31": 962,
+            "32": 902,
+            "33": 797,
+            "34": 752,
+            "35": 601,
+            "36": 436,
+            "37": 363,
+            "38": 293,
+            "39": 161,
+            "40": 114,
+            "41": 70,
+            "42": 37,
+            "43": 23,
+            "44": 12,
+            "45": 9,
+            "46": 1,
+            "47": 2,
+            "48": 1,
+            "49": 1,
+            "50": 1
+          },
+          "definition": "Also resamples which split-bucket tasks are in the suite. Wider; it answers a different question."
+        },
+        "caveat": "An extrapolation, not a measurement. It assumes the 10 measured split-bucket tasks are representative of the other 88, and that one model's instability is informative about another's."
+      },
+      "detectable_difference": {
+        "single_run_sd_pp": 3.1271,
+        "difference_sd_pp": 4.4224,
+        "mdd95_pp": 8.6677,
+        "mdd95_power80_pp": 12.3897,
+        "definition": {
+          "mdd95_pp": "A gap smaller than this between two single runs is within what noise alone produces 95% of the time when the two models are in fact equal.",
+          "mdd95_power80_pp": "The gap needed for a single-run comparison to come out significant 80% of the time."
+        },
+        "basis": "gui_only_extrapolation.fixed_taskset"
+      },
+      "statistical_power": {
+        "sufficient": true,
+        "reasons": [],
+        "n_tasks_scored": 29,
+        "min_scored_trials_per_task": 6,
+        "note": "Per-task numbers are always valid. The suite-level interval, the minimum detectable difference and the leaderboard comparison are only reported when this passes."
+      },
+      "leaderboard_gaps": {
+        "source": "data/public_matrix.json",
+        "mdd95_pp_applied": 8.6677,
+        "n_entries": 18,
+        "n_entries_on_board": 40,
+        "runs_distribution": {
+          "3": 3,
+          "1": 37
+        },
+        "n_single_run_entries": 37,
+        "n_repeated_entries": 3,
+        "n_adjacent_pairs": 17,
+        "entries": [
+          {
+            "model": "Qwen-UI-Agent",
+            "gui_only": 82.1
+          },
+          {
+            "model": "Kimi-K3",
+            "gui_only": 74.4
+          },
+          {
+            "model": "GPT-5.6-Sol",
+            "gui_only": 70.1
+          },
+          {
+            "model": "MagicGUI-Agent (GPT-5.4 + Seed-1.8)",
+            "gui_only": 66.7
+          },
+          {
+            "model": "KnowAct-GUIClaw",
+            "gui_only": 64.1
+          },
+          {
+            "model": "Seed-2.0-Pro",
+            "gui_only": 63.2
+          },
+          {
+            "model": "GPT-5.5",
+            "gui_only": 62.4
+          },
+          {
+            "model": "Gemini-3.1-Pro-Preview",
+            "gui_only": 58.1
+          },
+          {
+            "model": "Claude-Opus-4.7",
+            "gui_only": 56.4
+          },
+          {
+            "model": "Kimi-K2.6",
+            "gui_only": 55.6
+          },
+          {
+            "model": "Kimi-K2.5",
+            "gui_only": 49.6
+          },
+          {
+            "model": "Claude-Opus-4.6",
+            "gui_only": 44.5
+          },
+          {
+            "model": "Qwen3.5-397B-A17B",
+            "gui_only": 42.7
+          },
+          {
+            "model": "ForgeOwl-8B",
+            "gui_only": 41.0
+          },
+          {
+            "model": "Qwen3.5-122B-A10B",
+            "gui_only": 35
+          },
+          {
+            "model": "MemGUI-Agent-235B",
+            "gui_only": 29.1
+          },
+          {
+            "model": "MemGUI-8B-SFT",
+            "gui_only": 17.9
+          },
+          {
+            "model": "ForgeQwen3-8B",
+            "gui_only": 10.3
+          }
+        ],
+        "adjacent_pairs": [
+          {
+            "higher": "Qwen-UI-Agent",
+            "lower": "Kimi-K3",
+            "gap_pp": 7.7,
+            "within_noise": true
+          },
+          {
+            "higher": "Kimi-K3",
+            "lower": "GPT-5.6-Sol",
+            "gap_pp": 4.3,
+            "within_noise": true
+          },
+          {
+            "higher": "GPT-5.6-Sol",
+            "lower": "MagicGUI-Agent (GPT-5.4 + Seed-1.8)",
+            "gap_pp": 3.4,
+            "within_noise": true
+          },
+          {
+            "higher": "MagicGUI-Agent (GPT-5.4 + Seed-1.8)",
+            "lower": "KnowAct-GUIClaw",
+            "gap_pp": 2.6,
+            "within_noise": true
+          },
+          {
+            "higher": "KnowAct-GUIClaw",
+            "lower": "Seed-2.0-Pro",
+            "gap_pp": 0.9,
+            "within_noise": true
+          },
+          {
+            "higher": "Seed-2.0-Pro",
+            "lower": "GPT-5.5",
+            "gap_pp": 0.8,
+            "within_noise": true
+          },
+          {
+            "higher": "GPT-5.5",
+            "lower": "Gemini-3.1-Pro-Preview",
+            "gap_pp": 4.3,
+            "within_noise": true
+          },
+          {
+            "higher": "Gemini-3.1-Pro-Preview",
+            "lower": "Claude-Opus-4.7",
+            "gap_pp": 1.7,
+            "within_noise": true
+          },
+          {
+            "higher": "Claude-Opus-4.7",
+            "lower": "Kimi-K2.6",
+            "gap_pp": 0.8,
+            "within_noise": true
+          },
+          {
+            "higher": "Kimi-K2.6",
+            "lower": "Kimi-K2.5",
+            "gap_pp": 6.0,
+            "within_noise": true
+          },
+          {
+            "higher": "Kimi-K2.5",
+            "lower": "Claude-Opus-4.6",
+            "gap_pp": 5.1,
+            "within_noise": true
+          },
+          {
+            "higher": "Claude-Opus-4.6",
+            "lower": "Qwen3.5-397B-A17B",
+            "gap_pp": 1.8,
+            "within_noise": true
+          },
+          {
+            "higher": "Qwen3.5-397B-A17B",
+            "lower": "ForgeOwl-8B",
+            "gap_pp": 1.7,
+            "within_noise": true
+          },
+          {
+            "higher": "ForgeOwl-8B",
+            "lower": "Qwen3.5-122B-A10B",
+            "gap_pp": 6.0,
+            "within_noise": true
+          },
+          {
+            "higher": "Qwen3.5-122B-A10B",
+            "lower": "MemGUI-Agent-235B",
+            "gap_pp": 5.9,
+            "within_noise": true
+          },
+          {
+            "higher": "MemGUI-Agent-235B",
+            "lower": "MemGUI-8B-SFT",
+            "gap_pp": 11.2,
+            "within_noise": false
+          },
+          {
+            "higher": "MemGUI-8B-SFT",
+            "lower": "ForgeQwen3-8B",
+            "gap_pp": 7.6,
+            "within_noise": true
+          }
+        ],
+        "n_adjacent_within_noise": 16,
+        "n_all_pairs": 153,
+        "n_all_pairs_within_noise": 39,
+        "caveat": "The noise floor was measured for one model on a 29-task pilot and is applied here to entries produced by other agents, other models and (see the report) other verifier versions. It is an indication of scale, not a re-scoring."
+      },
+      "leaderboard_gaps_withheld": null,
+      "subgroups": {
+        "by_bucket": {
+          "all_fail": {
+            "n_tasks": 10,
+            "mean_pass_rate": 0.0,
+            "n_flipped": 0,
+            "mean_flip_rate": 0.0
+          },
+          "all_pass": {
+            "n_tasks": 9,
+            "mean_pass_rate": 0.873,
+            "n_flipped": 1,
+            "mean_flip_rate": 0.0317
+          },
+          "split": {
+            "n_tasks": 10,
+            "mean_pass_rate": 0.2381,
+            "n_flipped": 7,
+            "mean_flip_rate": 0.3238
+          }
+        },
+        "randomized_setup": {
+          "note": "7 tasks randomise their own initial state and nothing in the codebase seeds the RNG (ENVIRONMENT.md §5). These measure instability of a task that is literally different each run -- a different quantity from the rest, so they are never pooled with them.",
+          "task_ids": [
+            "CVEmailTask"
+          ],
+          "n_tasks": 1,
+          "n_flipped": 1,
+          "mean_flip_rate": 0.6
+        }
+      },
+      "absorbed_retries": {
+        "total": 95,
+        "by_task": {
+          "AcceptMeetingTask": 9,
+          "CVEmailTask": 9,
+          "ChangeWallpaperTask": 9,
+          "DownloadSendReceiptTask": 1,
+          "MastodonGetServerInfoTask": 4,
+          "MastodonImportMutedUsersTask": 8,
+          "MastodonServerInfoReportTask": 9,
+          "MastodonShareLocationTask": 7,
+          "MattermostBudgetApprovalPipelineTask": 3,
+          "MattermostCreateChannelTask": 9,
+          "MattermostEmailTask": 9,
+          "ScheduleLunchViaSmsTask": 9,
+          "SendFormsTask": 9
+        },
+        "by_trial": {
+          "4": 3,
+          "5": 3,
+          "6": 68,
+          "7": 3,
+          "8": 7,
+          "9": 7,
+          "10": 4
+        },
+        "max_trial_share": 0.7158,
+        "note": "Backup directories left behind when the harness silently retried inside a task (ENVIRONMENT.md §2.2). Every one of these is instability that was absorbed before it could reach a score, so the measured variance is a floor."
+      },
+      "duration_s_total": 78486.31,
+      "leave_one_out": {
+        "method": "Each repetition round dropped in turn; every figure recomputed from scratch on what is left.",
+        "variants": [
+          {
+            "dropped_trial": 4,
+            "n_trials_left": 6,
+            "observed_range_pp": 8.0959,
+            "mdd95_pp": 8.9992,
+            "ci95_width_pp": 12.8205,
+            "n_flipped": 8,
+            "leaderboard_adjacent_within_noise": 16
+          },
+          {
+            "dropped_trial": 5,
+            "n_trials_left": 6,
+            "observed_range_pp": 8.0959,
+            "mdd95_pp": 8.5178,
+            "ci95_width_pp": 11.9658,
+            "n_flipped": 8,
+            "leaderboard_adjacent_within_noise": 16
+          },
+          {
+            "dropped_trial": 6,
+            "n_trials_left": 6,
+            "observed_range_pp": 6.8965,
+            "mdd95_pp": 8.1524,
+            "ci95_width_pp": 11.1111,
+            "n_flipped": 7,
+            "leaderboard_adjacent_within_noise": 16
+          },
+          {
+            "dropped_trial": 7,
+            "n_trials_left": 6,
+            "observed_range_pp": 8.0959,
+            "mdd95_pp": 8.4202,
+            "ci95_width_pp": 11.9658,
+            "n_flipped": 7,
+            "leaderboard_adjacent_within_noise": 16
+          },
+          {
+            "dropped_trial": 8,
+            "n_trials_left": 6,
+            "observed_range_pp": 8.0959,
+            "mdd95_pp": 8.0213,
+            "ci95_width_pp": 11.1111,
+            "n_flipped": 7,
+            "leaderboard_adjacent_within_noise": 16
+          },
+          {
+            "dropped_trial": 9,
+            "n_trials_left": 6,
+            "observed_range_pp": 8.0959,
+            "mdd95_pp": 8.7584,
+            "ci95_width_pp": 12.8205,
+            "n_flipped": 8,
+            "leaderboard_adjacent_within_noise": 16
+          },
+          {
+            "dropped_trial": 10,
+            "n_trials_left": 6,
+            "observed_range_pp": 8.0959,
+            "mdd95_pp": 9.005,
+            "ci95_width_pp": 12.8205,
+            "n_flipped": 8,
+            "leaderboard_adjacent_within_noise": 16
+          }
+        ],
+        "mdd95_pp_min": 8.0213,
+        "mdd95_pp_max": 9.005,
+        "observed_range_pp_min": 6.8965,
+        "observed_range_pp_max": 8.0959,
+        "leaderboard_adjacent_within_noise_min": 16,
+        "leaderboard_adjacent_within_noise_max": 16
+      },
+      "regime_comparison": {
+        "applicable": true,
+        "boundary_trial": 4,
+        "note": "The boundary is supplied, not fitted. See the report for what happened at it.",
+        "before": {
+          "trials": [
+            1,
+            2,
+            3
+          ],
+          "suite_scores_pct": [
+            55.17,
+            51.72,
+            48.28
+          ],
+          "incomplete_trials_excluded": [],
+          "n_runs": 87
+        },
+        "after": {
+          "trials": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "suite_scores_pct": [
+            31.03,
+            31.03,
+            39.13,
+            34.48,
+            37.93,
+            37.93,
+            34.48
+          ],
+          "incomplete_trials_excluded": [],
+          "n_runs": 203
+        },
+        "tasks_worse": 10,
+        "tasks_better": 0,
+        "tasks_unchanged": 19,
+        "sign_test_p": 0.001953,
+        "sign_test_meaning": "Probability of a split this one-sided if the two regimes differed only by chance. Small means something changed, not that the score is noisy.",
+        "tasks_that_moved": [
+          {
+            "task_id": "SendFormsTask",
+            "bucket": "split",
+            "before": 1.0,
+            "after": 0.1667,
+            "delta_pp": -83.33
+          },
+          {
+            "task_id": "BidFileRenameTask",
+            "bucket": "split",
+            "before": 0.6667,
+            "after": 0.0,
+            "delta_pp": -66.67
+          },
+          {
+            "task_id": "CheckEventTimeTask",
+            "bucket": "all_pass",
+            "before": 0.6667,
+            "after": 0.0,
+            "delta_pp": -66.67
+          },
+          {
+            "task_id": "MattermostCreateChannelTask",
+            "bucket": "split",
+            "before": 0.6667,
+            "after": 0.0,
+            "delta_pp": -66.67
+          },
+          {
+            "task_id": "DownloadSendReceiptTask",
+            "bucket": "split",
+            "before": 0.6667,
+            "after": 0.1429,
+            "delta_pp": -52.38
+          },
+          {
+            "task_id": "CVEmailTask",
+            "bucket": "split",
+            "before": 1.0,
+            "after": 0.5,
+            "delta_pp": -50.0
+          },
+          {
+            "task_id": "MastodonImportMutedUsersTask",
+            "bucket": "split",
+            "before": 0.6667,
+            "after": 0.2857,
+            "delta_pp": -38.1
+          },
+          {
+            "task_id": "MattermostEmailTask",
+            "bucket": "split",
+            "before": 0.6667,
+            "after": 0.3333,
+            "delta_pp": -33.33
+          },
+          {
+            "task_id": "TakeSelfieTask",
+            "bucket": "all_pass",
+            "before": 1.0,
+            "after": 0.8571,
+            "delta_pp": -14.29
+          },
+          {
+            "task_id": "MattermostBudgetApprovalPipelineTask",
+            "bucket": "split",
+            "before": 0.3333,
+            "after": 0.2857,
+            "delta_pp": -4.76
+          }
+        ],
+        "reasoning_tokens_per_action": {
+          "per_trial_median": {
+            "1": 132.48,
+            "2": 132.38,
+            "3": 133.11,
+            "4": 102.2,
+            "5": 98.78,
+            "6": 108.72,
+            "7": 105.86,
+            "8": 103.77,
+            "9": 108.38,
+            "10": 108.0
+          },
+          "before_median_of_medians": 132.48,
+          "after_median_of_medians": 105.86,
+          "change_pct": -20.09,
+          "change_pct_abs": 20.09,
+          "source": "data/traj_stats.json (scripts/scan_trajectories.py)"
+        },
+        "headline_regime": [
+          4,
+          10
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+\section{\texttt{temperature=0} is not determinism}
+\label{sec:determinism}
+
+Holding the model still is the first thing a careful experimenter does, and the
+obvious lever is greedy decoding with a fixed seed. It does not work, and the
+convenient way of checking that it works reports that it does.
+
+We sent the same prompt three times to each of two endpoints serving the same
+model, at \texttt{temperature=0} with \texttt{seed=42}. Both endpoints
+advertise \texttt{seed} support in the router's capability listing. All three
+completions differed on both endpoints, with lengths varying roughly twofold
+(1571 / 2812 / 1427 tokens on one, 2963 / 1448 / 1494 on the other).
+
+\paragraph{The trap.} An earlier version of this check used the prompt
+\emph{``Reply with exactly: OK''}. It returned byte-identical output twice, and
+we recorded that the endpoint was deterministic. It is not. Under greedy decoding a thirty-token answer will almost always come back
+byte-identical, because the divergence that matters accumulates over long
+generations; the check therefore cannot distinguish a deterministic endpoint
+from a non-deterministic one. \textbf{Determinism has to be probed at the
+output length the real workload produces.} We report this because the cheap
+check is the one a practitioner will reach for, and it gives the wrong answer
+in the reassuring direction.
+
+\paragraph{Relation to known results.} That low-precision inference is
+non-reproducible across serving configurations is established:
+\citet{yuan2025nondeterminism} trace it to the non-associativity of
+floating-point arithmetic and show that batch size, GPU count and GPU version
+alone move accuracy by up to nine points under \texttt{bfloat16} greedy
+decoding. Our contribution here is not the phenomenon. It is that the
+phenomenon is invisible to the standard sanity check, and that a hosted
+endpoint gives a practitioner no way to hold those variables fixed --- batch
+composition is a property of other customers' traffic.
+
+\paragraph{Consequence for the rest of this paper.} Because sampling cannot be
+held still, we do not claim any decomposition of variance into
+``environment'' and ``model'' parts. What Section~\ref{sec:noise} reports is
+the total variation that survives every control available to a careful
+experimenter, which is the quantity a reader comparing two leaderboard entries
+actually faces.

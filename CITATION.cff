@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this data or code, please cite it as below."
+title: "The Instrument Moves: Unrecorded Serving Changes in Agent Benchmarks"
+authors:
+  - family-names: Yi
+    given-names: Jingyuan
+    email: hi@jingyuanyi.com
+date-released: 2026-09-29
+repository-code: "https://github.com/Universeyi/instrument-moves"
+license: MIT
+type: software

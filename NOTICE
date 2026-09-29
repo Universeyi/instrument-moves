@@ -1,0 +1,18 @@
+This repository contains material derived from MobileWorld
+(https://github.com/Tongyi-MAI/MobileWorld, commit 83e7b8f),
+copyright the MobileWorld authors, licensed under the Apache License 2.0
+(http://www.apache.org/licenses/LICENSE-2.0).
+
+Derived material:
+- data/tasks.json, data/pilot_tasks.json: task names, goals and attributes
+  extracted from src/mobile_world/tasks/definitions/.
+- data/public_matrix.json, data/public_matrix.lenient.json: outcomes read from
+  the trajectory bundles and leaderboard published under site/.
+- data/runs.jsonl: the `reason` field is text returned by MobileWorld's
+  scoring server.
+- report/upstream_issues/ and ENVIRONMENT.md: short excerpts of MobileWorld
+  source code, quoted with file and line references.
+
+The MobileWorld source code itself is not redistributed here and was not
+modified. Names and e-mail addresses that appear in task goals are fictional
+values from the benchmark's own task definitions.

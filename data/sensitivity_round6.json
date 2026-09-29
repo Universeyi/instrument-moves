@@ -1,0 +1,629 @@
+{
+ "question": "Round 6 caught a ~1h HTTP 401 outage from the serving provider. It contributed 68 of the arm's silent retries, all 6 unscored runs, and the highest suite score of the regime (on a reduced denominator). Does the headline survive its removal?",
+ "generated_from": "data/runs.jsonl via scripts/analyze.py --trials 4:10 [--exclude-trials 6]",
+ "runs_sha256": "5425e4299f4317033ac15c216228c81a796c9d2e3097f16b900b3138847b9668",
+ "with_round6": {
+  "n_trials": 7,
+  "suite_scores_pct": [
+   31.0345,
+   31.0345,
+   39.1304,
+   34.4828,
+   37.931,
+   37.931,
+   34.4828
+  ],
+  "best_worst_spread_pp": 8.0959,
+  "headline_ci95_pct": [
+   27.5862,
+   48.2759
+  ],
+  "headline_ci95_width_pp": 20.6897,
+  "headline_sd_pp": 5.8651,
+  "extrapolated_117_ci95_pct": [
+   19.6581,
+   32.4786
+  ],
+  "extrapolated_117_width_pp": 12.8205,
+  "extrapolated_117_sd_pp": 3.1271,
+  "mdd95_pp": 8.6677,
+  "n_flipped": 8,
+  "flipped_task_ids": [
+   "CVEmailTask",
+   "DownloadSendReceiptTask",
+   "MastodonImportMutedUsersTask",
+   "MattermostBudgetApprovalPipelineTask",
+   "MattermostEmailTask",
+   "ScheduleLunchViaSmsTask",
+   "SendFormsTask",
+   "TakeSelfieTask"
+  ],
+  "n_scored_runs": 197,
+  "absorbed_retries": 95,
+  "leaderboard_adjacent_within_noise": 16
+ },
+ "without_round6": {
+  "n_trials": 6,
+  "suite_scores_pct": [
+   31.0345,
+   31.0345,
+   34.4828,
+   37.931,
+   37.931,
+   34.4828
+  ],
+  "best_worst_spread_pp": 6.8965,
+  "headline_ci95_pct": [
+   24.1379,
+   48.2759
+  ],
+  "headline_ci95_width_pp": 24.1379,
+  "headline_sd_pp": 5.9218,
+  "extrapolated_117_ci95_pct": [
+   18.8034,
+   29.9145
+  ],
+  "extrapolated_117_width_pp": 11.1111,
+  "extrapolated_117_sd_pp": 2.9412,
+  "mdd95_pp": 8.1524,
+  "n_flipped": 7,
+  "flipped_task_ids": [
+   "CVEmailTask",
+   "MastodonImportMutedUsersTask",
+   "MattermostBudgetApprovalPipelineTask",
+   "MattermostEmailTask",
+   "ScheduleLunchViaSmsTask",
+   "SendFormsTask",
+   "TakeSelfieTask"
+  ],
+  "n_scored_runs": 174,
+  "absorbed_retries": 27,
+  "leaderboard_adjacent_within_noise": 16
+ },
+ "deltas": {
+  "best_worst_spread_pp": -1.1994,
+  "headline_sd_pp": 0.0567,
+  "extrapolated_117_width_pp": -1.7094,
+  "mdd95_pp": -0.5153,
+  "n_flipped": -1,
+  "flipped_only_with_round6": [
+   "DownloadSendReceiptTask"
+  ],
+  "flipped_only_without_round6": []
+ },
+ "per_task": [
+  {
+   "task_id": "AcceptMeetingTask",
+   "bucket": "all_pass",
+   "with_round6": {
+    "passes": 6,
+    "n": 6,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 6,
+    "n": 6,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "BidFileRenameTask",
+   "bucket": "split",
+   "with_round6": {
+    "passes": 0,
+    "n": 7,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "CVEmailTask",
+   "bucket": "split",
+   "with_round6": {
+    "passes": 3,
+    "n": 6,
+    "rate": 0.5,
+    "flipped": true
+   },
+   "without_round6": {
+    "passes": 3,
+    "n": 6,
+    "rate": 0.5,
+    "flipped": true
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "ChangeWallpaperTask",
+   "bucket": "all_pass",
+   "with_round6": {
+    "passes": 7,
+    "n": 7,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 6,
+    "n": 6,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "CheckEventTimeTask",
+   "bucket": "all_pass",
+   "with_round6": {
+    "passes": 0,
+    "n": 7,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "CheckInterviewTimesTask",
+   "bucket": "all_fail",
+   "with_round6": {
+    "passes": 0,
+    "n": 7,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "CloseFlightModeTask",
+   "bucket": "all_pass",
+   "with_round6": {
+    "passes": 7,
+    "n": 7,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 6,
+    "n": 6,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "DownloadSendReceiptTask",
+   "bucket": "split",
+   "with_round6": {
+    "passes": 1,
+    "n": 7,
+    "rate": 0.1429,
+    "flipped": true
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": -14.29
+  },
+  {
+   "task_id": "GoogleMapsAlibabaSouthNeighborTask",
+   "bucket": "all_pass",
+   "with_round6": {
+    "passes": 7,
+    "n": 7,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 6,
+    "n": 6,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "GraduationMassEmailTask",
+   "bucket": "split",
+   "with_round6": {
+    "passes": 0,
+    "n": 7,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "LocalFileManagementTask2",
+   "bucket": "all_fail",
+   "with_round6": {
+    "passes": 0,
+    "n": 7,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "MastodonCalendarMultiMemosTask",
+   "bucket": "all_fail",
+   "with_round6": {
+    "passes": 0,
+    "n": 7,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "MastodonChangeHeaderTask",
+   "bucket": "all_pass",
+   "with_round6": {
+    "passes": 7,
+    "n": 7,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 6,
+    "n": 6,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "MastodonGetServerInfoTask",
+   "bucket": "all_fail",
+   "with_round6": {
+    "passes": 0,
+    "n": 7,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "MastodonImportMutedUsersTask",
+   "bucket": "split",
+   "with_round6": {
+    "passes": 2,
+    "n": 7,
+    "rate": 0.2857,
+    "flipped": true
+   },
+   "without_round6": {
+    "passes": 1,
+    "n": 6,
+    "rate": 0.1667,
+    "flipped": true
+   },
+   "rate_delta_pp": -11.9
+  },
+  {
+   "task_id": "MastodonNewPostTask",
+   "bucket": "all_pass",
+   "with_round6": {
+    "passes": 7,
+    "n": 7,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 6,
+    "n": 6,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "MastodonServerInfoReportTask",
+   "bucket": "all_fail",
+   "with_round6": {
+    "passes": 0,
+    "n": 7,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "MastodonShareLocationTask",
+   "bucket": "all_fail",
+   "with_round6": {
+    "passes": 0,
+    "n": 7,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "MattermostBudgetApprovalPipelineTask",
+   "bucket": "split",
+   "with_round6": {
+    "passes": 2,
+    "n": 7,
+    "rate": 0.2857,
+    "flipped": true
+   },
+   "without_round6": {
+    "passes": 2,
+    "n": 6,
+    "rate": 0.3333,
+    "flipped": true
+   },
+   "rate_delta_pp": 4.76
+  },
+  {
+   "task_id": "MattermostCreateChannelTask",
+   "bucket": "split",
+   "with_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "MattermostEmailTask",
+   "bucket": "split",
+   "with_round6": {
+    "passes": 2,
+    "n": 6,
+    "rate": 0.3333,
+    "flipped": true
+   },
+   "without_round6": {
+    "passes": 2,
+    "n": 6,
+    "rate": 0.3333,
+    "flipped": true
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "MattermostProjectStatusReportTask",
+   "bucket": "all_fail",
+   "with_round6": {
+    "passes": 0,
+    "n": 7,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "MattermostResourceConflictResolutionTask",
+   "bucket": "all_fail",
+   "with_round6": {
+    "passes": 0,
+    "n": 7,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "OpenFlightModeTask",
+   "bucket": "all_pass",
+   "with_round6": {
+    "passes": 7,
+    "n": 7,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 6,
+    "n": 6,
+    "rate": 1.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "ReadQwen3PaperTask5",
+   "bucket": "all_fail",
+   "with_round6": {
+    "passes": 0,
+    "n": 7,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "SMSManagement",
+   "bucket": "all_fail",
+   "with_round6": {
+    "passes": 0,
+    "n": 7,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "without_round6": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0,
+    "flipped": false
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "ScheduleLunchViaSmsTask",
+   "bucket": "split",
+   "with_round6": {
+    "passes": 4,
+    "n": 6,
+    "rate": 0.6667,
+    "flipped": true
+   },
+   "without_round6": {
+    "passes": 4,
+    "n": 6,
+    "rate": 0.6667,
+    "flipped": true
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "SendFormsTask",
+   "bucket": "split",
+   "with_round6": {
+    "passes": 1,
+    "n": 6,
+    "rate": 0.1667,
+    "flipped": true
+   },
+   "without_round6": {
+    "passes": 1,
+    "n": 6,
+    "rate": 0.1667,
+    "flipped": true
+   },
+   "rate_delta_pp": 0.0
+  },
+  {
+   "task_id": "TakeSelfieTask",
+   "bucket": "all_pass",
+   "with_round6": {
+    "passes": 6,
+    "n": 7,
+    "rate": 0.8571,
+    "flipped": true
+   },
+   "without_round6": {
+    "passes": 5,
+    "n": 6,
+    "rate": 0.8333,
+    "flipped": true
+   },
+   "rate_delta_pp": -2.38
+  }
+ ],
+ "round6_denominator_check": {
+  "question": "Round 6 scored only 23 of 29 tasks. Is its 39.13% inflated by the missing six being hard ones?",
+  "lost_tasks": {
+   "AcceptMeetingTask": {
+    "passes": 6,
+    "n": 6,
+    "rate": 1.0
+   },
+   "CVEmailTask": {
+    "passes": 3,
+    "n": 6,
+    "rate": 0.5
+   },
+   "MattermostCreateChannelTask": {
+    "passes": 0,
+    "n": 6,
+    "rate": 0.0
+   },
+   "MattermostEmailTask": {
+    "passes": 2,
+    "n": 6,
+    "rate": 0.3333
+   },
+   "ScheduleLunchViaSmsTask": {
+    "passes": 4,
+    "n": 6,
+    "rate": 0.6667
+   },
+   "SendFormsTask": {
+    "passes": 1,
+    "n": 6,
+    "rate": 0.1667
+   }
+  },
+  "mean_pass_rate_of_lost_tasks": 0.4445,
+  "mean_pass_rate_all_tasks_other_rounds": 0.3448,
+  "round6_as_scored_pct": 39.13,
+  "round6_imputed_at_own_rates_pct": 40.23,
+  "finding": "No. The six lost tasks pass MORE often than average (44.4% vs 34.5%), so imputing them at their own rates puts round 6 at 40.2%, slightly ABOVE the 39.13% recorded. The outage depressed round 6 rather than inflating it; the observed spread is not an artefact of the reduced denominator."
+ }
+}

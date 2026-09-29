@@ -1,0 +1,82 @@
+\section{What is already true without running anything}
+\label{sec:zerocompute}
+
+Everything above rests on measurements a reader has to take on trust until the
+data is inspected. This section does not. Table~\ref{tab:zero} lists eight
+properties of the public repository at the pinned commit, each checkable in a
+few minutes, each bearing on whether two entries on one leaderboard are
+comparable. We re-verified all eight against commit \texttt{83e7b8fc} while
+drafting.
+
+\begin{table}[t]
+\centering\footnotesize
+\caption{Checkable without running the benchmark. Line numbers are at commit
+\texttt{83e7b8fc}; step-count statistics are computed from the benchmark's own
+published per-model trajectories.}
+\label{tab:zero}
+\begin{tabular}{p{0.28\textwidth}p{0.25\textwidth}p{0.39\textwidth}}
+\toprule
+\textbf{Verifiable fact} & \textbf{Where} & \textbf{Consequence for comparability} \\
+\midrule
+For model ids containing \texttt{claude}, \texttt{max\_tokens} is set to 64000;
+every other model uses the agent default of 2048.
+& \texttt{agents/base.py:97--99}
+& Entries on one board run under generation budgets differing by a factor of
+31, and no field records it. Room to reason is what
+Section~\ref{sec:endpoint} shows moving the score; we claim the structural
+difference only, no entry's counterfactual. \\
+\addlinespace
+Of 2562 published (model, task) runs with a step count, 525 (20.5\%) sit at
+exactly 50 steps, against 18, 10, 20 and 2 at 48, 49, 51 and 52. 490 of the 525
+(93.3\%) scored 0 and 35 passed.\footnotemark
+& published trajectories
+& One run in five ends at a budget rather than at a task outcome; the record
+shows a zero, not which event occurred. \\
+\addlinespace
+All 30 runs above 50 steps belong to a single entry, which has no runs at
+exactly 50; the other 17 entries have runs at 50 and none above.
+& published trajectories
+& At least two different round budgets produced the published board, and no
+entry records which applied. Under one 50-step budget the region above 50
+would be empty; it is not --- a different budget, not a lucky escape. \\
+\addlinespace
+For model ids containing \texttt{claude}, \texttt{temperature} is deleted from
+the request.
+& \texttt{agents/base.py:97--99}
+& Those entries ran at the provider's default sampling, not at the value the
+harness otherwise sets. \\
+\addlinespace
+Verifier corrections \texttt{8ae5064}, \texttt{c33e340}, \texttt{32ed916} and
+\texttt{702e904} postdate existing entries.
+& repository history
+& Entries from different dates were scored by different verifier versions, and
+no entry records which. \\
+\addlinespace
+For model ids containing \texttt{kimi-k}, \texttt{extra\_body} is assigned
+rather than merged, discarding whatever the caller supplied.
+& \texttt{agents/base.py:105--106}
+& Provider and quantization pinning supplied by a caller never reaches the API.
+This is how we found it: requests we believed pinned were served by three
+different providers. \\
+\addlinespace
+The cleanup path matches containers against a hardcoded \texttt{:latest} image.
+& \texttt{runtime/utils/}\allowbreak\texttt{models.py:28}
+& With a pinned image tag, \texttt{mw env rm --all} reports success while
+containers keep running. \\
+\addlinespace
+The emulator is started with \texttt{-no-snapshot}.
+& \texttt{docker/}\allowbreak\texttt{start\_emulator.sh:5}
+& The documented guarantee of identical initial state via AVD snapshots is not
+what executes. \\
+\bottomrule
+\end{tabular}
+\end{table}
+\footnotetext{%
+The version submitted for review reported 90 of the runs at the cap as carrying no score at all. Three of
+the 18 bundles record results in formats our first parser did not read; read in full, every run at the cap
+has a score, and the 90 split into 83 zeros and 7 passes.}
+
+None of this requires trusting a measurement of ours. It requires reading the
+repository. One nuance is empirical rather than read from code: the 30 runs
+above the cap sit at 51--54, and a plausible innocent cause is a custom agent
+setting its own bound --- whichever it is, the board does not say.

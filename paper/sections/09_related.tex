@@ -1,0 +1,70 @@
+\section{Related work}
+
+\paragraph{Mobile and GUI agent benchmarks.} Interactive Android environments
+with programmatic reward signals were established by
+AndroidWorld~\citep{rawles2025androidworld}, which supplies tasks across real
+applications on a live emulator rather than a static test set. MobileWorld
+\citep{kong2026mobileworld}, the benchmark studied here, extends that setting
+with agent--user interaction and MCP-augmented tasks and publishes a leaderboard
+together with per-model trajectories. Our use of it is not adversarial: the
+published trajectories are what made the zero-compute analysis of
+Section~\ref{sec:zerocompute} possible at all, and few benchmarks release
+enough for an outsider to do it.
+
+\paragraph{Nondeterminism in language model inference.}
+\citet{yuan2025nondeterminism} establish that low-precision inference is not
+reproducible across serving configurations, tracing it to the non-associativity
+of floating-point arithmetic and showing that batch size, GPU count and GPU
+version alone can move accuracy by several points under greedy decoding. That
+work explains the mechanism behind our Section~\ref{sec:determinism} and,
+plausibly, behind Section~\ref{sec:endpoint}. The difference in setting matters:
+their variables are controllable by whoever owns the hardware, whereas a
+practitioner calling a hosted endpoint controls none of them and cannot observe
+them either --- batch composition is a function of other customers' traffic.
+
+\paragraph{Drift in hosted model services.} That a commercial model endpoint
+changes behaviour over time is established. \citet{chen2024chatgpt} evaluated
+the March and June 2023 releases of two hosted models across several task
+families and found large swings --- identification of prime versus composite
+numbers fell from 84\% to 51\% accuracy on one of them --- and argued for
+continuous monitoring. The same group had earlier framed the general problem of
+detecting shifts in machine learning APIs efficiently~\citep{chen2021apishifts}.
+
+Our setting is narrower and, we think, harder to defend against. That work
+compares \emph{labelled versions} of a service \emph{months apart}, and detects
+the change by periodically re-running a whole evaluation suite. What we record
+happened inside a single model identifier, at one provider, at one
+quantization, within \emph{a single half-day}, with no version change announced or
+announceable --- and it was caught not by re-running an evaluation but by a
+cheap side signal, completion tokens per action, that costs one integer per
+request to log. The first result tells a practitioner that a service will
+change. The second tells them it can change \emph{during their experiment},
+while every control they know about is still set, and that the standard check
+will not show it.
+
+\paragraph{Flaky tests.} Software engineering has a mature literature on tests
+that pass and fail without a code change, including how practitioners
+experience and manage them~\citep{gruber2022flakiness}. The analogy is close
+and the vocabulary is useful, but the disanalogy is the point of this paper: a
+flaky test is understood as a defect to be fixed, whereas run-to-run variance
+in an environment-driven agent benchmark is a property of the measurement that
+should be quantified and reported rather than eliminated. The software
+engineering framing also assumes the system under test is the thing that
+varies. Here the harness, the environment and the serving endpoint all vary,
+and only one of them is the object of measurement.
+
+\paragraph{Statistical reporting for evaluations.}
+\citet{miller2024errorbars} sets out error-bar methodology for LLM evals,
+\citet{bowyer2025clt} caution that CLT intervals understate uncertainty at
+task counts like ours, and $\tau$-bench~\citep{yao2025taubench} reports
+run-to-run inconsistency as a metric, pass\textasciicircum{}$k$. All three
+hold the thing measured stationary while it is measured.
+Section~\ref{sec:noise} is what their machinery yields here;
+Section~\ref{sec:endpoint} is the case none of them models --- the instrument
+moving mid-experiment.
+
+\paragraph{Positioning.} These lines of work measure model or agent capability,
+or the reliability of a test suite. This paper measures the instrument: how far
+a benchmark's own output moves when its input is held as fixed as the available
+controls allow, and what a reader would need recorded in order to notice when
+it moves for reasons that have nothing to do with the agent.

@@ -1,0 +1,25 @@
+{
+  "provenance": {
+    "how_produced": "scripts/probe_determinism.py, run on the evaluation host against the live router. Values transcribed from the run output rather than written by the script to a file; the script now writes this file directly so a re-run overwrites it.",
+    "caveat": "These are the only numbers in the paper that were not emitted into a data file by the analysis pipeline at the time of measurement. They are reported here so every figure quoted in the paper has a traceable home.",
+    "prompt": "You are a phone GUI agent. Describe, step by step, how to turn on aeroplane mode from the Android home screen, then output a single action line. Think carefully before answering.",
+    "params": {"temperature": 0.0, "seed": 42, "enable_thinking": true, "max_tokens": 8192},
+    "note": "allow_fallbacks=false and an explicit provider+quantization pin on every request; the served provider was read back off each response."
+  },
+  "runs": [
+    {"date": "2026-08-25", "provider": "deepinfra", "quantization": "fp4",
+     "completion_tokens": [2963, 1448, 1494], "all_three_identical": false},
+    {"date": "2026-08-25", "provider": "atlas-cloud", "quantization": "int4",
+     "completion_tokens": [1571, 2812, 1427], "all_three_identical": false},
+    {"date": "2026-08-26", "provider": "deepinfra", "quantization": "fp4",
+     "completion_tokens": [1938, 1672, 2427], "all_three_identical": false},
+    {"date": "2026-08-26", "provider": "atlas-cloud", "quantization": "int4",
+     "completion_tokens": [1344, 1292, 1292], "all_three_identical": false,
+     "note": "two of the three completions were byte-identical; on 2026-08-25 no two of three were"}
+  ],
+  "findings": {
+    "determinism": "Neither endpoint returned three identical completions on any day, at temperature 0 with a fixed seed, though both advertise seed support.",
+    "endpoint_change": "Between 2026-08-25 and 2026-08-26 the atlas-cloud/int4 endpoint produced shorter and less varied completions (mean 1937 -> 1309 tokens) while deepinfra/fp4, used as a control, did not shift comparably.",
+    "trivial_prompt_trap": "An earlier check with the prompt 'Reply with exactly: OK' returned byte-identical output twice on atlas-cloud/int4 and was recorded as evidence of determinism. That completion was 33 tokens."
+  }
+}

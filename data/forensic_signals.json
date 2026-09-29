@@ -1,0 +1,721 @@
+{
+ "generated_at": "2026-09-04T03:20:45+00:00",
+ "generator": "scripts/forensic_signals.py",
+ "inputs": {
+  "public_matrix": "data/public_matrix.json",
+  "public_matrix_lenient": "data/public_matrix.lenient.json",
+  "task_registry": "data/tasks.json"
+ },
+ "signals": {
+  "S1_round_cap": {
+   "runs_with_steps": 2562,
+   "at_exactly_cap": 525,
+   "at_cap_scored_zero": 407,
+   "at_cap_passed": 28,
+   "neighbourhood": {
+    "48": 18,
+    "49": 10,
+    "50": 525,
+    "51": 20,
+    "52": 2,
+    "53": 5,
+    "54": 3
+   },
+   "per_model_cap_rate": {
+    "ForgeQwen3-8B": {
+     "at_cap": 50,
+     "n": 118,
+     "pct": 42.4
+    },
+    "ForgeOwl-8B": {
+     "at_cap": 46,
+     "n": 118,
+     "pct": 39.0
+    },
+    "Claude-Opus-4.6": {
+     "at_cap": 52,
+     "n": 162,
+     "pct": 32.1
+    },
+    "Kimi-K2.5": {
+     "at_cap": 47,
+     "n": 162,
+     "pct": 29.0
+    },
+    "Kimi-K2.6": {
+     "at_cap": 42,
+     "n": 162,
+     "pct": 25.9
+    },
+    "KnowAct-GUIClaw": {
+     "at_cap": 30,
+     "n": 118,
+     "pct": 25.4
+    },
+    "MemGUI-8B-SFT": {
+     "at_cap": 30,
+     "n": 118,
+     "pct": 25.4
+    },
+    "Claude-Opus-4.7": {
+     "at_cap": 35,
+     "n": 159,
+     "pct": 22.0
+    },
+    "Qwen3.5-122B-A10B": {
+     "at_cap": 35,
+     "n": 162,
+     "pct": 21.6
+    },
+    "MemGUI-Agent-235B": {
+     "at_cap": 21,
+     "n": 118,
+     "pct": 17.8
+    },
+    "Kimi-K3": {
+     "at_cap": 20,
+     "n": 119,
+     "pct": 16.8
+    },
+    "MagicGUI-Agent (GPT-5.4 + Seed-1.8)": {
+     "at_cap": 27,
+     "n": 162,
+     "pct": 16.7
+    },
+    "Qwen-UI-Agent": {
+     "at_cap": 19,
+     "n": 118,
+     "pct": 16.1
+    },
+    "Seed-2.0-Pro": {
+     "at_cap": 26,
+     "n": 162,
+     "pct": 16.0
+    },
+    "GPT-5.5": {
+     "at_cap": 23,
+     "n": 162,
+     "pct": 14.2
+    },
+    "GPT-5.6-Sol": {
+     "at_cap": 16,
+     "n": 118,
+     "pct": 13.6
+    },
+    "Qwen3.5-397B-A17B": {
+     "at_cap": 21,
+     "n": 162,
+     "pct": 13.0
+    },
+    "Gemini-3.1-Pro-Preview": {
+     "at_cap": 15,
+     "n": 162,
+     "pct": 9.3
+    }
+   },
+   "cap_rate_range_pct": [
+    9.3,
+    42.4
+   ]
+  },
+  "S2_fast_passes": {
+   "threshold_steps": 3,
+   "n_fast_passes": 19,
+   "by_task": {
+    "CheckInvoiceTask1": {
+     "fast_passes": 9,
+     "passes_total": 14,
+     "min_steps_any_model": 3,
+     "goal": "Read the invoice PDF file in the download directory. The customer has notified that payment will be made 45 days after the due date. Please recalculate the total amount payable and respond with only a single number representing the total amount, with no other text.",
+     "runs": [
+      {
+       "model": "Claude-Opus-4.7",
+       "steps": 3
+      },
+      {
+       "model": "GPT-5.5",
+       "steps": 3
+      },
+      {
+       "model": "Kimi-K2.5",
+       "steps": 3
+      },
+      {
+       "model": "Kimi-K3",
+       "steps": 3
+      },
+      {
+       "model": "MagicGUI-Agent (GPT-5.4 + Seed-1.8)",
+       "steps": 3
+      },
+      {
+       "model": "MemGUI-8B-SFT",
+       "steps": 3
+      },
+      {
+       "model": "Qwen3.5-397B-A17B",
+       "steps": 3
+      },
+      {
+       "model": "ForgeOwl-8B",
+       "steps": 3
+      },
+      {
+       "model": "Seed-2.0-Pro",
+       "steps": 3
+      }
+     ]
+    },
+    "CheckConferenceDurationTask": {
+     "fast_passes": 7,
+     "passes_total": 14,
+     "min_steps_any_model": 2,
+     "goal": "How many days of conference meetings did I schedule in October? Please only return the number of days, no other text.",
+     "runs": [
+      {
+       "model": "Claude-Opus-4.7",
+       "steps": 2
+      },
+      {
+       "model": "GPT-5.5",
+       "steps": 2
+      },
+      {
+       "model": "GPT-5.6-Sol",
+       "steps": 2
+      },
+      {
+       "model": "Kimi-K2.5",
+       "steps": 2
+      },
+      {
+       "model": "Qwen3.5-122B-A10B",
+       "steps": 2
+      },
+      {
+       "model": "Qwen3.5-397B-A17B",
+       "steps": 2
+      },
+      {
+       "model": "Seed-2.0-Pro",
+       "steps": 2
+      }
+     ]
+    },
+    "CheckDeduplicatedEventsTask": {
+     "fast_passes": 3,
+     "passes_total": 11,
+     "min_steps_any_model": 2,
+     "goal": "How many deduplicated events are there in the calendar, from October 20 to October 26?",
+     "runs": [
+      {
+       "model": "GPT-5.5",
+       "steps": 2
+      },
+      {
+       "model": "ForgeOwl-8B",
+       "steps": 2
+      },
+      {
+       "model": "Seed-2.0-Pro",
+       "steps": 2
+      }
+     ]
+    }
+   },
+   "fires": false,
+   "reading": "All fast passes are on answer-type tasks (the goal asks for a number or a value), where a 2-3 step path is plausible. No lead."
+  },
+  "S3_bundles_without_verdicts": {
+   "models_unparsed_strict": {
+    "MemGUI-Agent-235B": {
+     "tasks_in_bundle": 118,
+     "leaderboard_gui_only": 29.1
+    },
+    "Qwen-UI-Agent": {
+     "tasks_in_bundle": 118,
+     "leaderboard_gui_only": 82.1
+    },
+    "ForgeQwen3-8B": {
+     "tasks_in_bundle": 118,
+     "leaderboard_gui_only": 10.3
+    }
+   },
+   "lenient_matrix_present": true,
+   "after_lenient_parse": {
+    "MemGUI-Agent-235B": {
+     "tasks_without_score": 1
+    },
+    "Qwen-UI-Agent": {
+     "tasks_without_score": 1
+    },
+    "ForgeQwen3-8B": {
+     "tasks_without_score": 1
+    }
+   },
+   "round_cap_corrected": {
+    "at_exactly_cap": 525,
+    "at_cap_scored_zero": 490,
+    "at_cap_passed": 35,
+    "at_cap_unscored": 0,
+    "paper_as_submitted": {
+     "at_cap_not_passed": 497,
+     "pct": 94.7,
+     "scored_zero": 407,
+     "unscored": 90
+    }
+   },
+   "bucket_changes": {
+    "all_models_pass": {
+     "left": [
+      "AcceptMeetingTask",
+      "CheckEventTimeTask",
+      "GoogleMapsAlibabaSouthNeighborTask",
+      "TakeSelfieTask"
+     ],
+     "joined": []
+    },
+    "all_models_fail": {
+     "left": [
+      "SMSManagement"
+     ],
+     "joined": []
+    },
+    "most_split": {
+     "left": [
+      "CheckCartPriceTask",
+      "CheckConferenceAndSendSmsTask2",
+      "CountFileLinesTask",
+      "ItemCheckoutTask",
+      "MastodonAddBookmarkTask",
+      "MastodonExportFollowsTask",
+      "MastodonUpdateContactsTask",
+      "ReadQwen3PaperTask2",
+      "ReadQwen3PaperTask4",
+      "ReviewPaperEmailTask"
+     ],
+     "joined": [
+      "MastodonMallShareOrderTask",
+      "MastodonMattermostPostNoticeTask",
+      "SearchTopInfoAskUserTask",
+      "SearchWhiteSneakersCheckoutAskUserTask",
+      "SendInterviewInvitationAskUserTask",
+      "SendPhoneNumberAskUserTask",
+      "SetAlarmTaskAskUser2",
+      "SuggestPaperTask",
+      "TakeSelfieAskUserTask1",
+      "TextArrivalTimeTask"
+     ]
+    }
+   },
+   "fires": "pipeline",
+   "reading": "3 of 18 bundles are unreadable to the strict parser but carry verdicts in two other formats; read leniently they reproduce their leaderboard numbers exactly. A correction to our own matrix, not a finding about the benchmark."
+  },
+  "S4_verdicts_without_reason": {
+   "passes_without_reason": 384,
+   "passes_total": 1144,
+   "fails_without_reason": 9,
+   "fails_total": 1040,
+   "tasks_whose_passes_never_carry_a_reason": [
+    "BuyBlackTennisShoesBrotherAddressAskUserTask",
+    "BuySugarFreeColaWorkAddressAskUserTask",
+    "GraduationMassEmailTask",
+    "LocalFileManagementTask",
+    "MastodonAddBookmarkTask",
+    "MastodonAddFeaturedHashtagsTask",
+    "MastodonAdjustTootsTask",
+    "MastodonChangeHeaderTask",
+    "MastodonChangeLanguageTask",
+    "MastodonConditionalFavoTask",
+    "MastodonCreateListTask",
+    "MastodonCreateMemoTask",
+    "MastodonExportFollowsTask",
+    "MastodonFavoriteTootsTask",
+    "MastodonFilterLanguageTask",
+    "MastodonFollowTask",
+    "MastodonImportMutedUsersTask",
+    "MastodonInviteTask",
+    "MastodonMallPurchaseCommodityTask",
+    "MastodonMallShareOrderTask",
+    "MastodonManageHashtagsTask",
+    "MastodonManageMultiListTask",
+    "MastodonMattermostPostNoticeTask",
+    "MastodonMultiInviteTask",
+    "MastodonNewFilterTask",
+    "MastodonNewPostTask",
+    "MastodonOpenAutomatedDeletionTask",
+    "MastodonPinTootsTask",
+    "MastodonPostEditedPhotoTask",
+    "MastodonPostPollTask",
+    "MastodonRemoveBookmarkTask",
+    "MastodonReplyTask",
+    "MastodonReportTask",
+    "MastodonRevisePhotoAltTask",
+    "MastodonRevisePollTask",
+    "MastodonSavePhotosTask",
+    "MastodonUnfollowTask",
+    "MastodonUpdateContactsTask",
+    "MattermostBudgetApprovalPipelineTask",
+    "MattermostCreateChannelTask",
+    "MattermostCustomerFeedbackAnalysisTask",
+    "MattermostDeadlineReconciliationTask",
+    "MattermostEmailTask",
+    "MattermostIncidentEscalationTask",
+    "MattermostProjectHandoverTask",
+    "MattermostReadingGroupTask",
+    "MattermostReplyToMessageTask",
+    "MattermostSendFileTask",
+    "MattermostShiftCoverageTask",
+    "MattermostTechnicalDebtTriageTask",
+    "MattermostVisualInstructionResponseTask",
+    "PhotoManagementTask",
+    "SearchWhiteSneakersCheckoutAskUserTask",
+    "TextArrivalTimeTask"
+   ],
+   "n_such_tasks": 54,
+   "fires": true,
+   "reading": "384 of 1144 published passes carry no verifier reason; on 54 tasks no pass ever does."
+  },
+  "S5_timestamps": {
+   "fires": null,
+   "reading": "Upstream records no timestamps per run or per step; published bundles carry trajectory and result only. The timestamp-clustering signal is not computable on this benchmark."
+  },
+  "S6_bundle_vs_board": {
+   "entries": {
+    "Claude-Opus-4.6": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": "Due to API limit, we still have some tasks failed to run.",
+     "gui_only": {
+      "bundle_pass": 52,
+      "bundle_scored": 113,
+      "bundle_pct": 46.0,
+      "board_pct": 44.5,
+      "delta": 1.5
+     },
+     "user_interaction": {
+      "bundle_pass": 15,
+      "bundle_scored": 44,
+      "bundle_pct": 34.1,
+      "board_pct": 34.1,
+      "delta": 0.0
+     }
+    },
+    "Claude-Opus-4.7": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": "We noticed hallucination issues with the model when using more than 1 image in the history, so we only used 1 image in the history.",
+     "gui_only": {
+      "bundle_pass": 66,
+      "bundle_scored": 114,
+      "bundle_pct": 57.9,
+      "board_pct": 56.4,
+      "delta": 1.5
+     },
+     "user_interaction": {
+      "bundle_pass": 26,
+      "bundle_scored": 44,
+      "bundle_pct": 59.1,
+      "board_pct": 59.1,
+      "delta": 0.0
+     }
+    },
+    "Gemini-3.1-Pro-Preview": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": null,
+     "gui_only": {
+      "bundle_pass": 68,
+      "bundle_scored": 117,
+      "bundle_pct": 58.1,
+      "board_pct": 58.1,
+      "delta": 0.0
+     },
+     "user_interaction": {
+      "bundle_pass": 10,
+      "bundle_scored": 44,
+      "bundle_pct": 22.7,
+      "board_pct": 22.7,
+      "delta": 0.0
+     }
+    },
+    "GPT-5.5": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": "Requires resizing the screenshot long-edge below 2000px",
+     "gui_only": {
+      "bundle_pass": 73,
+      "bundle_scored": 115,
+      "bundle_pct": 63.5,
+      "board_pct": 62.4,
+      "delta": 1.1
+     },
+     "user_interaction": {
+      "bundle_pass": 15,
+      "bundle_scored": 44,
+      "bundle_pct": 34.1,
+      "board_pct": 34.1,
+      "delta": 0.0
+     }
+    },
+    "GPT-5.6-Sol": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": null,
+     "gui_only": {
+      "bundle_pass": 82,
+      "bundle_scored": 117,
+      "bundle_pct": 70.1,
+      "board_pct": 70.1,
+      "delta": 0.0
+     },
+     "user_interaction": {
+      "bundle_pass": 0,
+      "bundle_scored": 0,
+      "bundle_pct": null,
+      "board_pct": null,
+      "delta": null
+     }
+    },
+    "Kimi-K2.5": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": "Scores reported for 3 historical images. Uploaded trajectories use 1 historical image (several points lower) as the original 3-image run logs were lost.",
+     "gui_only": {
+      "bundle_pass": 53,
+      "bundle_scored": 117,
+      "bundle_pct": 45.3,
+      "board_pct": 49.6,
+      "delta": -4.3
+     },
+     "user_interaction": {
+      "bundle_pass": 22,
+      "bundle_scored": 44,
+      "bundle_pct": 50.0,
+      "board_pct": 51.2,
+      "delta": -1.2
+     }
+    },
+    "Kimi-K2.6": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": null,
+     "gui_only": {
+      "bundle_pass": 65,
+      "bundle_scored": 117,
+      "bundle_pct": 55.6,
+      "board_pct": 55.6,
+      "delta": 0.0
+     },
+     "user_interaction": {
+      "bundle_pass": 25,
+      "bundle_scored": 44,
+      "bundle_pct": 56.8,
+      "board_pct": 56.8,
+      "delta": 0.0
+     }
+    },
+    "Kimi-K3": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": null,
+     "gui_only": {
+      "bundle_pass": 87,
+      "bundle_scored": 117,
+      "bundle_pct": 74.4,
+      "board_pct": 74.4,
+      "delta": 0.0
+     },
+     "user_interaction": {
+      "bundle_pass": 0,
+      "bundle_scored": 1,
+      "bundle_pct": 0.0,
+      "board_pct": null,
+      "delta": null
+     }
+    },
+    "KnowAct-GUIClaw": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": "Agentic result built on Kimi-K2.6, using GUIClaw compact skills and GUI memory induced from prior MobileWorld trajectories. The directory consolidates task reruns performed after correcting the GUI memory bank; execution used a shared budget of up to 50 GUI decision steps across at most 5 GUI calls.",
+     "gui_only": {
+      "bundle_pass": 75,
+      "bundle_scored": 117,
+      "bundle_pct": 64.1,
+      "board_pct": 64.1,
+      "delta": 0.0
+     },
+     "user_interaction": {
+      "bundle_pass": 0,
+      "bundle_scored": 0,
+      "bundle_pct": null,
+      "board_pct": null,
+      "delta": null
+     }
+    },
+    "MagicGUI-Agent (GPT-5.4 + Seed-1.8)": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": null,
+     "gui_only": {
+      "bundle_pass": 78,
+      "bundle_scored": 117,
+      "bundle_pct": 66.7,
+      "board_pct": 66.7,
+      "delta": 0.0
+     },
+     "user_interaction": {
+      "bundle_pass": 29,
+      "bundle_scored": 44,
+      "bundle_pct": 65.9,
+      "board_pct": 65.9,
+      "delta": 0.0
+     }
+    },
+    "MemGUI-Agent-235B": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": null,
+     "gui_only": {
+      "bundle_pass": 34,
+      "bundle_scored": 117,
+      "bundle_pct": 29.1,
+      "board_pct": 29.1,
+      "delta": 0.0
+     },
+     "user_interaction": {
+      "bundle_pass": 0,
+      "bundle_scored": 0,
+      "bundle_pct": null,
+      "board_pct": null,
+      "delta": null
+     }
+    },
+    "MemGUI-8B-SFT": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": null,
+     "gui_only": {
+      "bundle_pass": 21,
+      "bundle_scored": 115,
+      "bundle_pct": 18.3,
+      "board_pct": 17.9,
+      "delta": 0.4
+     },
+     "user_interaction": {
+      "bundle_pass": 0,
+      "bundle_scored": 0,
+      "bundle_pct": null,
+      "board_pct": null,
+      "delta": null
+     }
+    },
+    "Qwen-UI-Agent": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": null,
+     "gui_only": {
+      "bundle_pass": 96,
+      "bundle_scored": 117,
+      "bundle_pct": 82.1,
+      "board_pct": 82.1,
+      "delta": 0.0
+     },
+     "user_interaction": {
+      "bundle_pass": 0,
+      "bundle_scored": 0,
+      "bundle_pct": null,
+      "board_pct": null,
+      "delta": null
+     }
+    },
+    "Qwen3.5-122B-A10B": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": null,
+     "gui_only": {
+      "bundle_pass": 41,
+      "bundle_scored": 117,
+      "bundle_pct": 35.0,
+      "board_pct": 35,
+      "delta": 0.0
+     },
+     "user_interaction": {
+      "bundle_pass": 18,
+      "bundle_scored": 44,
+      "bundle_pct": 40.9,
+      "board_pct": 40.9,
+      "delta": 0.0
+     }
+    },
+    "Qwen3.5-397B-A17B": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": null,
+     "gui_only": {
+      "bundle_pass": 50,
+      "bundle_scored": 117,
+      "bundle_pct": 42.7,
+      "board_pct": 42.7,
+      "delta": 0.0
+     },
+     "user_interaction": {
+      "bundle_pass": 24,
+      "bundle_scored": 44,
+      "bundle_pct": 54.5,
+      "board_pct": 54.4,
+      "delta": 0.1
+     }
+    },
+    "ForgeQwen3-8B": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": null,
+     "gui_only": {
+      "bundle_pass": 12,
+      "bundle_scored": 117,
+      "bundle_pct": 10.3,
+      "board_pct": 10.3,
+      "delta": 0.0
+     },
+     "user_interaction": {
+      "bundle_pass": 0,
+      "bundle_scored": 0,
+      "bundle_pct": null,
+      "board_pct": null,
+      "delta": null
+     }
+    },
+    "ForgeOwl-8B": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": null,
+     "gui_only": {
+      "bundle_pass": 48,
+      "bundle_scored": 116,
+      "bundle_pct": 41.4,
+      "board_pct": 41.0,
+      "delta": 0.4
+     },
+     "user_interaction": {
+      "bundle_pass": 0,
+      "bundle_scored": 0,
+      "bundle_pct": null,
+      "board_pct": null,
+      "delta": null
+     }
+    },
+    "Seed-2.0-Pro": {
+     "leaderboard_runs": 1,
+     "leaderboard_notes": null,
+     "gui_only": {
+      "bundle_pass": 74,
+      "bundle_scored": 117,
+      "bundle_pct": 63.2,
+      "board_pct": 63.2,
+      "delta": 0.0
+     },
+     "user_interaction": {
+      "bundle_pass": 27,
+      "bundle_scored": 44,
+      "bundle_pct": 61.4,
+      "board_pct": 61.4,
+      "delta": 0.0
+     }
+    }
+   },
+   "note": "delta = bundle - board, percentage points; unscored tasks are left out of the bundle rate",
+   "entries_off_by_2pp_or_more_with_full_bundle": {
+    "Kimi-K2.5": -4.3
+   },
+   "disclosed_upstream": {
+    "Kimi-K2.5": "Scores reported for 3 historical images. Uploaded trajectories use 1 historical image (several points lower) as the original 3-image run logs were lost."
+   },
+   "fires": true,
+   "reading": "1 entry(ies) with a fully scored GUI-only bundle differ from the board by 2 points or more: {'Kimi-K2.5': -4.3}. Of these, 1 carry an upstream note explaining the gap (a different configuration than the one scored; the original logs were lost). Small deltas elsewhere are a few unscored tasks counted as fails on the board."
+  }
+ }
+}

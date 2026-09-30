@@ -6,6 +6,10 @@
     "params": {"temperature": 0.0, "seed": 42, "enable_thinking": true, "max_tokens": 8192},
     "note": "allow_fallbacks=false and an explicit provider+quantization pin on every request; the served provider was read back off each response."
   },
+  "corrections": [
+    {"date": "2026-09-30", "field": "findings.trivial_prompt_trap", "was": "An earlier check with the prompt 'Reply with exactly: OK' returned byte-identical output twice on atlas-cloud/int4 and was recorded as evidence of determinism. That completion was 33 tokens.",
+     "why": "The endpoint had been transcribed as atlas-cloud/int4. The session log of the 2026-08-25 probe shows both short-prompt responses were served by DeepInfra (pinned deepinfra/fp4), and that no seed was sent."}
+  ],
   "runs": [
     {"date": "2026-08-25", "provider": "deepinfra", "quantization": "fp4",
      "completion_tokens": [2963, 1448, 1494], "all_three_identical": false},
@@ -20,6 +24,6 @@
   "findings": {
     "determinism": "Neither endpoint returned three identical completions on any day, at temperature 0 with a fixed seed, though both advertise seed support.",
     "endpoint_change": "Between 2026-08-25 and 2026-08-26 the atlas-cloud/int4 endpoint produced shorter and less varied completions (mean 1937 -> 1309 tokens) while deepinfra/fp4, used as a control, did not shift comparably.",
-    "trivial_prompt_trap": "An earlier check with the prompt 'Reply with exactly: OK' returned byte-identical output twice on atlas-cloud/int4 and was recorded as evidence of determinism. That completion was 33 tokens."
+    "trivial_prompt_trap": "An earlier check with the prompt 'Reply with exactly: OK' (temperature 0, no seed sent) returned byte-identical output twice on deepinfra/fp4 (2026-08-25 07:30 UTC, both responses served by DeepInfra, 33 output tokens each) and was recorded as evidence of determinism. The three long probes to the same endpoint the same day all differed (2963 / 1448 / 1494 tokens)."
   }
 }

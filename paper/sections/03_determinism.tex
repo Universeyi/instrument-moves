@@ -13,7 +13,7 @@ completions differed on both endpoints, with lengths varying roughly twofold
 (1571 / 2812 / 1427 tokens on one, 2963 / 1448 / 1494 on the other).
 
 \paragraph{The trap.} An earlier version of this check used the prompt
-\emph{``Reply with exactly: OK''}. On \texttt{atlas-cloud/int4} it returned
+\emph{``Reply with exactly: OK''}. On \texttt{deepinfra/fp4} it returned
 byte-identical output twice, and we recorded that the endpoint was
 deterministic. It is not: three longer requests to the same endpoint all came
 back different. Auxiliary probes at five endpoints that carry both kinds of

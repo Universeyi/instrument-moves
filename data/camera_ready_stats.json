@@ -1,0 +1,204 @@
+{
+ "basis": {
+  "arm": "A_temp0",
+  "rounds": [
+   4,
+   5,
+   7,
+   8,
+   9,
+   10
+  ],
+  "n_tasks": 29,
+  "suite_slots": 117
+ },
+ "headline": {
+  "single_run_sd_pp": 2.9124,
+  "threshold95_pp": 8.0726,
+  "note": "Exact Bernoulli SD; analyze.py simulates the same quantity (2.9412 / 8.1524).",
+  "leaderboard_adjacent": {
+   "within": 16,
+   "of": 17
+  }
+ },
+ "round_bootstrap": {
+  "method": "Six headline rounds resampled with replacement (5000 draws); per-task rates, the 117-slot reweighting and the threshold recomputed on each draw.",
+  "threshold95_pp_median": 7.4604,
+  "threshold95_pp_ci95": [
+   5.1783,
+   8.5327
+  ],
+  "leaderboard_adjacent_at_ci_low": {
+   "within": 11,
+   "of": 17
+  },
+  "leaderboard_adjacent_at_ci_high": {
+   "within": 16,
+   "of": 17
+  }
+ },
+ "round_effect": {
+  "additive_round_sd_pp_upper95": 5.25,
+  "threshold95_pp_if_additive_round_sd_at_upper": 16.6411,
+  "leaderboard_adjacent_at_additive_upper": {
+   "within": 17,
+   "of": 17
+  },
+  "observed_round_scores_pct": [
+   31.03,
+   31.03,
+   34.48,
+   37.93,
+   37.93,
+   34.48
+  ],
+  "observed_sd_pp": 3.0842,
+  "predicted_sd_pp_independent_tasks": 3.9817,
+  "p_value_spread_at_least_observed": 0.7033,
+  "logit_round_sd_upper95": 1.25,
+  "threshold95_pp_if_round_sd_at_upper": 30.6341,
+  "leaderboard_adjacent_at_that_threshold": {
+   "within": 17,
+   "of": 17
+  },
+  "method": "Round-to-round SD of the 29-task score compared with what independent tasks at the measured rates predict (20000 simulated sets of six rounds). A shared round effect is modelled as a common logit shift N(0, s) applied to every task in a round; tasks at 0 or 1 stay there. `logit_round_sd_upper95` is the smallest s at which the observed spread falls below the 5th percentile of simulated spreads, i.e. the largest round effect the six rounds cannot rule out."
+ },
+ "leave_one_task_out": {
+  "min": 7.6052,
+  "max": 8.56,
+  "without_CVEmailTask": 7.6052,
+  "split_bucket": [
+   {
+    "task": "BidFileRenameTask",
+    "bucket": "split",
+    "threshold95_pp": 8.56
+   },
+   {
+    "task": "CVEmailTask",
+    "bucket": "split",
+    "threshold95_pp": 7.6052
+   },
+   {
+    "task": "DownloadSendReceiptTask",
+    "bucket": "split",
+    "threshold95_pp": 8.56
+   },
+   {
+    "task": "GraduationMassEmailTask",
+    "bucket": "split",
+    "threshold95_pp": 8.56
+   },
+   {
+    "task": "MastodonImportMutedUsersTask",
+    "bucket": "split",
+    "threshold95_pp": 8.0436
+   },
+   {
+    "task": "MattermostBudgetApprovalPipelineTask",
+    "bucket": "split",
+    "threshold95_pp": 7.7172
+   },
+   {
+    "task": "MattermostCreateChannelTask",
+    "bucket": "split",
+    "threshold95_pp": 8.56
+   },
+   {
+    "task": "MattermostEmailTask",
+    "bucket": "split",
+    "threshold95_pp": 7.7172
+   },
+   {
+    "task": "ScheduleLunchViaSmsTask",
+    "bucket": "split",
+    "threshold95_pp": 7.7071
+   },
+   {
+    "task": "SendFormsTask",
+    "bucket": "split",
+    "threshold95_pp": 8.0436
+   }
+  ],
+  "method": "Each task removed in turn; its bucket's remaining rates fill the bucket's slots."
+ },
+ "pre_vs_post": {
+  "rounds_1_3_sd_pp": 3.395,
+  "rounds_1_3_threshold95_pp": 9.4102,
+  "headline_sd_pp": 2.9124,
+  "note": "Three rounds only; the pre-shift figure is weakly determined."
+ },
+ "power80": {
+  "threshold_pp": 11.539,
+  "leaderboard_adjacent": {
+   "within": 17,
+   "of": 17
+  }
+ },
+ "probe_dispersion": [
+  {
+   "date": "2026-08-25",
+   "endpoint": "deepinfra/fp4",
+   "tokens": [
+    2963,
+    1448,
+    1494
+   ],
+   "sd": 861.7,
+   "range": 1515,
+   "mean": 1968.3
+  },
+  {
+   "date": "2026-08-25",
+   "endpoint": "atlas-cloud/int4",
+   "tokens": [
+    1571,
+    2812,
+    1427
+   ],
+   "sd": 761.5,
+   "range": 1385,
+   "mean": 1936.7
+  },
+  {
+   "date": "2026-08-26",
+   "endpoint": "deepinfra/fp4",
+   "tokens": [
+    1938,
+    1672,
+    2427
+   ],
+   "sd": 382.9,
+   "range": 755,
+   "mean": 2012.3
+  },
+  {
+   "date": "2026-08-26",
+   "endpoint": "atlas-cloud/int4",
+   "tokens": [
+    1344,
+    1292,
+    1292
+   ],
+   "sd": 30.0,
+   "range": 52,
+   "mean": 1309.3
+  }
+ ],
+ "token_agreement": {
+  "median_completion_per_step_by_round": {
+   "1": 132.48,
+   "2": 132.38,
+   "3": 133.11,
+   "4": 102.2,
+   "5": 98.78,
+   "6": 108.72,
+   "7": 105.86,
+   "8": 103.77,
+   "9": 108.38,
+   "10": 108.0
+  },
+  "pre_shift_spread_pct": 0.55,
+  "post_shift_headline_spread_pct": 9.72,
+  "change_round3_to_round4_pct": -23.22
+ }
+}

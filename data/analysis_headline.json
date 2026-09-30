@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T02:02:54.865929+00:00",
+  "generated_at": "2026-09-30T20:36:48.629053+00:00",
   "generator": "scripts/analyze.py",
   "inputs": {
     "runs_jsonl": "data/runs.jsonl",
@@ -3543,6 +3543,7 @@
             "41": 3,
             "42": 2
           },
+          "sd_pp_exact": 2.9124,
           "definition": "Stratum rates carried to their real sizes; only Bernoulli noise. This is the width to compare with a leaderboard gap."
         },
         "resampled_tasks": {
@@ -3595,15 +3596,15 @@
         "caveat": "An extrapolation, not a measurement. It assumes the 10 measured split-bucket tasks are representative of the other 88, and that one model's instability is informative about another's."
       },
       "detectable_difference": {
-        "single_run_sd_pp": 2.9412,
-        "difference_sd_pp": 4.1595,
-        "mdd95_pp": 8.1524,
-        "mdd95_power80_pp": 11.6532,
+        "single_run_sd_pp": 2.9124,
+        "difference_sd_pp": 4.1188,
+        "mdd95_pp": 8.0726,
+        "mdd95_power80_pp": 11.539,
         "definition": {
           "mdd95_pp": "A gap smaller than this between two single runs is within what noise alone produces 95% of the time when the two models are in fact equal.",
           "mdd95_power80_pp": "The gap needed for a single-run comparison to come out significant 80% of the time."
         },
-        "basis": "gui_only_extrapolation.fixed_taskset"
+        "basis": "gui_only_extrapolation.fixed_taskset (exact Bernoulli SD)"
       },
       "statistical_power": {
         "sufficient": true,
@@ -3614,7 +3615,7 @@
       },
       "leaderboard_gaps": {
         "source": "data/public_matrix.json",
-        "mdd95_pp_applied": 8.1524,
+        "mdd95_pp_applied": 8.0726,
         "n_entries": 18,
         "n_entries_on_board": 40,
         "runs_distribution": {

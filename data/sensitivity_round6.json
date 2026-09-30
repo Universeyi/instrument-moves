@@ -26,7 +26,7 @@
   ],
   "extrapolated_117_width_pp": 12.8205,
   "extrapolated_117_sd_pp": 3.1271,
-  "mdd95_pp": 8.6677,
+  "mdd95_pp": 8.6364,
   "n_flipped": 8,
   "flipped_task_ids": [
    "CVEmailTask",
@@ -40,7 +40,9 @@
   ],
   "n_scored_runs": 197,
   "absorbed_retries": 95,
-  "leaderboard_adjacent_within_noise": 16
+  "leaderboard_adjacent_within_noise": 16,
+  "extrapolated_117_sd_pp_exact": 3.1158,
+  "mdd95_power80_pp": 12.3449
  },
  "without_round6": {
   "n_trials": 6,
@@ -65,7 +67,7 @@
   ],
   "extrapolated_117_width_pp": 11.1111,
   "extrapolated_117_sd_pp": 2.9412,
-  "mdd95_pp": 8.1524,
+  "mdd95_pp": 8.0726,
   "n_flipped": 7,
   "flipped_task_ids": [
    "CVEmailTask",
@@ -78,13 +80,15 @@
   ],
   "n_scored_runs": 174,
   "absorbed_retries": 27,
-  "leaderboard_adjacent_within_noise": 16
+  "leaderboard_adjacent_within_noise": 16,
+  "extrapolated_117_sd_pp_exact": 2.9124,
+  "mdd95_power80_pp": 11.539
  },
  "deltas": {
   "best_worst_spread_pp": -1.1994,
   "headline_sd_pp": 0.0567,
   "extrapolated_117_width_pp": -1.7094,
-  "mdd95_pp": -0.5153,
+  "mdd95_pp": -0.5638,
   "n_flipped": -1,
   "flipped_only_with_round6": [
    "DownloadSendReceiptTask"
@@ -625,5 +629,6 @@
   "round6_as_scored_pct": 39.13,
   "round6_imputed_at_own_rates_pct": 40.23,
   "finding": "No. The six lost tasks pass MORE often than average (44.4% vs 34.5%), so imputing them at their own rates puts round 6 at 40.2%, slightly ABOVE the 39.13% recorded. The outage depressed round 6 rather than inflating it; the observed spread is not an artefact of the reduced denominator."
- }
+ },
+ "threshold_note": "mdd95_pp is computed from the exact Bernoulli SD (extrapolated_117_sd_pp_exact). extrapolated_117_sd_pp is the simulated SD, kept for the interval; the submitted version used it for the threshold (8.1524 without round 6)."
 }

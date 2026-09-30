@@ -2,8 +2,9 @@
 \label{sec:determinism}
 
 Holding the model still is the first thing a careful experimenter does, and the
-obvious lever is greedy decoding with a fixed seed. It does not work, and the
-convenient way of checking that it works reports that it does.
+obvious lever is greedy decoding with a fixed seed. It did not work on either
+endpoint we tested, and our own first attempt to check that it worked gave the
+wrong answer.
 
 We sent the same prompt three times to each of two endpoints serving the same
 model, at \texttt{temperature=0} with \texttt{seed=42}. Both endpoints
@@ -12,14 +13,16 @@ completions differed on both endpoints, with lengths varying roughly twofold
 (1571 / 2812 / 1427 tokens on one, 2963 / 1448 / 1494 on the other).
 
 \paragraph{The trap.} An earlier version of this check used the prompt
-\emph{``Reply with exactly: OK''}. It returned byte-identical output twice, and
-we recorded that the endpoint was deterministic. It is not. Under greedy decoding a thirty-token answer will almost always come back
-byte-identical, because the divergence that matters accumulates over long
-generations; the check therefore cannot distinguish a deterministic endpoint
-from a non-deterministic one. \textbf{Determinism has to be probed at the
-output length the real workload produces.} We report this because the cheap
-check is the one a practitioner will reach for, and it gives the wrong answer
-in the reassuring direction.
+\emph{``Reply with exactly: OK''}. On \texttt{atlas-cloud/int4} it returned
+byte-identical output twice, and we recorded that the endpoint was
+deterministic. It is not: three longer requests to the same endpoint all came
+back different. Auxiliary probes at five endpoints that carry both kinds of
+request repeat on short, structured outputs 38--79\% of the time and on long
+reasoning outputs 0--36\%. The two kinds of request differ in form as well as
+length, so they do not isolate the role of length, and short outputs are far
+from always identical. \textbf{Determinism has to be probed with requests that
+resemble the real workload.} We report this because the cheap check is the one
+a practitioner will reach for, and it failed in the reassuring direction.
 
 \paragraph{Relation to known results.} That low-precision inference is
 non-reproducible across serving configurations is established:

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T02:02:49.760448+00:00",
+  "generated_at": "2026-09-30T20:36:43.422638+00:00",
   "generator": "scripts/analyze.py",
   "inputs": {
     "runs_jsonl": "data/runs.jsonl",
@@ -3830,6 +3830,7 @@
             "44": 4,
             "46": 1
           },
+          "sd_pp_exact": 3.1158,
           "definition": "Stratum rates carried to their real sizes; only Bernoulli noise. This is the width to compare with a leaderboard gap."
         },
         "resampled_tasks": {
@@ -3884,15 +3885,15 @@
         "caveat": "An extrapolation, not a measurement. It assumes the 10 measured split-bucket tasks are representative of the other 88, and that one model's instability is informative about another's."
       },
       "detectable_difference": {
-        "single_run_sd_pp": 3.1271,
-        "difference_sd_pp": 4.4224,
-        "mdd95_pp": 8.6677,
-        "mdd95_power80_pp": 12.3897,
+        "single_run_sd_pp": 3.1158,
+        "difference_sd_pp": 4.4064,
+        "mdd95_pp": 8.6364,
+        "mdd95_power80_pp": 12.3449,
         "definition": {
           "mdd95_pp": "A gap smaller than this between two single runs is within what noise alone produces 95% of the time when the two models are in fact equal.",
           "mdd95_power80_pp": "The gap needed for a single-run comparison to come out significant 80% of the time."
         },
-        "basis": "gui_only_extrapolation.fixed_taskset"
+        "basis": "gui_only_extrapolation.fixed_taskset (exact Bernoulli SD)"
       },
       "statistical_power": {
         "sufficient": true,
@@ -3903,7 +3904,7 @@
       },
       "leaderboard_gaps": {
         "source": "data/public_matrix.json",
-        "mdd95_pp_applied": 8.6677,
+        "mdd95_pp_applied": 8.6364,
         "n_entries": 18,
         "n_entries_on_board": 40,
         "runs_distribution": {
@@ -4165,7 +4166,7 @@
             "dropped_trial": 4,
             "n_trials_left": 6,
             "observed_range_pp": 8.0959,
-            "mdd95_pp": 8.9992,
+            "mdd95_pp": 8.9563,
             "ci95_width_pp": 12.8205,
             "n_flipped": 8,
             "leaderboard_adjacent_within_noise": 16
@@ -4174,7 +4175,7 @@
             "dropped_trial": 5,
             "n_trials_left": 6,
             "observed_range_pp": 8.0959,
-            "mdd95_pp": 8.5178,
+            "mdd95_pp": 8.4668,
             "ci95_width_pp": 11.9658,
             "n_flipped": 8,
             "leaderboard_adjacent_within_noise": 16
@@ -4183,7 +4184,7 @@
             "dropped_trial": 6,
             "n_trials_left": 6,
             "observed_range_pp": 6.8965,
-            "mdd95_pp": 8.1524,
+            "mdd95_pp": 8.0726,
             "ci95_width_pp": 11.1111,
             "n_flipped": 7,
             "leaderboard_adjacent_within_noise": 16
@@ -4192,7 +4193,7 @@
             "dropped_trial": 7,
             "n_trials_left": 6,
             "observed_range_pp": 8.0959,
-            "mdd95_pp": 8.4202,
+            "mdd95_pp": 8.3828,
             "ci95_width_pp": 11.9658,
             "n_flipped": 7,
             "leaderboard_adjacent_within_noise": 16
@@ -4201,7 +4202,7 @@
             "dropped_trial": 8,
             "n_trials_left": 6,
             "observed_range_pp": 8.0959,
-            "mdd95_pp": 8.0213,
+            "mdd95_pp": 7.9069,
             "ci95_width_pp": 11.1111,
             "n_flipped": 7,
             "leaderboard_adjacent_within_noise": 16
@@ -4210,7 +4211,7 @@
             "dropped_trial": 9,
             "n_trials_left": 6,
             "observed_range_pp": 8.0959,
-            "mdd95_pp": 8.7584,
+            "mdd95_pp": 8.6913,
             "ci95_width_pp": 12.8205,
             "n_flipped": 8,
             "leaderboard_adjacent_within_noise": 16
@@ -4219,14 +4220,14 @@
             "dropped_trial": 10,
             "n_trials_left": 6,
             "observed_range_pp": 8.0959,
-            "mdd95_pp": 9.005,
+            "mdd95_pp": 8.9563,
             "ci95_width_pp": 12.8205,
             "n_flipped": 8,
             "leaderboard_adjacent_within_noise": 16
           }
         ],
-        "mdd95_pp_min": 8.0213,
-        "mdd95_pp_max": 9.005,
+        "mdd95_pp_min": 7.9069,
+        "mdd95_pp_max": 8.9563,
         "observed_range_pp_min": 6.8965,
         "observed_range_pp_max": 8.0959,
         "leaderboard_adjacent_within_noise_min": 16,

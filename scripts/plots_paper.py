@@ -44,7 +44,7 @@ def fig_regime(a: dict, traj: dict, out: Path) -> Path:
                                    gridspec_kw={"hspace": 0.16})
 
     def mark(ax):
-        # The configuration change and the infrastructure incident are marked
+        # The behaviour shift and the infrastructure incident are marked
         # differently and sit at different rounds. A reader must be able to see
         # at a glance that the step is not the outage.
         ax.axvline(boundary - 0.5, color=C_BOUND, lw=1.4, zorder=1)
@@ -65,7 +65,7 @@ def fig_regime(a: dict, traj: dict, out: Path) -> Path:
     ax2.set_ylim(min(toks) - 14, max(toks) + 14)
     ax2.set_xticks(rounds)
 
-    ax1.annotate("serving configuration changes here",
+    ax1.annotate("endpoint behaviour shifts here",
                  xy=(boundary - 0.5, max(score) + 4.5), xytext=(boundary + 0.25, max(score) + 5.5),
                  fontsize=7.4, color=C_BOUND,
                  arrowprops=dict(arrowstyle="-", color=C_BOUND, lw=0.9))
@@ -103,7 +103,7 @@ def fig_dumbbell(a: dict, out: Path) -> Path:
         ax.plot([b], [y], "o", color=C_GREY, ms=5.5, zorder=3)
     ax.set_yticks(list(ys))
     ax.set_yticklabels([m["task_id"] for m in moved], fontsize=7)
-    ax.set_xlabel("pass rate before → after the configuration change (%)", fontsize=9)
+    ax.set_xlabel("pass rate before → after the shift (%)", fontsize=9)
     ax.set_xlim(-6, 106)
     # Headroom so the summary line below cannot sit on top of the lowest arrow.
     ax.set_ylim(-0.7, len(moved) - 0.4)

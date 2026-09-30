@@ -20,33 +20,33 @@ can be doing the work.}
 \label{fig:regime}
 \end{figure}
 
-\subsection{Five independent lines of evidence}
+\subsection{Five checks on the same trajectories, corroborated outside them}
 
 \paragraph{1. Every task that moved, moved the same way.} Ten tasks changed
 pass rate across the boundary; all ten got worse, none improved, nineteen were
-unchanged. Figure~\ref{fig:dumbbell} is the argument, and it is more persuasive
-than any summary of it: every arrow points the same way, and noise moves tasks
-in both directions. As a statistic, an exact sign test on the ten gives
-$p = 0.002$. We read that as an indication of how one-sided the split is rather
-than as a hypothesis test at face value, since tasks within a round share a
-container, the backend services and an execution order, and so are not strictly
-independent.
+unchanged. Figure~\ref{fig:dumbbell} shows all ten arrows pointing the same
+way, which repetition noise alone would rarely produce: an exact sign test on the
+ten gives $p = 0.002$. We read that as an indication of how one-sided the split
+is rather than as a hypothesis test at face value, since tasks within a round
+share a container, the backend services and an execution order, and so are not
+strictly independent.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.86\textwidth]{figures/fig_dumbbell.pdf}
 \caption{Per-task pass rate before and after the boundary, one arrow per task
 that moved. Ten tasks moved and all ten moved the same way: 10 worse, 0 better,
-19 unchanged (exact sign test $p = 0.002$).}
+19 unchanged (exact sign test $p = 0.002$, read as an indication of how
+one-sided the split is; tasks within a round are not strictly independent).}
 \label{fig:dumbbell}
 \end{figure}
 
 \paragraph{2. Reasoning volume stepped, and did not drift.} Median completion
 tokens per action --- one step is one model request, and the output is almost
-entirely reasoning --- were 132.5, 132.4, 133.1 in rounds 1--3 and 102.2, 98.8,
-108.7, 105.9, 103.8, 108.4, 108.0 in rounds 4--10: agreement to within about
-1\% inside the first regime and about 5\% inside the second, across a 20.1\%
-gap between them. A drift would not look like this.
+entirely reasoning --- were 132.5, 132.4, 133.1 in rounds 1--3, within 0.55\%
+of each other, and 102.2, 98.8, 108.7, 105.9, 103.8, 108.4, 108.0 in rounds
+4--10, spanning 98.8--108.7, about $\pm$4.8\% around the regime midpoint.
+Between the two regimes the median fell 20.1\%.
 
 \paragraph{3. Faster and worse at the same time.} Comparing rounds 1--3 with
 rounds 4--10 throughout (round 6 in, its six zero-step no-verdict runs out):
@@ -66,39 +66,49 @@ produce a step that survives a return to the original hours.
 
 \paragraph{4 and 5. Corroborated outside the harness, with a control.} The
 determinism probe of Section~\ref{sec:determinism}, unchanged, sent to the
-pinned endpoint on consecutive days: mean completion length fell from 1937 to
-1309 tokens, and two of three completions came back byte-identical where none
-had the day before. The same probe against a second provider serving the same
-model on the same two days gave 1968 then 2012 tokens. The harness is not
-involved in either measurement, and whatever changed was specific to the
-endpoint we had pinned rather than to the model, the prompt or our tooling.
+pinned endpoint on two consecutive days: on the first day the three completions
+ranged from 1427 to 2812 tokens (sample SD 761), and on the second day they
+came back nearly identical (1344, 1292, 1292; sample SD 30). The same probe
+against a second provider serving the same model gave 2963, 1448, 1494 on the
+first day and 1938, 1672, 2427 on the second, varying on both days. Each cell
+is three requests, so we describe rather than test, and we report sample SD
+throughout. The probe locates the change to a day; the round boundary comes
+from the harness's internal timing. The harness is not involved in either
+measurement, and the change in behaviour was specific to the endpoint we had
+pinned rather than to the model, the prompt or our tooling.
 
 \paragraph{What we observed, and what we infer.} We observed an endpoint's
 behaviour, not its configuration. A serving-side change is the only explanation
-we know of that accounts for all of it at once, but it remains an inference, and
-nothing below depends on the cause.
+we know of that accounts for all of it at once, but we cannot rule out
+explanations we have not thought of, and nothing below depends on the cause.
 
 \subsection{Why this is the finding}
 
-Every one of these controls exists and we set it. There is no flag that pins a
-serving configuration, because a serving configuration is not part of the
-API contract --- it is an operational property of somebody else's fleet. And
-there is no field in any leaderboard entry, on this board or the others we
-looked at, that records which one produced the number.
-
-\begin{quote}
-Two submissions made a day apart --- same model identifier, same quantization,
-same provider --- are compared against each other across a gap that neither
-submitter can see.
-\end{quote}
+Every one of these controls exists and we set it. There is no flag that pins
+how a provider serves the model, because serving behaviour is not part of the
+API contract; it is an operational property of somebody else's fleet. And there
+is no field in any leaderboard entry, on this board or the others we looked at,
+that records which configuration produced the number.
 
 This is not a property of the benchmark we happened to use. Any evaluation
-built on hosted inference inherits it, and the more an agent's behaviour
-depends on long reasoning chains, the more exposed it is.
+built on hosted inference is exposed to this gap between what the submitter
+controls and what determines the number, and the more an agent's behaviour
+depends on long reasoning chains, the more exposed it is. We observed one such
+change in ten repetitions; we have no measurement of how often they happen,
+and nothing here should be read as a claim that they are routine.
 
-\paragraph{A detector, offered for reuse.} The quantity that made this visible
-is completion tokens per action. The harness records \texttt{total\_tokens}, which
-is 98.5\% prompt in this workload and moved by 8\% across the change: not
-enough to notice. Completion tokens per action moved 20.1\% in one step. It cost
-nothing to record and we had to recover it from the raw trajectories after the
-fact. We recommend logging it by default (Section~\ref{sec:recs}).
+\paragraph{A cheap side signal, offered with its limits.} The quantity that
+made this visible is completion tokens per action. The harness records
+\texttt{total\_tokens}, which is 98.5\% prompt in this workload and moved by
+8\% across the change: not enough to notice. Completion tokens per action moved
+20.1\% in one step, and a per-round check of the kind our sentinel uses fires
+on it at the boundary round while a score test at the same granularity does
+not. We call this a side signal, not a detector: it has
+worked once, after the fact. A sentinel probe logging fixed requests to 14
+endpoints over three weeks raised five length alarms in 328 endpoint-days, none
+on two consecutive days; day-shuffled calibration puts the false-alarm rate at
+0.06\%. The sentinel measures the output length of fixed requests, a close
+relative of tokens per action rather than the same quantity, and a quiet period
+calibrates false alarms, not sensitivity. Recording the signal cost nothing
+and we had to recover it from raw trajectories after the fact. We recommend
+logging it by default (Section~\ref{sec:recs}).

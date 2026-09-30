@@ -15,32 +15,32 @@
 
 \title{The Instrument Moves: Unrecorded Serving Changes in Agent Benchmarks}
 
-\author{Jingyuan Yi\\ \texttt{hi@jingyuanyi.com}}
+\author{Jingyuan Yi\\ Independent Researcher\\ \texttt{jingyuay@alumni.cmu.edu}}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
 Agent benchmarks are instruments for measuring capability, and their outputs are
-read as measurements. We pinned every control a mobile-agent benchmark
-exposes --- model identifier, serving provider, quantization, temperature, seed,
-image digest, task-set commit, one fresh container per repetition, serial
-execution --- and ran ten repetitions. Three things followed. First,
+read as measurements. We pinned every control a mobile-agent benchmark exposes
+(model identifier, serving provider, quantization, temperature, seed, image
+digest, task-set commit, one fresh container per repetition, serial execution)
+and ran ten repetitions. Three things followed. First,
 \texttt{temperature{=}0} with a fixed seed did not produce determinism on either
-endpoint we tried, and the convenient way to check for it --- a short
-prompt --- returns byte-identical output and hides it. Second, ten and a half
-hours in, the pinned endpoint showed an abrupt, unannounced shift in behaviour:
-ten tasks got worse and none got better, and completion tokens per action fell
-by a fifth at a single round boundary and stayed there. We did not observe the
-provider's configuration and do not claim to; what we show is that the shift was
-abrupt, specific to that endpoint, absent from a control, and invisible to every
-field a leaderboard records. Third, under a resampling model fitted to this
-agent, endpoint and reweighted task sample, two single-run scores need a gap of
-roughly eight points before the gap exceeds what repetition alone produces. The shift
-was caught not by the score but by a cheap side signal --- completion tokens per
-action, one integer per request to log. That is the argument for treating an
-evaluation harness as a verification system rather than a score generator.
-Data, analysis code and figure scripts: \url{https://github.com/Universeyi/instrument-moves}.
+endpoint we tried. Our first check said otherwise: a short prompt came back
+byte-identical twice, on an endpoint that turned out not to be deterministic.
+Second, ten and a half hours in, the pinned endpoint's behaviour changed. Ten
+tasks got worse and none got better. Median completion tokens per action fell
+by a fifth at a single round boundary and stayed there. We observed the
+endpoint's behaviour, not its configuration: the shift was sudden, specific to
+that endpoint, absent from a control, and invisible to every field a
+leaderboard records. Third, for this agent, this endpoint and this reweighted
+task sample, two single-run scores need to differ by roughly eight points
+before the gap exceeds what repetition alone produces. The token signal flagged
+the shift at the round level; the score did not. The signal costs one integer
+per request to log. We argue that an evaluation harness should be treated as a
+verification system rather than a score generator. Data, analysis code and
+figure scripts: \url{https://github.com/Universeyi/instrument-moves}.
 \end{abstract}
 
 \input{sections/01_intro}

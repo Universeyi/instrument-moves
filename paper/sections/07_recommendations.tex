@@ -12,16 +12,17 @@ rather than experiments.
   to tell. This is the single highest-value change here, and it is one column.
 \item \textbf{Record image digest, task-set commit and run date.} Digest rather
   than tag: a tag moves. The run date is what lets a reader notice that two
-  entries are separated by a serving change nobody documented.
+  entries are separated by an unannounced change in endpoint behaviour.
 \item \textbf{Report the number of runs, and a range when there is more than
   one.} Three runs with a minimum and maximum costs three times the compute and
   removes most of the ambiguity. Where a board already stores a run count,
   surfacing it in the rendered table is free.
 \item \textbf{State a minimum meaningful gap in the leaderboard
-  documentation.} The detectable difference of Section~\ref{sec:noise} is one
-  way to compute one. If a number like ours is roughly right, differences below it
-  between single runs are not resolvable. Saying so protects submitters as much
-  as readers: it removes the incentive to claim a lead that a re-run would
+  documentation.} The same-system difference threshold of
+  Section~\ref{sec:noise} is one way to compute one; resampling whole rounds
+  puts it between 5.18 and 8.53 points. Differences below that range between
+  single runs are not resolvable. Saying so protects submitters as much as
+  readers: it removes the incentive to claim a lead that a re-run would
   erase.
 \item \textbf{Log completion tokens per action.} It is the cheapest available
   witness to an endpoint changing underneath a run. Aggregate token counts are

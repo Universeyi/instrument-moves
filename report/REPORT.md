@@ -38,7 +38,7 @@ with the model, serving provider, quantization, image digest, task-set commit,
 temperature and seed all pinned. 8 of 29 tasks did not return the same verdict
 every time.
 
-Two entries need to differ by **8.7 points** before one run each can tell them
+Two entries need to differ by **8.6 points** before one run each can tell them
 apart. **16 of the 17 adjacent gaps** on the published GUI-Only board are
 smaller than that, as are 39 of its 153 pairs overall. 37 of the 40 entries are
 single runs and none reports an interval.
@@ -313,16 +313,16 @@ everything recomputed from scratch on what is left:
 
 | round dropped | rounds left | observed range (pp) | detectable difference (pp) | tasks that flipped | adjacent gaps needing a second run |
 |---|---|---|---|---|---|
-| 4 | 6 | 8.1 | 9.00 | 8 | 16 of 17 |
-| 5 | 6 | 8.1 | 8.52 | 8 | 16 of 17 |
-| 6 | 6 | 6.9 | 8.15 | 7 | 16 of 17 |
-| 7 | 6 | 8.1 | 8.42 | 7 | 16 of 17 |
-| 8 | 6 | 8.1 | 8.02 | 7 | 16 of 17 |
-| 9 | 6 | 8.1 | 8.76 | 8 | 16 of 17 |
-| 10 | 6 | 8.1 | 9.01 | 8 | 16 of 17 |
+| 4 | 6 | 8.1 | 8.96 | 8 | 16 of 17 |
+| 5 | 6 | 8.1 | 8.47 | 8 | 16 of 17 |
+| 6 | 6 | 6.9 | 8.07 | 7 | 16 of 17 |
+| 7 | 6 | 8.1 | 8.38 | 7 | 16 of 17 |
+| 8 | 6 | 8.1 | 7.91 | 7 | 16 of 17 |
+| 9 | 6 | 8.1 | 8.69 | 8 | 16 of 17 |
+| 10 | 6 | 8.1 | 8.96 | 8 | 16 of 17 |
 
-The detectable difference stays between **8.02 and 9.01 points** whichever
-round is removed, against 8.67 for the full set — the headline sits inside its
+The detectable difference stays between **7.91 and 8.96 points** whichever
+round is removed, against 8.64 for the full set — the headline sits inside its
 own leave-one-out range rather than at an edge of it. The count of adjacent
 leaderboard gaps too small to resolve is 16–16 of 17 across every variant.
 
@@ -455,9 +455,9 @@ single number is quoted below, it comes from within one regime.
 
 ## What this means for reading the leaderboard
 
-Two single runs must differ by **8.7 points** before the difference is outside
+Two single runs must differ by **8.6 points** before the difference is outside
 what noise produces on its own; to detect a real difference reliably (80% of
-the time) it needs to be 12.4 points.
+the time) it needs to be 12.3 points.
 
 | entry | next entry below | gap (pp) |  |
 |---|---|---|---|
@@ -661,5 +661,5 @@ Upstream: [Tongyi-MAI/MobileWorld](https://github.com/Tongyi-MAI/MobileWorld),
 Apache-2.0, pinned at `83e7b8fc75ebb6c4a098254a42999db5f4172666`. Nothing under
 `vendor/` was modified.
 
-Generated 2026-08-28T02:02:49.760448+00:00 by `scripts/render_report.py` from
+Generated 2026-09-30T20:36:43.422638+00:00 by `scripts/render_report.py` from
 `data/analysis.json`, arm `A_temp0` (203 trials, provenance-consistent: True).

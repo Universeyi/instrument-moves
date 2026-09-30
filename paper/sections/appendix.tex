@@ -7,7 +7,7 @@ passed a task, all failed it, or disagreed on it (Section~\ref{sec:setup}), and
 it is how the task set was stratified. A task can therefore be listed as
 \emph{all-pass} and still have failed in every one of our repetitions.\footnote{%
 Four tasks here score 0/6 despite having passed in two of the three rounds that
-preceded the serving change of Section~\ref{sec:endpoint}:
+preceded the shift in behaviour of Section~\ref{sec:endpoint}:
 \texttt{BidFileRenameTask}, \texttt{CheckEventTimeTask},
 \texttt{DownloadSendReceiptTask} and \texttt{MattermostCreateChannelTask} (see
 Figure~\ref{fig:dumbbell}). The headline basis lies entirely after that change,
@@ -46,7 +46,7 @@ most likely way to misread this paper.
   carried through rather than assumed away. This is the headline at the 29-task
   suite scale (the $\sigma$ of the footnote in Section~\ref{sec:noise}).
 \item \textbf{Plug-in distribution.} The same, with each measured rate treated
-  as exact. The reweighted 117-task width and the detectable difference ---
+  as exact. The reweighted 117-task width and the same-system difference threshold ---
   $1.96\sqrt{2}\,\sigma$ of this distribution --- derive from it. Excluding
   parameter uncertainty makes both lower bounds on the re-run width, which is
   the conservative direction for reading a gap.
@@ -73,42 +73,6 @@ incident happens in one.
 \input{sections/tables/app_retries_task}
 \end{center}
 
-\section{Round-6 sensitivity in full}
-\label{app:sensitivity}
-Round 6 caught the run's only infrastructure incident and is also its
-highest-scoring round, so it is the obvious thing to attack. Every figure below
-is recomputed from scratch on the data that remains.
-
-\begin{center}\small
-\input{sections/tables/app_sens_headline}
-\end{center}
-
-\noindent Statistics that use all the data rather than the extremes barely
-move, and the two $\sigma$ scales move in \emph{opposite} directions --- the
-29-task figure widens because a task losing a repetition widens its Beta
-posterior, while the 117-task figure narrows because two low-rate tasks move
-further from $0.5$, cutting their Bernoulli variance by more than the two tasks
-moving toward $0.5$ add. Of the four estimates that move, three fall and one
-rises. The detectable difference derives from the second. The
-best$-$worst spread is the one figure that responds, because round 6 holds the
-maximum; Table~\ref{tab:loo} shows it is unmoved by dropping any other round.
-
-\noindent Only four tasks change pass rate at all, and none flips \emph{only}
-when round 6 is removed:
-
-\begin{center}\small
-\input{sections/tables/app_sens_pertask}
-\end{center}
-
-\noindent Finally, the worry that round 6's 39.13\% flatters it because the
-outage cost it six of its 29 tasks. It is the other way round: the tasks it lost
-pass \emph{more} often than average, so imputing them at their own observed
-rates puts round 6 at 40.2\%, above the figure actually recorded.
-
-\begin{center}\small
-\input{sections/tables/app_sens_lost}
-\end{center}
-
 \section{Method and provenance}
 \label{app:provenance}
 The harness records a trajectory, a screenshot per step and a free-text
@@ -130,7 +94,7 @@ a violation rather than averaged over.
 \end{center}
 
 \noindent Round boundaries in wall-clock time, so that the change of
-Section~\ref{sec:endpoint} and the outage of Appendix~\ref{app:sensitivity} can
+Section~\ref{sec:endpoint} and the outage of Section~\ref{sec:noise} can
 be located independently of the prose:
 
 \begin{center}\small
@@ -186,19 +150,27 @@ one we have, and it would have fitted this paper's theme better.
 We ranked runs by how likely they were to be scoring errors --- minority
 outcomes inside unstable tasks first, then passes completed in fewer steps than
 any published run of the same task needed, then runs stopped at the round
-budget --- and inspected the five most suspicious of the 111 ranked candidates
-against the task definitions in the public repository.
+budget. The top of that ranking led to one task; we added five whose failure
+pattern looked wrong: an identical or implausible failure reason on every
+trial, or a flip among tasks every published run passes. We inspected these six
+tasks against the task definitions in the public repository.
 
-\textbf{We found no verifier defect.} Every case was a genuine agent failure.
-The most promising candidate was a task whose verifier rejected an email for
-not containing a tracking code, while the recorded subject line visibly
-contained one; the task definition shows the required code, and the agent had
-supplied a different, invented string. The verifier was right.
+Among the six we found no false positives and no false negatives. Four were
+genuine agent failures (MattermostEmailTask, MastodonGetServerInfoTask,
+MastodonShareLocationTask, CheckEventTimeTask). One was a task defect:
+ReadQwen3PaperTask5 requires an exact match to \texttt{vie Latn,khm Khmr}, and
+the English answer, a reversed order, and the paper's own spelling
+\texttt{vie\_Latn} all score zero. Our ten runs all failed earlier, with empty
+answers, so the defect did not affect our measurements; it is listed in
+Table~\ref{tab:zero}. One remains unresolved: GraduationMassEmailTask, where
+published data disagree, a published Kimi-K2.5 entry passes, and our ten runs
+all failed with the same ``No email found'' error, which we did not pursue
+further.
 
-We report the negative result for three reasons: it is the obvious alternative
+We report the result for three reasons: it is the obvious alternative
 explanation and a reader deserves it answered before asking; it leaves that
 explanation unsupported where it was most likely to show, which is what
-Section~\ref{sec:noise} needs --- five of 111 is a triage depth, not an
+Section~\ref{sec:noise} needs --- six tasks is a triage depth, not an
 exhaustive audit, and the ranking is released so a reader can extend the search
 from the top; and reporting a search that failed is the discipline this paper
 argues for.

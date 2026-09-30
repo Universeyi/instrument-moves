@@ -1,7 +1,8 @@
 # The Instrument Moves
 
 Data, analysis code and figure scripts for **The Instrument Moves: Unrecorded
-Serving Changes in Agent Benchmarks** (Jingyuan Yi, 2026).
+Serving Changes in Agent Benchmarks** (Jingyuan Yi, 2026), accepted as a poster
+at the NeurIPS 2026 workshop *Who Verifies the Agents?*.
 Paper: [`paper/instrument-moves.pdf`](paper/instrument-moves.pdf) · arXiv: _to be added_
 
 We pinned every control the [MobileWorld](https://github.com/Tongyi-MAI/MobileWorld)
@@ -11,18 +12,21 @@ container per repetition, serial execution) and ran the same agent on the same
 29 tasks ten times. Three things followed:
 
 1. **`temperature=0` with a fixed seed was not deterministic** on either
-   endpoint tried. A short test prompt returns byte-identical output and hides
-   this.
-2. **The pinned endpoint shifted, unannounced, ten and a half hours in.** Ten
-   tasks got worse and none got better, and completion tokens per action fell by
-   a fifth at a single round boundary and stayed there. A control provider did
-   not move. No field a leaderboard records would show it.
-3. **Two single-run scores need a gap of roughly eight points** before the gap
-   exceeds what repetition alone produces, under a resampling model fitted to
-   this agent, endpoint and reweighted task sample.
+   endpoint we tried. Our first check said otherwise: a short prompt came back
+   byte-identical twice, on an endpoint that turned out not to be deterministic.
+2. **Ten and a half hours in, the pinned endpoint's behaviour changed.** Ten
+   tasks got worse and none got better. Median completion tokens per action fell
+   by a fifth at a single round boundary and stayed there. We observed the
+   endpoint's behaviour, not its configuration: the shift was specific to that
+   endpoint, absent from a control, and invisible to every field a leaderboard
+   records.
+3. **Two single-run scores need to differ by roughly eight points** (8.07; a
+   95% interval of 5.18–8.53 when whole rounds are resampled) before the gap
+   exceeds what repetition alone produces, for this agent, this endpoint and
+   this reweighted task sample.
 
-The shift was caught by a side signal, completion tokens per action, not by the
-score.
+The token signal flagged the shift at the round level; the score did not. The
+signal costs one integer per request to log.
 
 ## What is here
 
@@ -50,6 +54,9 @@ Key data files:
 | `data/public_matrix.json` | Model × task outcomes from the 18 trajectory bundles upstream publishes |
 | `data/public_matrix.lenient.json` | The same, reading the three bundles that use other result formats |
 | `data/tasks.json` | All 201 task definitions, statically extracted |
+| `data/camera_ready_stats.json` | Sensitivity of the threshold: round-level bootstrap, shared round effects, leave-one-task-out, 80% power |
+| `data/detector_checks.json` | Tokens per step as a change signal: the round-by-round test in this run, and the endpoint sentinel's false-alarm record |
+| `data/sentinel_alerts_snapshot.json` | Snapshot of the endpoint sentinel's daily drift tests (2026-09-06 to 09-29) behind `detector_checks.json` |
 
 Each `runs.jsonl` row records the outcome (`outcome, score, pass, reason,
 steps, total_tokens, duration_s, started_at, ended_at`) together with the full
@@ -68,7 +75,7 @@ python3 scripts/audit_paper_numbers.py
 ```
 
 It reads every number the paper states against `data/` and fails on any
-mismatch (43 claims at the time of release).
+mismatch (62 claims at the time of release).
 
 ## Rerun the analysis
 
@@ -86,6 +93,9 @@ python3 scripts/make_appendix_tables.py   # paper/sections/tables/
 python3 scripts/plots_paper.py            # paper/figures/ (needs matplotlib)
 python3 scripts/plots.py                  # report/figures/ (needs matplotlib)
 python3 scripts/render_report.py          # report/REPORT.md from its template
+python3 scripts/refresh_sensitivity.py     # threshold fields of data/sensitivity_round6.json
+python3 scripts/camera_ready_stats.py      # data/camera_ready_stats.json
+python3 scripts/detector_checks.py         # data/detector_checks.json
 ```
 
 `report/REPORT.md` is generated from `report/REPORT.template.md`, which holds
@@ -120,8 +130,8 @@ python3 scripts/run_matrix.py --arm A_temp0 --trials 10 --tasks data/pilot_all.t
 This is the main arm's configuration as recorded on every row.
 
 `--dry-run` prints the plan on any machine. Runs are resumable, and every row
-is written and fsync'd as it completes. The serving endpoint you reach will not
-be the one measured here; that is the paper's point. The raw trajectories and
+is written and fsync'd as it completes. The endpoint you reach may not behave like
+the one measured here. The raw trajectories and
 screenshots of the original runs are not published.
 
 ## Licence

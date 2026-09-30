@@ -529,6 +529,11 @@ def suite_extrapolation(tasks: list[dict], strata: dict[str, int],
 
     rng = random.Random(seed + 3)
     fixed = _bernoulli_suite(rng, fixed_ps, n_resamples)
+    # The spread of a sum of independent Bernoullis needs no simulation. The
+    # simulated SD above carries Monte Carlo noise (about +/-0.03 pp at 10,000
+    # draws; the submitted version printed 2.9412 against an exact 2.9124), so
+    # the threshold is computed from this exact value.
+    sd_exact = 100.0 * math.sqrt(sum(p * (1 - p) for p in fixed_ps)) / total_slots
 
     rng = random.Random(seed + 4)
     resampled: Counter = Counter()
@@ -549,6 +554,7 @@ def suite_extrapolation(tasks: list[dict], strata: dict[str, int],
         "strata_unmeasured": {b: strata[b] - len(by_bucket[b]) for b in sorted(strata)},
         "total_slots": total_slots,
         "fixed_taskset": {**_hist_stats(fixed, total_slots),
+                          "sd_pp_exact": round(sd_exact, 4),
                           "definition": "Stratum rates carried to their real "
                                         "sizes; only Bernoulli noise. This is "
                                         "the width to compare with a "
@@ -848,8 +854,8 @@ def analyse_arm(arm: str, rows: list[dict], meta: dict, strata: dict[str, int],
     # 117-task extrapolation when it is available, and from the pilot itself
     # otherwise -- a 29-task suite is noisier, so falling back overstates.
     if extrap:
-        sd_for_mdd = extrap["fixed_taskset"]["sd_pp"]
-        sd_basis = "gui_only_extrapolation.fixed_taskset"
+        sd_for_mdd = extrap["fixed_taskset"]["sd_pp_exact"]
+        sd_basis = "gui_only_extrapolation.fixed_taskset (exact Bernoulli SD)"
     else:
         sd_for_mdd = rerun["posterior"]["sd_pp"]
         sd_basis = "rerun.posterior (pilot scale -- overstates a 117-task suite)"

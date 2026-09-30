@@ -1,7 +1,7 @@
 \section{The resulting noise floor}
 \label{sec:noise}
 
-Seven repetitions fall inside the later serving configuration. They scored
+Seven repetitions fall after the shift in behaviour. They scored
 31.0, 31.0, 39.1, 34.5, 37.9, 37.9 and 34.5\%. \emph{Every headline figure
 below is computed on the six rounds that exclude round 6, for the reason given
 after Table~\ref{tab:loo}; seven-round values are given alongside so the
@@ -16,26 +16,27 @@ average with the number of repetitions, and a seven-round spread and a
 six-round spread are therefore not comparable quantities. Our own sensitivity
 check forced this correction. Table~\ref{tab:loo} recomputes everything with
 each round dropped in turn: the spread is unmoved by dropping any round except
-the one holding the maximum, while the minimum detectable difference varies
+the one holding the maximum, while the same-system difference threshold varies
 across all seven variants within a narrow band. Throughout, the
-\emph{detectable difference at 95\%} is $1.96\sqrt{2}\,\sigma$, with $\sigma$
-the resampled single-run standard deviation at the reweighted 117-task scale;
-interval widths beside it are empirical 2.5--97.5\% spans of the same
-distribution, hence not exact multiples (Appendix~\ref{app:intervals}).
+\emph{same-system difference threshold at 95\%} is $1.96\sqrt{2}\,\sigma$, with
+$\sigma$ the exact standard deviation of a sum of independent per-task
+Bernoulli outcomes at the reweighted 117-task scale; interval widths beside it are empirical 2.5--97.5\% spans of
+the same distribution, hence not exact multiples
+(Appendix~\ref{app:intervals}).
 
 \begin{table}[t]
 \centering\small
 \caption{Leave-one-round-out. Every figure recomputed from scratch on what
-remains. The range responds only to removing the maximum; the detectable
-difference is stable at 8.02--9.01 points and the comparison against published
-entries never changes.}
+remains. The range responds only to removing the maximum; the same-system
+difference threshold is stable at 7.91--8.96 points and the comparison against
+published entries never changes.}
 \label{tab:loo}
 \begin{tabular}{lccccccc}
 \toprule
 round dropped & 4 & 5 & \textbf{6} & 7 & 8 & 9 & 10 \\
 \midrule
 best $-$ worst (pp) & 8.10 & 8.10 & \textbf{6.90} & 8.10 & 8.10 & 8.10 & 8.10 \\
-detectable difference (pp) & 9.00 & 8.52 & \textbf{8.15} & 8.42 & 8.02 & 8.76 & 9.01 \\
+same-system threshold (pp) & 8.96 & 8.47 & \textbf{8.07} & 8.38 & 7.91 & 8.69 & 8.96 \\
 adjacent gaps within noise & 16/17 & 16/17 & 16/17 & 16/17 & 16/17 & 16/17 & 16/17 \\
 \bottomrule
 \end{tabular}
@@ -49,9 +50,12 @@ round of the regime, on a reduced denominator of 23 tasks. We therefore report
 the figures \emph{without} it as the headline, with the seven-round values
 alongside:\footnote{The two scales move in \emph{opposite} directions when round
 6 is removed: at the 29-task scale $\sigma$ rises from 5.87 to 5.92\,pp, at the
-reweighted 117-task scale it falls from 3.13 to 2.94\,pp. They are computed
-differently, and Appendix~\ref{app:sensitivity} traces the mechanism; the
-detectable difference derives from the second scale. We report both because
+reweighted 117-task scale it falls from 3.12 to 2.91\,pp. They are computed
+differently: the 29-task figure widens because a task losing a repetition widens
+its Beta posterior, while the 117-task figure narrows because two low-rate tasks
+move further from $0.5$, cutting their Bernoulli variance by more than the two
+tasks moving toward $0.5$ add. The same-system difference threshold derives
+from the second scale. We report both because
 reporting only the one that suits the argument is precisely the failure this
 paper is about.}
 
@@ -60,7 +64,7 @@ paper is about.}
 \toprule
  & 6 rounds (round 6 removed) & 7 rounds \\
 \midrule
-detectable difference at 95\% & \textbf{8.15 pp} & 8.67 pp \\
+same-system threshold at 95\% & \textbf{8.07 pp} & 8.64 pp \\
 95\% interval at suite scale, width & \textbf{11.11 pp} & 12.82 pp \\
 tasks that flipped & 7 / 29 & 8 / 29 \\
 \bottomrule
@@ -68,7 +72,7 @@ tasks that flipped & 7 / 29 & 8 / 29 \\
 \end{center}
 
 \textbf{Removing the incident moves the result against us, and we report it
-anyway.} The threshold falls from 8.67 to 8.15 points, which is a stricter bar:
+anyway.} The threshold falls from 8.64 to 8.07 points, which is a stricter bar:
 the number of published pairs separated by less than it drops from 39 to 35.
 We report the lower figure because it is the one measured on data containing no
 infrastructure incident, not because it is the more favourable one.
@@ -81,7 +85,6 @@ removed. Second, imputing the six lost runs at those tasks' own rates in the
 other rounds puts round 6 at 40.2\% rather than the 39.13\% recorded --- the
 outage cost that round height rather than lending it any, because the tasks it
 happened to cost pass more often than average (44.4\% against 34.5\%).
-Appendix~\ref{app:sensitivity} has the full comparison.
 
 
 
@@ -89,25 +92,44 @@ Appendix~\ref{app:sensitivity} has the full comparison.
 skewed, so their level means nothing on its own. Reweighting the three groups
 to their true sizes in the 117-task GUI-only suite (98 disagreed-on, 9
 always-passed, 10 always-failed) gives a width that is comparable to a
-leaderboard number. Stated conditionally, because it is:
-\emph{if the 88 disagreed-on tasks we did not measure behave like the 10 we
-did}, a single run of the full suite falls within a 95\% interval about
+leaderboard number. The ten disagreed-on tasks we measured are not a random
+sample: before running anything, and using public data alone, we selected
+deterministically the ten GUI-only tasks rated by at least ten published runs
+whose public pass rate was closest to 50\% (ties broken by run count, then task
+name). Tasks near 50\% are likely among the least stable, so extrapolating
+from them probably overstates the width; we state this as a direction, not a
+measurement. Dropping any single task from the ten moves the threshold between
+7.61 and 8.56 points (7.61 without CVEmailTask). Stated conditionally, because
+it is: \emph{if the 88 disagreed-on tasks we did not measure behave like the 10
+we did}, a single run of the full suite falls within a 95\% interval about
 11.1 points wide.
 
-\paragraph{What this means for reading a leaderboard.} Under the resampling model above, and for this agent on this endpoint, two
-single runs need to differ by 8.15 points before the gap exceeds what
-repetition alone produces; to detect a real difference reliably rather than merely to notice it,
-the gap must be larger still. Of the 17 adjacent pairs among the 18 published GUI-only entries, 16 are
-separated by less than that, as are 35 of the 153 pairs overall (39 at the
-seven-round threshold of 8.67). We state this as an indication of scale and not as a re-scoring: the
-threshold was measured for one model on 29 tasks and is being applied to
-entries produced by other agents and other models. The appropriate reading of a
-gap below the threshold is that it \emph{warrants a second run before
-citation}, not that the two systems are equal.
+\paragraph{What this means for reading a leaderboard.} Under the model above,
+and for this agent on this endpoint, two single runs need to differ by 8.07
+points before the gap exceeds what repetition alone produces. The exact value
+supersedes the 8.15 of the submitted version, which came from simulation noise.
+Resampling whole rounds gives a 95\% interval of 5.18--8.53 for the same
+quantity, and even at the low end 11 of the 17 adjacent published pairs stay
+inside the threshold. Requiring 80\% power rather than a 95\% exclusion of
+repetition noise raises the figure to 11.54 points, inside which all 17
+adjacent pairs fall. Six rounds cannot rule out a shared round-level effect on
+top of per-task variance: we observe no excess dispersion (total-score SD 3.08
+against 3.98 predicted under independence, $p = 0.70$), but an additive effect
+of up to 5.25 points per round would still fit the data and would raise the
+threshold to 16.6. Before the shift, the same computation gives $\sigma = 3.40$
+and a threshold of 9.41. Of the 17 adjacent pairs among the 18 published
+GUI-only entries, 16 are separated by less than 8.07, as are 35 of the 153
+pairs overall (39 at the seven-round threshold of 8.64). We state this as an
+indication of scale and not as a re-scoring: the threshold was measured for one
+model on 29 tasks and is being applied to entries produced by other agents and
+other models. The appropriate reading of a gap below the threshold is that it
+\emph{warrants a second run before citation}, not that the two systems are
+equal.
 
 \paragraph{Are the flips scoring errors rather than variance?} It is the
-obvious alternative explanation, and we checked it: we inspected the five
-most suspicious of 111 ranked runs against the task definitions and found no
-verifier defect --- every one was a genuine agent failure. Appendix~\ref{app:checker}
-reports that negative result and why we had every incentive to find the
-opposite.
+obvious alternative explanation, and we checked it: we inspected six tasks against the task definitions in the public repository,
+one from the top of a ranking of 111 suspicious runs and five whose failure
+pattern looked wrong, and found no false positives and no false negatives.
+Four were genuine agent failures; one was a task defect that did not affect our
+runs (Table~\ref{tab:zero}); one remains unresolved. Appendix~\ref{app:checker}
+reports the audit and why we had every incentive to find the opposite.

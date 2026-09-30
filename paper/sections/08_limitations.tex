@@ -1,10 +1,13 @@
 \section{Limitations}
 
-\textbf{One agent, one model, one endpoint.} Instability is very likely
-model-dependent: a model that is decisive on a task will flip less than one
-that is borderline on it. The threshold we report should be read as an order of
-magnitude for this class of benchmark, not as a constant to be applied to other
-entries as though it were measured on them.
+\textbf{One agent, one model, one endpoint --- and one event.} Instability is
+very likely model-dependent: a model that is decisive on a task will flip less
+than one that is borderline on it. The threshold we report should be read as an
+order of magnitude for this class of benchmark, not as a constant to be applied
+to other entries as though it were measured on them. Separately, we observed
+one behavioural shift in ten repetitions and have no measurement of how often
+such shifts occur, so the cost and benefit of the mitigations we recommend
+cannot be estimated from our data.
 
 \textbf{Seven repetitions over 29 tasks.} Per-task rates are correspondingly
 imprecise --- a task passing 3 of 6 times has a 95\% interval of roughly
@@ -31,12 +34,21 @@ had already fixed and injecting a known bug into a variance measurement would
 measure the wrong thing. The quantization also differs from the reference
 entry's. Both are recorded per run.
 
-\textbf{The serving change is documented, not explained.} We can show when it
-happened, that it was specific to one endpoint, and what it did to the output.
-We cannot see inside somebody else's fleet, and we do not speculate about the
-cause.
+\textbf{The behavioural shift is documented, its cause is not.} We can show when
+the endpoint's behaviour changed, that the change was specific to one endpoint,
+and what it did to the output. We cannot see inside somebody else's fleet, and
+we do not speculate about the cause.
 
-We would rather see this measured better than see it left unmeasured. The raw
+\textbf{The side signal is calibrated on one event.} Completion tokens per
+action exposed the shift of Section~\ref{sec:endpoint}, but only in hindsight
+and only once. The sentinel run gives false-alarm rates, not sensitivity: in a
+three-week window with no known changes it can say how often it would alarm by
+chance, not how often a real change would trip it. And the sentinel measures
+the output length of fixed requests, which is related to, but not the same as,
+tokens per action in a real workload. We offer the signal because it costs a
+log line, not because we have validated it as a detector.
+
+The raw
 per-run records, the analysis code and the figure scripts are released, and the
 figures in this paper regenerate from a single command. If the noise floor of
 an evaluation instrument is worth knowing --- and we think a field that cites

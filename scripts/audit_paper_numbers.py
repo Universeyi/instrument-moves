@@ -31,9 +31,15 @@ def main() -> int:
     ext = A["gui_only_extrapolation"]["fixed_taskset"]
     lost = S["round6_denominator_check"]["lost_tasks"]
 
-    def probe_mean(i):
-        c = PR["runs"][i]["completion_tokens"]
-        return sum(c) / len(c)
+    CR = load("camera_ready_stats.json")
+    DC = load("detector_checks.json")
+
+    def probe_sd(i):
+        import statistics
+        return statistics.stdev(PR["runs"][i]["completion_tokens"])
+
+    _post = [v for k, v in CR["token_agreement"]["median_completion_per_step_by_round"].items() if int(k) >= 4]
+    tok_halfrange_pct = 100 * (max(_post) - min(_post)) / 2 / ((max(_post) + min(_post)) / 2)
 
     # Strand-3 regime statistics, recomputed from the raw per-run records on
     # the paper's stated basis: rounds 1-3 vs rounds 4-10, round 6 in, its six
@@ -66,18 +72,23 @@ def main() -> int:
     _, strict_scored0, strict_passed, strict_noscore = cap_census("public_matrix.json")
     assert cap_noscore == 0, "a run at the cap still has no score under the full read"
 
+    loo = {v["dropped_trial"]: v["mdd95_pp"] for v in A["leave_one_out"]["variants"]}
     # (string as printed, exact value, where it comes from)
     claims = [
-        ("8.15",  S["without_round6"]["mdd95_pp"],            "MDD, 6 rounds"),
-        ("8.67",  A["detectable_difference"]["mdd95_pp"],     "MDD, 7 rounds"),
+        ("8.07",  S["without_round6"]["mdd95_pp"],            "MDD, 6 rounds"),
+        ("8.64",  A["detectable_difference"]["mdd95_pp"],     "MDD, 7 rounds"),
         ("11.11", S["without_round6"]["extrapolated_117_width_pp"], "117-task width, 6 rounds"),
         ("12.82", ext["ci95_width_pp"],                       "117-task width, 7 rounds"),
-        ("8.02",  A["leave_one_out"]["mdd95_pp_min"],         "leave-one-out MDD min"),
-        ("9.01",  A["leave_one_out"]["mdd95_pp_max"],         "leave-one-out MDD max"),
+        ("7.91",  A["leave_one_out"]["mdd95_pp_min"],         "leave-one-out MDD min"),
+        ("8.96",  A["leave_one_out"]["mdd95_pp_max"],         "leave-one-out MDD max"),
+    ] + [
+        (printed, loo[r], f"leave-one-out MDD, round {r} dropped")
+        for r, printed in ((4, "8.96"), (5, "8.47"), (7, "8.38"), (8, "7.91"), (9, "8.69"), (10, "8.96"))
+    ] + [
         ("5.87",  S["with_round6"]["headline_sd_pp"],         "29-task sigma, 7 rounds"),
         ("5.92",  S["without_round6"]["headline_sd_pp"],      "29-task sigma, 6 rounds"),
-        ("3.13",  ext["sd_pp"],                               "117-task sigma, 7 rounds"),
-        ("2.94",  S["without_round6"]["extrapolated_117_sd_pp"], "117-task sigma, 6 rounds"),
+        ("3.12",  ext["sd_pp_exact"],                               "117-task sigma, 7 rounds"),
+        ("2.91",  S["without_round6"]["extrapolated_117_sd_pp_exact"], "117-task sigma, 6 rounds"),
         ("8.10",  A["per_trial_suite_score"]["observed_range_pp"], "spread, 7 rounds"),
         ("6.90",  S["without_round6"]["best_worst_spread_pp"], "spread, 6 rounds"),
         ("39.13", S["round6_denominator_check"]["round6_as_scored_pct"], "round 6 as scored"),
@@ -117,10 +128,25 @@ def main() -> int:
         ("7",     float(cap_passed - strict_passed), "footnote: of those 90, passes"),
         ("110",   AL["absorbed_retries"]["total"],            "silent retries, all rounds"),
         ("95",    A["absorbed_retries"]["total"],             "silent retries, headline rounds"),
-        ("1937",  probe_mean(1),                              "probe mean, pinned endpoint day 1"),
-        ("1309",  probe_mean(3),                              "probe mean, pinned endpoint day 2"),
-        ("1968",  probe_mean(0),                              "probe mean, control day 1"),
-        ("2012",  probe_mean(2),                              "probe mean, control day 2"),
+        # Strand 4 reports dispersion (sample SD) since the camera-ready.
+        ("761",   probe_sd(1),                                "probe sample SD, pinned endpoint day 1"),
+        # Numbers the camera-ready added (scripts/camera_ready_stats.py, scripts/detector_checks.py).
+        ("5.18",  CR["round_bootstrap"]["threshold95_pp_ci95"][0], "round-bootstrap interval, low"),
+        ("8.53",  CR["round_bootstrap"]["threshold95_pp_ci95"][1], "round-bootstrap interval, high"),
+        ("11.54", CR["power80"]["threshold_pp"],              "threshold at 80% power"),
+        ("3.08",  CR["round_effect"]["observed_sd_pp"],       "round-score SD, six rounds"),
+        ("3.98",  CR["round_effect"]["predicted_sd_pp_independent_tasks"], "round-score SD predicted under independence"),
+        ("0.70",  CR["round_effect"]["p_value_spread_at_least_observed"], "p, excess dispersion"),
+        ("5.25",  CR["round_effect"]["additive_round_sd_pp_upper95"], "largest additive round effect not ruled out"),
+        ("16.6",  CR["round_effect"]["threshold95_pp_if_additive_round_sd_at_upper"], "threshold at that round effect"),
+        ("3.40",  CR["pre_vs_post"]["rounds_1_3_sd_pp"],      "sigma, rounds 1-3"),
+        ("9.41",  CR["pre_vs_post"]["rounds_1_3_threshold95_pp"], "threshold, rounds 1-3"),
+        ("7.61",  CR["leave_one_task_out"]["min"],            "leave-one-task-out min (without CVEmailTask)"),
+        ("8.56",  CR["leave_one_task_out"]["max"],            "leave-one-task-out max"),
+        ("0.55",  CR["token_agreement"]["pre_shift_spread_pct"], "pre-shift token medians agree within"),
+        ("4.8",   tok_halfrange_pct,                          "post-shift token medians, half-range around midpoint"),
+        ("328",   float(DC["sentinel"]["tests"]["length"]),   "sentinel endpoint-days tested for length"),
+        ("0.06",  100 * DC["sentinel"]["calibration"]["pooled_rate"], "sentinel shuffled false-alarm rate, %"),
     ]
 
     tex = "\n".join(p.read_text() for p in sorted((ROOT / "paper" / "sections").glob("*.tex")))

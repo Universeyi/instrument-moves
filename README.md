@@ -134,6 +134,20 @@ is written and fsync'd as it completes. The endpoint you reach may not behave li
 the one measured here. The raw trajectories and
 screenshots of the original runs are not published.
 
+## Upstream status
+
+What this work found in MobileWorld's code and reported upstream, and where each item stands as of 2026-10-03. File references are to the pinned commit `83e7b8f`.
+
+| Finding | Upstream | Status |
+|---|---|---|
+| A reasoning model that returns no content crashes the agent (`agents/base.py:115`) | [PR #61](https://github.com/Tongyi-MAI/MobileWorld/pull/61) | Merged 2026-09-22 |
+| `mw env rm --all` removes nothing when the image tag is pinned (`runtime/utils/models.py:28`) | [PR #64](https://github.com/Tongyi-MAI/MobileWorld/pull/64) | Merged 2026-10-03 |
+| `extra_body` is replaced rather than merged for Kimi models, so provider pinning never reaches the API (`agents/base.py:105-106`) | [PR #59](https://github.com/Tongyi-MAI/MobileWorld/pull/59) | Open |
+| Measured run-to-run variance on the GUI-only suite, with the data offered | [Issue #58](https://github.com/Tongyi-MAI/MobileWorld/issues/58) | Open |
+| SMS route-planning verifiers cannot be passed (reported by threegold116, independently confirmed here) | [Issue #54](https://github.com/Tongyi-MAI/MobileWorld/issues/54), fixed by [PR #60](https://github.com/Tongyi-MAI/MobileWorld/pull/60) | Fixed 2026-10-03 |
+
+The same noise-floor analysis, applied to the trajectory files τ²-bench releases, is in [sierra-research/tau2-bench#540](https://github.com/sierra-research/tau2-bench/issues/540) (open).
+
 ## Licence
 
 Code (`scripts/`, `agents/`): MIT, see [`LICENSE`](LICENSE). Data, report and
